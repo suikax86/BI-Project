@@ -1,0 +1,136 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/16/2023 2:54:31 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WATERMELONX86"
+  DTS:CreatorName="WATERMELONX86\water"
+  DTS:DTSID="{F0D5CF73-E6BC-4360-9F75-8AC0FC987205}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{473071A1-E59A-4D2D-9F12-233054015575}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WATERMELONX86.MetadataDA.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BB1CD48B-5B6C-4C82-8818-858815F517F9}"
+      DTS:ObjectName="WATERMELONX86.MetadataDA.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=MetadataDA;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{BB1CD48B-5B6C-4C82-8818-858815F517F9}WATERMELONX86.MetadataDA.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAACJ03f5h68i6nKYvSM8ys/N6iTHFFjk4Cczyzf+f6kygAAAAAOgAAAAAIAACAAAADvszcD2zp56o+pc2rT9GDRHAhFQKHs4oNeNfrhllChLxAAAACy8aHHd/Q5TTFXiRbTYgIlQAAAAPhRYxmNwls8GmZNYJeszLxw7xaisPSBK4fZllBrk/wpgI2hA3tHLA7t78xbKXPXufCfGGIx5mBrzR1U9u71OE0</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WATERMELONX86.SourceDA.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{41C8F314-9C8E-4169-A7C7-89D431A650C9}"
+      DTS:ObjectName="WATERMELONX86.SourceDA.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=SourceDA;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{41C8F314-9C8E-4169-A7C7-89D431A650C9}WATERMELONX86.SourceDA.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADo8dlY4KMb3XsVnbAWMabH/9lnfGG8x9r7ZCwfXAlwcQAAAAAOgAAAAAIAACAAAAC6eFOrNEu34P4qLIHZcqmD4oS6fnOgWVN2oukmioo//hAAAAAdOZrDnz0hl4np3lv/lDFQQAAAAFCDvDhQRqP6Oex0AD1Mqr4/nYsqQO8YziP+1ieAwEo1ahjQ+gvRb/i3vydPyNjow/RSUaDhv958fO3rPcDbLkM</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Set NULL for CET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{e11c24e3-ad9a-4fb7-9eb4-cf8430923f15}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set NULL for CET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BB1CD48B-5B6C-4C82-8818-858815F517F9}"
+          SQLTask:SqlStatementSource="update data_flow set CET = null;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set NULL for LSET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{380719BE-637C-4C0C-B01E-65683F97D028}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set NULL for LSET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BB1CD48B-5B6C-4C82-8818-858815F517F9}"
+          SQLTask:SqlStatementSource="update data_flow set LSET = null;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set UpdatedDate of Source to null"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A5F97912-DC38-4195-9A60-CE29E2F04302}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set UpdatedDate of Source to null"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{41C8F314-9C8E-4169-A7C7-89D431A650C9}"
+          SQLTask:SqlStatementSource="UPDATE City_Source SET updatedDate = null;&#xA;UPDATE ProductLine_Source SET updatedDate = null;&#xA;UPDATE Product_Source SET updatedDate = null;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Set NULL for LSET"
+          TopLeft="102.499995417893,51.3499975514413" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Set NULL for CET"
+          TopLeft="321.874985611067,48.716669239203" />
+        <NodeLayout
+          Size="240,42.6666666666667"
+          Id="Package\Set UpdatedDate of Source to null"
+          TopLeft="100.624995501712,126.099993987084" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

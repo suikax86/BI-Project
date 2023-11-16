@@ -1,0 +1,216 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/16/2023 2:28:10 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WATERMELONX86"
+  DTS:CreatorName="WATERMELONX86\water"
+  DTS:DTSID="{5BB99CCA-673B-4239-8240-C6B257AEC5C0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{EDFC1740-0C2F-4663-AFB6-35B61EFE437D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WATERMELONX86.MetadataDA.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+      DTS:ObjectName="WATERMELONX86.MetadataDA.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=MetadataDA;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{BE94487D-8BEA-4179-811B-D29973FDD1CA}WATERMELONX86.MetadataDA.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAWpDODZZw3e5EXXrjEjYXDPDiBvxvLFuZq2eV4kNHYHAAAAAAOgAAAAAIAACAAAABSs6Xb4+CqfSbrLv8rTTBmXNIrN4wtNFlqI+GRHRoCUBAAAACqKBdfWgdTZrYrh9FuauqXQAAAAAS0jtIyPG98gHcVEM8gjmubLqc0lb81H/jPxazIp7vJ2P+e57NNCctE9OWj3keu4ehjkyQtB749WdjaOi2FhfA</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\From City_Source to City_Stage"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{7C28C485-1FFC-4F54-BC48-A1AAAE49F075}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="From City_Source to City_Stage">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\From City_Source to City_Stage\SET CET to Metadata"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E4570B82-DD63-423D-8D2B-BA4210B7C5D8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SET CET to Metadata"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:SqlStatementSource="update data_flow set CET = getdate() where Name = 'City';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\From ProductLine_Source to ProductLine_Stage"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{34cf9549-ccee-4ab4-8c61-ecbfe94b2b02}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="From ProductLine_Source to ProductLine_Stage">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\From ProductLine_Source to ProductLine_Stage\SET CET to Metadata"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9cede4bc-5085-47b0-ab8c-0cd809bf2da0}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SET CET to Metadata"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:SqlStatementSource="update data_flow set CET = getdate() where Name = 'ProductLine';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\From Product_Source to Product_Stage"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3d21c08c-d020-4cc1-a984-b72c70df0ed8}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="From Product_Source to Product_Stage">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\From Product_Source to Product_Stage\SET CET to Metadata"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{65917786-b46b-417d-b727-abb69c71c712}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SET CET to Metadata"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:SqlStatementSource="update data_flow set CET = getdate() where Name = 'Product';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\From Sales_Source to Sales_Stage"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{0d0d60f9-5ab3-4e4f-994c-96d5e0caab35}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="From Sales_Source to Sales_Stage">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\From Sales_Source to Sales_Stage\SET CET to Metadata"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{62732a01-c048-4bd5-a26f-b593dd3bcb0f}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SET CET to Metadata"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:SqlStatementSource="update data_flow set CET = getdate() where Name = 'Sales';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\From City_Source to City_Stage\SET CET to Metadata"
+          TopLeft="58.166662755112,23.0666624514263" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="289.333333333334,332"
+          Size="289.333333333334,374.666666666667"
+          Id="Package\From City_Source to City_Stage"
+          TopLeft="29.3749986868352,22.7499989151955" />
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\From ProductLine_Source to ProductLine_Stage\SET CET to Metadata"
+          TopLeft="54.1111089380251,19.5222183031507" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="289.333333333334,325.333333333334"
+          Size="289.333333333334,368.666666666667"
+          Id="Package\From ProductLine_Source to ProductLine_Stage"
+          TopLeft="379.374983040616,28.0000123977657" />
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\From Product_Source to Product_Stage\SET CET to Metadata"
+          TopLeft="49.944442457623,25.750016478697" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="289.333333333334,317.333333333334"
+          Size="289.333333333334,360.666666666667"
+          Id="Package\From Product_Source to Product_Stage"
+          TopLeft="748.333304052553,20.8500127387042" />
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\From Sales_Source to Sales_Stage\SET CET to Metadata"
+          TopLeft="51.3333312844236,12.9166836619371" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="289.333333333334,328.666666666667"
+          Size="289.333333333334,372"
+          Id="Package\From Sales_Source to Sales_Stage"
+          TopLeft="1075.58329371487,22.7499989151955" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
