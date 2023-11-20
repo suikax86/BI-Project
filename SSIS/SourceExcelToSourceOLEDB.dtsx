@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{23745267-6CB6-48D9-9AB3-F92F3AC0A3C2}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{948251DD-73EA-40FE-A2DA-7ED69E597A3E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\source\Project\BI-Project\SSIS\DataSource\supermarket_sales.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\source\Project\BI-Project\SSIS\DataSource\supermarket_sales.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,11 +37,11 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=SourceDA;Provider=SQLOLEDB.1;Auto Translate=False;Application Name=SSIS-Package1-{D1B51D80-E04A-4714-ADAF-8DD6DE450EB9}WATERMELONX86.SourceDA.sa;">
+          DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=SourceDA;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{D1B51D80-E04A-4714-ADAF-8DD6DE450EB9}WATERMELONX86.SourceDA.sa;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACuDX2A2jN4ZB2HjN/9RRWWA21T/zzqoMn4KXlXzZfvOwAAAAAOgAAAAAIAACAAAADZCAC/NG24d53zqsjBZTndX2LCblUr5kNtJV/nOIxIyhAAAADOWI/b2JjU0rqIj39q6MSVQAAAAC99kCeYTc/Ae2hNoK8/bayyXCZoAe71jri+hb2RSxkIbQsSFNsLmhX6WR7aOcNY2e3OpiHhJeAsVz7KPKjtozU</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAAB+Nky8++CRQlnOKsDz7PVrv25MOyig4zQ/PN5WlYxAAAAAAOgAAAAAIAACAAAACtxC3aixdqcT+Nb1b+Y6qv2T5/bZK0fIl65wd83klkpRAAAADG1yd3J4+1Wga5CvSvkijWQAAAAEZqG4iR+tDx88PjlMhLnod/SsGkuCKFkX5PBH8+pMkNvlBdMujX7RRUDAFAJ53TPiUbjF2JTgIPutiFprpf5IY</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1946,11 +1946,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="227,43"
+          Size="226.666666666667,42.6666666666667"
           Id="Package\Source Excel to Source OLE DB"
           TopLeft="71.2499968148769,98.1499953198435" />
         <NodeLayout
-          Size="164,43"
+          Size="164,42.6666666666667"
           Id="Package\Truncate table of Source"
           TopLeft="98.1249956134708,18.1999991321564" />
         <EdgeLayout
@@ -2276,6 +2276,19 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Source Excel to Source OLE DB\Excel Source City">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Source Excel to Source OLE DB\OLE DB Destination">
     <Properties>
       <Property>
@@ -2316,19 +2329,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Source Excel to Source OLE DB\SourceDA - Product_Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source Excel to Source OLE DB\Excel Source City">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

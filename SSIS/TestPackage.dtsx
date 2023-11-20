@@ -7,12 +7,12 @@
   DTS:CreatorName="WATERMELONX86\water"
   DTS:DTSID="{F0D5CF73-E6BC-4360-9F75-8AC0FC987205}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5314.0"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{F0A4F15E-8017-4C14-8E54-B9A2F64C855F}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{EDE62004-0CD5-45E3-A40F-071A65AD95F6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADufrlbf646Vfrbns0WrVmeht54lEwrpv1+f6+nieO1XgAAAAAOgAAAAAIAACAAAAD+oOtxj7LVXP7g0rNGssG7N7tvR7M/uf1m14k8sdIbZxAAAAAMs/5loxnJ5sHdwxUpOnYhQAAAAHq4+pB9B9AHuA7TwAu/5VrXn4OXjZ5cIi6v9GyEf6Yehw7e3ZzGtDXoueY/N/UkiAgtddEY2bc5TI2RKJBuOr8</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABCj+EMGM6AQFcK2la06m0Fa+bZcD9Bey8iOrO4h4GcugAAAAAOgAAAAAIAACAAAAC8bn/hD+wAq6NcWmAW3SLfRQOZme+yxUU9ahQuLpAckhAAAAAg+cT2RVoZIkhuhzcXHMYdQAAAAGeFHaPqtBn5bH1bBYjeDP0bVkpsqZtN+NiBstC3S67kiXXuNkOw2T7uvrFdM6GDYtkXd8++Ih5/Q33gUfejW8I</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADkX/anKfoly2meDp66xfff/SqYsNKE0KLmo4Ya0INdjQAAAAAOgAAAAAIAACAAAADd2UjB4eNHQZ8y+FLpnmL4GjVeTi7OpChwxrXDoEK+9hAAAABhze0Xq44V2KX26O3PrmokQAAAAKrDIlRoWApkOF8XTwkYJorySemJ8tpU1xusDCkYpJIoQwrsSUcuraZCesHMaSrYd4wwbbPUDVO93mCOY4BRtE4</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAALaNCFhvN/ZkekRdxESWIDNccOfzMJSPMKGQHZe8UtCwAAAAAOgAAAAAIAACAAAAAnqt/TO9UVYonemrNPKMde9IGira3ADuxPvCZrN4PGkxAAAAA2+JnjKcutnJ/dE2DeJiYaQAAAAABOIK3eWvOivU9XlqSz4VEaNZPCBwIAVkBxRR+JkWyegIox4OSIEkCv2jzgfimlPHVh6FniZITRz3bduySOMHY</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -54,60 +54,38 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Sequence Container"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Sequence Container"
-      DTS:DTSID="{517C3A24-1E0E-4678-8CC7-DCAEE9632169}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:refId="Package\Set NULL for CET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{e11c24e3-ad9a-4fb7-9eb4-cf8430923f15}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Sequence Container">
+      DTS:ObjectName="Set NULL for CET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
       <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Sequence Container\Set NULL for CET"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{e11c24e3-ad9a-4fb7-9eb4-cf8430923f15}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Set NULL for CET"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{BB1CD48B-5B6C-4C82-8818-858815F517F9}"
-              SQLTask:SqlStatementSource="update data_flow set CET = null;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Sequence Container\Set NULL for LSET"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{380719BE-637C-4C0C-B01E-65683F97D028}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Set NULL for LSET"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{BB1CD48B-5B6C-4C82-8818-858815F517F9}"
-              SQLTask:SqlStatementSource="update data_flow set LSET = null;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-      <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
-          DTS:CreationName=""
-          DTS:DTSID="{D7566E41-B445-483B-A919-78CB88B66607}"
-          DTS:From="Package\Sequence Container\Set NULL for LSET"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint"
-          DTS:To="Package\Sequence Container\Set NULL for CET" />
-      </DTS:PrecedenceConstraints>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BB1CD48B-5B6C-4C82-8818-858815F517F9}"
+          SQLTask:SqlStatementSource="update data_flow set CET = null;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set NULL for LSET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{380719BE-637C-4C0C-B01E-65683F97D028}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set NULL for LSET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BB1CD48B-5B6C-4C82-8818-858815F517F9}"
+          SQLTask:SqlStatementSource="update data_flow set LSET = null;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Set UpdatedDate of Source to null"
@@ -118,7 +96,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Set UpdatedDate of Source to null"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -138,48 +116,19 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="240,42.6666666666667"
           Id="Package\Set UpdatedDate of Source to null"
-          TopLeft="100.624995501712,126.099993987084" />
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Sequence Container\Set NULL for LSET"
-          TopLeft="7.45832492349072,5.5" />
+          TopLeft="78.7499958276749,169.649993208349" />
         <NodeLayout
           Size="161.333333333334,42.6666666666667"
-          Id="Package\Sequence Container\Set NULL for CET"
-          TopLeft="11.2083247558529,73.4499878191952" />
-        <EdgeLayout
-          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
-          TopLeft="91.3333248396718,48.1666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,25.2833211525285"
-              Start="0,0"
-              End="0,17.7833211525285">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.7833211525285" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="205.333333333334,171.333333333334"
-          Size="205.333333333334,214"
-          Id="Package\Sequence Container"
-          TopLeft="180.624991925434,241.799988470078" />
+          Id="Package\Set NULL for CET"
+          TopLeft="77.4999931268398,88.3666593093678" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Set NULL for LSET"
+          TopLeft="76.8749932479114,21.7166714669267" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
