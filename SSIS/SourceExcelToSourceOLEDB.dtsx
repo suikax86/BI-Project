@@ -11,8 +11,9 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{948251DD-73EA-40FE-A2DA-7ED69E597A3E}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{B1EC5F2B-29CB-4AE4-AE82-1ECDC3E483CC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -40,8 +41,7 @@
           DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=SourceDA;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{D1B51D80-E04A-4714-ADAF-8DD6DE450EB9}WATERMELONX86.SourceDA.sa;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAAB+Nky8++CRQlnOKsDz7PVrv25MOyig4zQ/PN5WlYxAAAAAAOgAAAAAIAACAAAACtxC3aixdqcT+Nb1b+Y6qv2T5/bZK0fIl65wd83klkpRAAAADG1yd3J4+1Wga5CvSvkijWQAAAAEZqG4iR+tDx88PjlMhLnod/SsGkuCKFkX5PBH8+pMkNvlBdMujX7RRUDAFAJ53TPiUbjF2JTgIPutiFprpf5IY</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>

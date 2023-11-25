@@ -11,8 +11,9 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StagetoNDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{6DD64346-BEF8-4BED-ACA8-245ED387D123}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{03B388A0-23F4-4CF2-9A1A-BB65E8B547F0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,8 +38,7 @@
           DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=StageDA;Persist Security Info=True;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADjkNB3F5bN8bJBQXZCGYemrq7HprGWxSEzpTuACKv0/QAAAAAOgAAAAAIAACAAAACXFWTvygOupSvkjSDqERdP9WmdLNlbVllYm1SD8fkVVhAAAACwHjxMzWaH0rpoxzF9K6f9QAAAAN35LNbeI5txJhNOZPK13IRmSPGTEhoglU19sp69E4J1OV4+EFH7EvRcNHwbrkCLRCuipt0jOb7J910KywdLJtY</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>

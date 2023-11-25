@@ -7,12 +7,13 @@
   DTS:CreatorName="WATERMELONX86\water"
   DTS:DTSID="{5BB99CCA-673B-4239-8240-C6B257AEC5C0}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5314.0"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="42"
-  DTS:VersionGUID="{0E048063-4ED0-435B-BC39-1C8CFF2DE823}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{C6F9C459-0C90-4915-86D8-356793C81BD1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,8 +29,7 @@
           DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=MetadataDA;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{BE94487D-8BEA-4179-811B-D29973FDD1CA}WATERMELONX86.MetadataDA.sa;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADDFEQ5RjRo5WB1c7VCNqFo4f1YPqBI7JejcduqWIaCQQAAAAAOgAAAAAIAACAAAABjlK4sKmCSC+ley2msgd5GK89JDqZKWbzZAS22D498bxAAAABpyqkpNzYeiomiSG9NsdLbQAAAAAWcCi3ZvXicJJuqjVQkMn/VwZTpLwG3SA0VFI4szYPDKQeS6gGPr/JKkbyWNKkvjgvcfb+KXfsGrhQiZlrlSgI</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -45,8 +45,7 @@
           DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=SourceDA;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{425A349F-F86C-4325-8C02-A57B04DD16B7}WATERMELONX86.SourceDA.sa;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAANDh72tTM2grSVPypABDTrUbuB0TuzX6WrOhv9J7TBkwAAAAAOgAAAAAIAACAAAADAX02Y0tfslki7Cej582g071T73Z1/KFOhAB+T3omyaRAAAABPCNa+u/vHkBLN74+58cuzQAAAAC+ULZ9b6XCnR10c7QOYGcI4EMwcU2XCD572UfUYqSN1zB1TYhBWAWONvROvEUWeBgR4CG96xZ6HsXFh/kJgIPY</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -62,8 +61,7 @@
           DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=StageDA;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{2F97ED4B-E59A-4BBC-82DC-497D030C225F}WATERMELONX86.StageDA.sa;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB5O4DYdldzxSWvwUO+GBk9f9bqYzYJeX+2brG9pbJCoQAAAAAOgAAAAAIAACAAAAAUixw7RPhjv9hx9PwBh8jQ7ULFtAClDA7YLzhlKUed2BAAAABi/EXE6VnB9yK+pZxV0fxIQAAAAL0QNrj6r+awFu948V2tfFs/zAH/+JzDSgLoOGAFNq7qePpFm85c9mLkBtp66hq5FyPr3oB+orlrBxfrsy8LCJo</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -162,7 +160,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET, CET from data_flow of Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -525,7 +523,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET CET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -542,7 +540,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET LSET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -559,7 +557,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Table City_Stage"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -622,7 +620,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET, CET from data_flow of Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -985,7 +983,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET CET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1002,7 +1000,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET LSET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1019,7 +1017,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Table ProductLine_Stage"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1082,7 +1080,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET, CET from data_flow of Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1440,7 +1438,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET CET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1457,7 +1455,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET LSET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1474,7 +1472,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Table Product_Stage"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1537,7 +1535,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET, CET from data_flow of Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2228,7 +2226,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET CET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2245,7 +2243,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET LCET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2262,7 +2260,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Table Sales_Stage"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2320,9 +2318,21 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="285.333333333334,42.6666666666667"
+          Id="Package\From City_Source to City_Stage\GET LSET, CET from data_flow of Metadata"
+          TopLeft="11.4687475203539,183.95832147797" />
+        <NodeLayout
+          Size="195.333333333334,58"
+          Id="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage"
+          TopLeft="57.3854127900365,266.979150820772" />
+        <NodeLayout
           Size="180,42.6666666666667"
           Id="Package\From City_Source to City_Stage\SET CET to Metadata"
           TopLeft="58.166662755112,23.0666624514263" />
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\From City_Source to City_Stage\SET LSET to Metadata"
+          TopLeft="68.3854116724496,359.020813225707" />
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\From City_Source to City_Stage\Truncate Table City_Stage"
@@ -2349,14 +2359,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="195.333333333334,58"
-          Id="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage"
-          TopLeft="57.3854127900365,266.979150820772" />
-        <NodeLayout
-          Size="285.333333333334,42.6666666666667"
-          Id="Package\From City_Source to City_Stage\GET LSET, CET from data_flow of Metadata"
-          TopLeft="11.4687475203539,183.95832147797" />
         <EdgeLayout
           Id="Package\From City_Source to City_Stage.PrecedenceConstraints[Constraint 1]"
           TopLeft="152.359371571569,145.861104240683">
@@ -2401,10 +2403,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="180,42.6666666666667"
-          Id="Package\From City_Source to City_Stage\SET LSET to Metadata"
-          TopLeft="68.3854116724496,359.020813225707" />
         <EdgeLayout
           Id="Package\From City_Source to City_Stage.PrecedenceConstraints[Constraint 3]"
           TopLeft="156.718745564576,324.979150820772">
@@ -2435,9 +2433,21 @@
           Id="Package\From City_Source to City_Stage"
           TopLeft="43.4374980581924,20.3124990314245" />
         <NodeLayout
+          Size="222.666666666667,42.6666666666667"
+          Id="Package\From Product_Source to Product_Stage\GET LSET, CET from data_flow of Metadata"
+          TopLeft="33.6562156830924,183.416683868567" />
+        <NodeLayout
+          Size="185.333333333334,52.6666666666667"
+          Id="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage"
+          TopLeft="58.2499639578177,260.854151208203" />
+        <NodeLayout
           Size="180,42.6666666666667"
           Id="Package\From Product_Source to Product_Stage\SET CET to Metadata"
           TopLeft="49.944442457623,25.750016478697" />
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\From Product_Source to Product_Stage\SET LSET to Metadata"
+          TopLeft="61.9895434284903,349.583341236909" />
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\From Product_Source to Product_Stage\Truncate Table Product_Stage"
@@ -2464,14 +2474,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="185.333333333334,52.6666666666667"
-          Id="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage"
-          TopLeft="58.2499639578177,260.854151208203" />
-        <NodeLayout
-          Size="222.666666666667,42.6666666666667"
-          Id="Package\From Product_Source to Product_Stage\GET LSET, CET from data_flow of Metadata"
-          TopLeft="33.6562156830924,183.416683868567" />
         <EdgeLayout
           Id="Package\From Product_Source to Product_Stage.PrecedenceConstraints[Constraint 1]"
           TopLeft="145.61454801991,144.527770907349">
@@ -2516,10 +2518,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="180,42.6666666666667"
-          Id="Package\From Product_Source to Product_Stage\SET LSET to Metadata"
-          TopLeft="61.9895434284903,349.583341236909" />
         <EdgeLayout
           Id="Package\From Product_Source to Product_Stage.PrecedenceConstraints[Constraint 3]"
           TopLeft="151.453087026487,313.520817874869">
@@ -2550,124 +2548,21 @@
           Id="Package\From Product_Source to Product_Stage"
           TopLeft="814.739551083962,9.47501328110644" />
         <NodeLayout
-          Size="180,42.6666666666667"
-          Id="Package\From Sales_Source to Sales_Stage\SET CET to Metadata"
-          TopLeft="51.3333312844236,12.9166836619371" />
+          Size="212.666666666667,42"
+          Id="Package\From ProductLine_Source to ProductLine_Stage\GET LSET, CET from data_flow of Metadata"
+          TopLeft="31.2812488474884,171.624988764525" />
         <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\From Sales_Source to Sales_Stage\Truncate Table Sales_Stage"
-          TopLeft="62.1978660609275,92.9166593829794" />
-        <EdgeLayout
-          Id="Package\From Sales_Source to Sales_Stage.PrecedenceConstraints[Constraint]"
-          TopLeft="142.765598672676,55.5833503286038">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.3333090543757"
-              Start="0,0"
-              End="0,29.8333090543757">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.8333090543757" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="300,42.6666666666667"
-          Id="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage"
-          TopLeft="1.59375017462366,275.916650394599" />
-        <NodeLayout
-          Size="285.333333333334,42.6666666666667"
-          Id="Package\From Sales_Source to Sales_Stage\GET LSET, CET from data_flow of Metadata"
-          TopLeft="8.21869303798394,180.833322485288" />
-        <EdgeLayout
-          Id="Package\From Sales_Source to Sales_Stage.PrecedenceConstraints[Constraint 1]"
-          TopLeft="147.541612882789,135.583326049646">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.2499964356423"
-              Start="0,0"
-              End="0,37.7499964356423">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.7499964356423" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\From Sales_Source to Sales_Stage.PrecedenceConstraints[Constraint 2]"
-          TopLeft="151.239554939637,223.499989151955">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.4166612426442"
-              Start="0,0"
-              End="0,44.9166612426442">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.9166612426442" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="185.333333333334,42.6666666666667"
-          Id="Package\From Sales_Source to Sales_Stage\SET LCET to Metadata"
-          TopLeft="63.3749405723077,363.020840500792" />
-        <EdgeLayout
-          Id="Package\From Sales_Source to Sales_Stage.PrecedenceConstraints[Constraint 3]"
-          TopLeft="153.817678706799,318.583317061266">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.4375234395256"
-              Start="0,0"
-              End="0,36.9375234395256">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.9375234395256" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="370.666666666667,474.666666666667"
-          Size="370.666666666667,518"
-          Id="Package\From Sales_Source to Sales_Stage"
-          TopLeft="1266.20828519327,4.06249980628496" />
+          Size="206,58"
+          Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage"
+          TopLeft="40.1978979121591,259.208317603668" />
         <NodeLayout
           Size="180,42.6666666666667"
           Id="Package\From ProductLine_Source to ProductLine_Stage\SET CET to Metadata"
           TopLeft="54.1111089380251,19.5222183031507" />
+        <NodeLayout
+          Size="235.333333333334,42.6666666666667"
+          Id="Package\From ProductLine_Source to ProductLine_Stage\SET LSET to Metadata"
+          TopLeft="22.6666465500997,351.583313961825" />
         <NodeLayout
           Size="188,42.6666666666667"
           Id="Package\From ProductLine_Source to ProductLine_Stage\Truncate Table ProductLine_Stage"
@@ -2694,14 +2589,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="206,58"
-          Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage"
-          TopLeft="40.1978979121591,259.208317603668" />
-        <NodeLayout
-          Size="212.666666666667,42"
-          Id="Package\From ProductLine_Source to ProductLine_Stage\GET LSET, CET from data_flow of Metadata"
-          TopLeft="31.2812488474884,171.624988764525" />
         <EdgeLayout
           Id="Package\From ProductLine_Source to ProductLine_Stage.PrecedenceConstraints[Constraint 1]"
           TopLeft="139.395823223827,143.145845898985">
@@ -2746,10 +2633,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="235.333333333334,42.6666666666667"
-          Id="Package\From ProductLine_Source to ProductLine_Stage\SET LSET to Metadata"
-          TopLeft="22.6666465500997,351.583313961825" />
         <EdgeLayout
           Id="Package\From ProductLine_Source to ProductLine_Stage.PrecedenceConstraints[Constraint 3]"
           TopLeft="141.765605564463,317.208317603668">
@@ -2779,6 +2662,121 @@
           Size="315.333333333334,494"
           Id="Package\From ProductLine_Source to ProductLine_Stage"
           TopLeft="427.031230910215,11.666669456164" />
+        <NodeLayout
+          Size="285.333333333334,42.6666666666667"
+          Id="Package\From Sales_Source to Sales_Stage\GET LSET, CET from data_flow of Metadata"
+          TopLeft="8.21869303798394,180.833322485288" />
+        <NodeLayout
+          Size="300,42.6666666666667"
+          Id="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage"
+          TopLeft="1.59375017462366,275.916650394599" />
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\From Sales_Source to Sales_Stage\SET CET to Metadata"
+          TopLeft="51.3333312844236,12.9166836619371" />
+        <NodeLayout
+          Size="185.333333333334,42.6666666666667"
+          Id="Package\From Sales_Source to Sales_Stage\SET LCET to Metadata"
+          TopLeft="63.3749405723077,363.020840500792" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\From Sales_Source to Sales_Stage\Truncate Table Sales_Stage"
+          TopLeft="62.1978660609275,92.9166593829794" />
+        <EdgeLayout
+          Id="Package\From Sales_Source to Sales_Stage.PrecedenceConstraints[Constraint]"
+          TopLeft="142.765598672676,55.5833503286038">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.3333090543757"
+              Start="0,0"
+              End="0,29.8333090543757">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.8333090543757" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From Sales_Source to Sales_Stage.PrecedenceConstraints[Constraint 1]"
+          TopLeft="147.541612882789,135.583326049646">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.2499964356423"
+              Start="0,0"
+              End="0,37.7499964356423">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.7499964356423" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From Sales_Source to Sales_Stage.PrecedenceConstraints[Constraint 2]"
+          TopLeft="151.239554939637,223.499989151955">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.4166612426442"
+              Start="0,0"
+              End="0,44.9166612426442">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.9166612426442" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From Sales_Source to Sales_Stage.PrecedenceConstraints[Constraint 3]"
+          TopLeft="153.817678706799,318.583317061266">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.4375234395256"
+              Start="0,0"
+              End="0,36.9375234395256">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.9375234395256" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="370.666666666667,474.666666666667"
+          Size="370.666666666667,518"
+          Id="Package\From Sales_Source to Sales_Stage"
+          TopLeft="1266.20828519327,4.06249980628496" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2820,44 +2818,32 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <TaskHost
-    design-time-name="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="246.666666666667,42.6666666666667"
-          Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source"
-          TopLeft="279.99999165535,165.999995052815" />
-        <NodeLayout
-          Size="268,42.6666666666667"
-          Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source"
-          TopLeft="266.99999204278,258.999992281199" />
-        <EdgeLayout
-          Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage.Paths[OLE DB Source Output]"
-          TopLeft="402.166658515732,208.666661719481">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.3333305617174"
-              Start="0,0"
-              End="0,42.8333305617174">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.8333305617174" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage">
     <LayoutInfo>
@@ -2896,6 +2882,91 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="246.666666666667,42.6666666666667"
+          Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source"
+          TopLeft="279.99999165535,165.999995052815" />
+        <NodeLayout
+          Size="268,42.6666666666667"
+          Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source"
+          TopLeft="266.99999204278,258.999992281199" />
+        <EdgeLayout
+          Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage.Paths[OLE DB Source Output]"
+          TopLeft="402.166658515732,208.666661719481">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.3333305617174"
+              Start="0,0"
+              End="0,42.8333305617174">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.8333305617174" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage">
     <LayoutInfo>
@@ -2935,67 +3006,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage">
+    design-time-name="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3012,19 +3023,6 @@
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

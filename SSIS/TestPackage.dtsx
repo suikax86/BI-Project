@@ -11,8 +11,9 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{EDE62004-0CD5-45E3-A40F-071A65AD95F6}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{75F974A2-AAE9-4D2C-8097-3565703CC34A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,8 +29,7 @@
           DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=MetadataDA;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{BB1CD48B-5B6C-4C82-8818-858815F517F9}WATERMELONX86.MetadataDA.sa;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABCj+EMGM6AQFcK2la06m0Fa+bZcD9Bey8iOrO4h4GcugAAAAAOgAAAAAIAACAAAAC8bn/hD+wAq6NcWmAW3SLfRQOZme+yxUU9ahQuLpAckhAAAAAg+cT2RVoZIkhuhzcXHMYdQAAAAGeFHaPqtBn5bH1bBYjeDP0bVkpsqZtN+NiBstC3S67kiXXuNkOw2T7uvrFdM6GDYtkXd8++Ih5/Q33gUfejW8I</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -45,8 +45,7 @@
           DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=SourceDA;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{41C8F314-9C8E-4169-A7C7-89D431A650C9}WATERMELONX86.SourceDA.sa;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJFlD+Gtp0GaFwANNSqaggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAALaNCFhvN/ZkekRdxESWIDNccOfzMJSPMKGQHZe8UtCwAAAAAOgAAAAAIAACAAAAAnqt/TO9UVYonemrNPKMde9IGira3ADuxPvCZrN4PGkxAAAAA2+JnjKcutnJ/dE2DeJiYaQAAAAABOIK3eWvOivU9XlqSz4VEaNZPCBwIAVkBxRR+JkWyegIox4OSIEkCv2jzgfimlPHVh6FniZITRz3bduySOMHY</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -118,10 +117,6 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="240,42.6666666666667"
-          Id="Package\Set UpdatedDate of Source to null"
-          TopLeft="78.7499958276749,169.649993208349" />
-        <NodeLayout
           Size="161.333333333334,42.6666666666667"
           Id="Package\Set NULL for CET"
           TopLeft="77.4999931268398,88.3666593093678" />
@@ -129,6 +124,10 @@
           Size="166.666666666667,42.6666666666667"
           Id="Package\Set NULL for LSET"
           TopLeft="76.8749932479114,21.7166714669267" />
+        <NodeLayout
+          Size="240,42.6666666666667"
+          Id="Package\Set UpdatedDate of Source to null"
+          TopLeft="78.7499958276749,169.649993208349" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
