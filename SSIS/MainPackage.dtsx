@@ -7,12 +7,13 @@
   DTS:CreatorName="WATERMELONX86\water"
   DTS:DTSID="{9AA15829-7E49-4FF4-B429-380F0BFE5E26}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5314.0"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="MainPackage"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{FD5F1EC3-90FA-4540-AE85-74B290F46E3E}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{85525BB8-C11B-4F99-A3B0-4EFA9513C012}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -75,13 +76,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="214.666666666667,42.6666666666667"
-          Id="Package\SourceExcelToSourceOLEDB"
-          TopLeft="96.2499956972898,60.4499971175194" />
-        <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Source to Stage"
           TopLeft="123.124994495884,144.949993088246" />
+        <NodeLayout
+          Size="214.666666666667,42.6666666666667"
+          Id="Package\SourceExcelToSourceOLEDB"
+          TopLeft="96.2499956972898,60.4499971175194" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="202.02082842992,103.116663784186">
