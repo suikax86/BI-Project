@@ -7,13 +7,13 @@
   DTS:CreatorName="WATERMELONX86\water"
   DTS:DTSID="{F0D5CF73-E6BC-4360-9F75-8AC0FC987205}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LastModifiedProductVersion="16.0.5396.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{75F974A2-AAE9-4D2C-8097-3565703CC34A}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{9834C11E-9398-452D-81DC-EAF8CF3537BC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,11 +26,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=MetadataDA;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{BB1CD48B-5B6C-4C82-8818-858815F517F9}WATERMELONX86.MetadataDA.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"></DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=WATERMELONX86;Initial Catalog=MetadataDA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{BB1CD48B-5B6C-4C82-8818-858815F517F9}WATERMELONX86.MetadataDA.sa;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -42,11 +38,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=SourceDA;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{41C8F314-9C8E-4169-A7C7-89D431A650C9}WATERMELONX86.SourceDA.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"></DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=WATERMELONX86;Initial Catalog=SourceDA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{41C8F314-9C8E-4169-A7C7-89D431A650C9}WATERMELONX86.SourceDA.sa;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -61,7 +53,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Set NULL for CET"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -78,7 +70,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Set NULL for LSET"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -95,7 +87,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Set UpdatedDate of Source to null"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
