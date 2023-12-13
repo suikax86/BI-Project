@@ -7,13 +7,13 @@
   DTS:CreatorName="WATERMELONX86\water"
   DTS:DTSID="{A8DDC897-A45A-4A7B-A243-9F5F5E38A1DB}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{AA1E1DDF-CEC9-4344-81E1-74D311D6CADF}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{D7818E00-A752-4549-9268-B007D5492CA4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\source\Project\BI-Project\SSIS\DataSource\supermarket_sales.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\source\Project\BI-Project\SSIS\DataSource\supermarket_sales.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -1289,7 +1289,7 @@
                     <externalMetadataColumn
                       refId="Package\Source Excel to Source OLE DB\SourceDA - Branch_Source.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
                       dataType="wstr"
-                      length="150"
+                      length="255"
                       name="Branch" />
                     <externalMetadataColumn
                       refId="Package\Source Excel to Source OLE DB\SourceDA - Branch_Source.Inputs[OLE DB Destination Input].ExternalColumns[City]"
@@ -1431,7 +1431,7 @@
                     <externalMetadataColumn
                       refId="Package\Source Excel to Source OLE DB\SourceDA - ProductLine_Source.Inputs[OLE DB Destination Input].ExternalColumns[ProductLineID]"
                       dataType="wstr"
-                      length="150"
+                      length="255"
                       name="ProductLineID" />
                     <externalMetadataColumn
                       refId="Package\Source Excel to Source OLE DB\SourceDA - ProductLine_Source.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
@@ -1569,7 +1569,7 @@
                     <externalMetadataColumn
                       refId="Package\Source Excel to Source OLE DB\SourceDA - Product_Source.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
                       dataType="wstr"
-                      length="150"
+                      length="255"
                       name="ProductID" />
                     <externalMetadataColumn
                       refId="Package\Source Excel to Source OLE DB\SourceDA - Product_Source.Inputs[OLE DB Destination Input].ExternalColumns[Unit price]"
@@ -1582,7 +1582,7 @@
                     <externalMetadataColumn
                       refId="Package\Source Excel to Source OLE DB\SourceDA - Product_Source.Inputs[OLE DB Destination Input].ExternalColumns[ProductLine]"
                       dataType="wstr"
-                      length="150"
+                      length="255"
                       name="ProductLine" />
                   </externalMetadataColumns>
                 </input>
@@ -1780,12 +1780,12 @@
                     <externalMetadataColumn
                       refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
                       dataType="wstr"
-                      length="150"
+                      length="255"
                       name="Branch" />
                     <externalMetadataColumn
                       refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Invoice ID]"
                       dataType="wstr"
-                      length="150"
+                      length="255"
                       name="Invoice ID" />
                     <externalMetadataColumn
                       refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Customer type]"
@@ -1800,7 +1800,7 @@
                     <externalMetadataColumn
                       refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
                       dataType="wstr"
-                      length="150"
+                      length="255"
                       name="ProductID" />
                     <externalMetadataColumn
                       refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
@@ -1817,7 +1817,7 @@
                     <externalMetadataColumn
                       refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Payment]"
                       dataType="wstr"
-                      length="150"
+                      length="255"
                       name="Payment" />
                     <externalMetadataColumn
                       refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[cogs]"
@@ -1959,11 +1959,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="226.666666666667,42.6666666666667"
+          Size="227,43"
           Id="Package\Source Excel to Source OLE DB"
           TopLeft="71.2499968148769,98.1499953198435" />
         <NodeLayout
-          Size="164,42.6666666666667"
+          Size="164,43"
           Id="Package\Truncate table of Source"
           TopLeft="98.1249956134708,18.1999991321564" />
         <EdgeLayout
@@ -1995,227 +1995,59 @@
     design-time-name="Package\Source Excel to Source OLE DB">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="230.666666666667,42.6666666666667"
+          Size="231,43"
           Id="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales"
           TopLeft="75.9027743846595,303.087035201479" />
         <NodeLayout
-          Size="220,42.6666666666667"
-          Id="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales"
-          TopLeft="842.187462351286,298.312492212653" />
+          Size="207,43"
+          Id="Package\Source Excel to Source OLE DB\Add Column createdDate 3"
+          TopLeft="359.821412486158,304.73808810938" />
         <NodeLayout
-          Size="178.666666666667,42.6666666666667"
-          Id="Package\Source Excel to Source OLE DB\Excel Source product"
-          TopLeft="79.7222186583615,237.253700111795" />
-        <NodeLayout
-          Size="206.666666666667,42.6666666666667"
+          Size="207,43"
           Id="Package\Source Excel to Source OLE DB\SourceDA - Branch_Source"
           TopLeft="733.234094206008,93.9920590101727" />
         <NodeLayout
-          Size="206.666666666667,42.6666666666667"
+          Size="179,43"
+          Id="Package\Source Excel to Source OLE DB\Excel Source product"
+          TopLeft="79.7222186583615,237.253700111795" />
+        <NodeLayout
+          Size="209,43"
+          Id="Package\Source Excel to Source OLE DB\SourceDA - Product_Source"
+          TopLeft="724.702348555661,226.576718189351" />
+        <NodeLayout
+          Size="207,43"
           Id="Package\Source Excel to Source OLE DB\Add Column createdDate 2"
           TopLeft="354.722206364904,232.679902292559" />
         <NodeLayout
-          Size="197.333333333334,42.6666666666667"
+          Size="197,43"
           Id="Package\Source Excel to Source OLE DB\Excel Source ProductLine"
           TopLeft="83.6111073734033,168.349991972447" />
-        <NodeLayout
-          Size="229.333333333334,42.6666666666667"
-          Id="Package\Source Excel to Source OLE DB\SourceDA - ProductLine_Source"
-          TopLeft="724.305523176575,170.611104671161" />
         <NodeLayout
           Size="160,42"
           Id="Package\Source Excel to Source OLE DB\Excel Source City"
           TopLeft="93,100" />
         <NodeLayout
-          Size="206.666666666667,42.6666666666667"
+          Size="207,43"
           Id="Package\Source Excel to Source OLE DB\Add Column createdDate 1"
           TopLeft="366.071412206761,163.357138473647" />
         <NodeLayout
-          Size="209.333333333334,42.6666666666667"
-          Id="Package\Source Excel to Source OLE DB\SourceDA - Product_Source"
-          TopLeft="724.702348555661,226.576718189351" />
+          Size="229,43"
+          Id="Package\Source Excel to Source OLE DB\SourceDA - ProductLine_Source"
+          TopLeft="724.305523176575,170.611104671161" />
         <NodeLayout
-          Size="206.666666666667,42.6666666666667"
-          Id="Package\Source Excel to Source OLE DB\Add Column createdDate 3"
-          TopLeft="359.821412486158,304.73808810938" />
-        <NodeLayout
-          Size="157.333333333334,42.6666666666667"
+          Size="157,43"
           Id="Package\Source Excel to Source OLE DB\Data Conversion"
           TopLeft="619.642829442664,300.142850324086" />
         <NodeLayout
-          Size="197.333333333334,42.6666666666667"
+          Size="197,43"
           Id="Package\Source Excel to Source OLE DB\Add Column createdDate"
           TopLeft="345.535698839065,97.4999953508378" />
-        <EdgeLayout
-          Id="Package\Source Excel to Source OLE DB.Paths[Derived Column Output1]"
-          TopLeft="566.488079152825,323.773802550066">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="53.1547502898395,0"
-              Start="0,0"
-              End="45.6547502898395,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="45.6547502898395,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-1.98209751133025,5,49.6189453125,11.2236328125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Source Excel to Source OLE DB.Paths[Derived Column Output]"
-          TopLeft="561.388873031571,250.961643574288">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="163.31347552409,0"
-              Start="0,0"
-              End="155.81347552409,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="155.81347552409,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="56.954081512045,5,41.9053125,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Source Excel to Source OLE DB.Paths[Data Conversion Output]"
-          TopLeft="776.976162775997,320.561004601703">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="65.2112995752885,0"
-              Start="0,0"
-              End="57.7112995752885,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="57.7112995752885,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="4.04617713139427,5,49.6189453125,11.2236328125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Source Excel to Source OLE DB.Paths[Excel Source Output3]"
-          TopLeft="253,119.999997675419">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="92.535698839065,0"
-              Start="0,0"
-              End="85.035698839065,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="85.035698839065,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="27.0984353570325,5,30.838828125,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Source Excel to Source OLE DB.Paths[Excel Source Output2]"
-          TopLeft="280.944440706737,187.18689855638">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="85.1269715000244,0"
-              Start="0,0"
-              End="77.6269715000244,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="77.6269715000244,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="23.3647748125122,5,30.897421875,9.55859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Source Excel to Source OLE DB.Paths[Excel Source Output1]"
-          TopLeft="306.569441051326,325.245894988763">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="53.2519714348317,0"
-              Start="0,0"
-              End="45.7519714348317,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="45.7519714348317,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-1.93348693883415,5,49.6189453125,11.2236328125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Source Excel to Source OLE DB.Paths[Excel Source Output]"
-          TopLeft="258.388885325028,256.30013453551">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="96.3333210398761,0"
-              Start="0,0"
-              End="88.8333210398761,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="88.8333210398761,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="23.464004269938,5,41.9053125,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="220,43"
+          Id="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales"
+          TopLeft="842.187462351286,298.312492212653" />
         <EdgeLayout
           Id="Package\Source Excel to Source OLE DB.Paths[Derived Column Output3]"
           TopLeft="542.869032172398,117.079360513839">
@@ -2235,9 +2067,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="76.0131169543048,5,30.838828125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2259,9 +2089,161 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="56.5850112140735,5,30.897421875,9.55859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Source Excel to Source OLE DB.Paths[Derived Column Output1]"
+          TopLeft="566.488079152825,323.773802550066">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.1547502898395,0"
+              Start="0,0"
+              End="45.6547502898395,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="45.6547502898395,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Source Excel to Source OLE DB.Paths[Derived Column Output]"
+          TopLeft="561.388873031571,250.961643574288">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="163.31347552409,0"
+              Start="0,0"
+              End="155.81347552409,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="155.81347552409,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Source Excel to Source OLE DB.Paths[Data Conversion Output]"
+          TopLeft="776.976162775997,320.561004601703">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65.2112995752885,0"
+              Start="0,0"
+              End="57.7112995752885,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="57.7112995752885,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Source Excel to Source OLE DB.Paths[Excel Source Output3]"
+          TopLeft="253,119.999997675419">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.535698839065,0"
+              Start="0,0"
+              End="85.035698839065,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="85.035698839065,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Source Excel to Source OLE DB.Paths[Excel Source Output2]"
+          TopLeft="280.944440706737,187.18689855638">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.1269715000244,0"
+              Start="0,0"
+              End="77.6269715000244,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="77.6269715000244,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Source Excel to Source OLE DB.Paths[Excel Source Output1]"
+          TopLeft="306.569441051326,325.245894988763">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.2519714348317,0"
+              Start="0,0"
+              End="45.7519714348317,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="45.7519714348317,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Source Excel to Source OLE DB.Paths[Excel Source Output]"
+          TopLeft="258.388885325028,256.30013453551">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96.3333210398761,0"
+              Start="0,0"
+              End="88.8333210398761,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="88.8333210398761,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2269,32 +2251,6 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source Excel to Source OLE DB\Excel Source product">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2320,7 +2276,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Source Excel to Source OLE DB\Excel Source ProductLine">
+    design-time-name="Package\Source Excel to Source OLE DB\Excel Source product">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2333,7 +2289,20 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Source Excel to Source OLE DB\SourceDA - ProductLine_Source">
+    design-time-name="Package\Source Excel to Source OLE DB\SourceDA - Product_Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source Excel to Source OLE DB\Excel Source ProductLine">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2359,7 +2328,20 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Source Excel to Source OLE DB\SourceDA - Product_Source">
+    design-time-name="Package\Source Excel to Source OLE DB\SourceDA - ProductLine_Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
