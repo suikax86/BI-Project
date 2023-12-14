@@ -7,62 +7,50 @@
   DTS:CreatorName="WATERMELONX86\water"
   DTS:DTSID="{5BB99CCA-673B-4239-8240-C6B257AEC5C0}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{C6F9C459-0C90-4915-86D8-356793C81BD1}">
+  DTS:VersionBuild="79"
+  DTS:VersionGUID="{0ACC1B05-9E5B-446E-9D7F-1E0471FA4FBB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[WATERMELONX86.MetadataDA.sa]"
+      DTS:refId="Package.ConnectionManagers[WATERMELONX86.MetadataDA]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
-      DTS:ObjectName="WATERMELONX86.MetadataDA.sa">
+      DTS:DTSID="{9FD3E274-467E-46AA-B0A6-ED20BA14F61C}"
+      DTS:ObjectName="WATERMELONX86.MetadataDA">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=MetadataDA;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{BE94487D-8BEA-4179-811B-D29973FDD1CA}WATERMELONX86.MetadataDA.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"></DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=WATERMELONX86;Initial Catalog=MetadataDA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{9FD3E274-467E-46AA-B0A6-ED20BA14F61C}WATERMELONX86.MetadataDA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[WATERMELONX86.SourceDA.sa]"
+      DTS:refId="Package.ConnectionManagers[WATERMELONX86.SourceDA]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{425A349F-F86C-4325-8C02-A57B04DD16B7}"
-      DTS:ObjectName="WATERMELONX86.SourceDA.sa">
+      DTS:DTSID="{01C02C44-D29A-4052-94C4-A3437DE33FCD}"
+      DTS:ObjectName="WATERMELONX86.SourceDA">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=SourceDA;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{425A349F-F86C-4325-8C02-A57B04DD16B7}WATERMELONX86.SourceDA.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"></DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=WATERMELONX86;Initial Catalog=SourceDA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{01C02C44-D29A-4052-94C4-A3437DE33FCD}WATERMELONX86.SourceDA;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[WATERMELONX86.StageDA.sa]"
+      DTS:refId="Package.ConnectionManagers[WATERMELONX86.StageDA1]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{2F97ED4B-E59A-4BBC-82DC-497D030C225F}"
-      DTS:ObjectName="WATERMELONX86.StageDA.sa">
+      DTS:DTSID="{7CAEAD18-A9EB-4422-80D3-B274B1907AC2}"
+      DTS:ObjectName="WATERMELONX86.StageDA1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=WATERMELONX86;User ID=sa;Initial Catalog=StageDA;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{2F97ED4B-E59A-4BBC-82DC-497D030C225F}WATERMELONX86.StageDA.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"></DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=WATERMELONX86;Initial Catalog=StageDA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{7CAEAD18-A9EB-4422-80D3-B274B1907AC2}WATERMELONX86.StageDA1;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -160,11 +148,11 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET, CET from data_flow of Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:Connection="{9FD3E274-467E-46AA-B0A6-ED20BA14F61C}"
               SQLTask:SqlStatementSource="SELECT LSET, CET from data_flow where Name = 'City'"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
@@ -191,11 +179,11 @@
               version="1">
               <components>
                 <component
-                  refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage"
+                  refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
-                  name="OLE DB Destination City_Stage"
+                  name="OLE DB Destination Branch_Stage"
                   usesDispositions="true"
                   version="4">
                   <properties>
@@ -206,7 +194,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[City_Stage]</property>
+                      name="OpenRowset">[Branch_Stage]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -228,7 +216,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">3</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -248,88 +236,68 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.StageDA.sa]"
-                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.StageDA.sa]"
+                      refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.StageDA1]"
+                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.StageDA1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input]"
+                      refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input].Columns[Branch]"
+                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Inputs[OLE DB Destination Input].Columns[Branch]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Branch"
-                          externalMetadataColumnId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
+                          externalMetadataColumnId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
                           lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].Columns[Branch]" />
                         <inputColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input].Columns[City]"
+                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Inputs[OLE DB Destination Input].Columns[City]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="City"
-                          externalMetadataColumnId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          externalMetadataColumnId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Inputs[OLE DB Destination Input].ExternalColumns[City]"
                           lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].Columns[City]" />
-                        <inputColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input].Columns[createdDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="createdDate"
-                          externalMetadataColumnId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
-                          lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].Columns[createdDate]" />
-                        <inputColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input].Columns[updatedDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="updatedDate"
-                          externalMetadataColumnId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
-                          lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].Columns[updatedDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
+                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
                           dataType="wstr"
                           length="255"
                           name="Branch" />
                         <externalMetadataColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Inputs[OLE DB Destination Input].ExternalColumns[City]"
                           dataType="wstr"
                           length="255"
                           name="City" />
-                        <externalMetadataColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
-                          dataType="dbTimeStamp"
-                          name="createdDate" />
-                        <externalMetadataColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          name="updatedDate" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -353,7 +321,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[City_Source]</property>
+                      name="OpenRowset">[dbo].[Branch_Source]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -379,7 +347,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">2</property>
+                      typeConverter="AccessMode">0</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
@@ -388,8 +356,8 @@
                   <connections>
                     <connection
                       refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.SourceDA.sa]"
-                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.SourceDA.sa]"
+                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.SourceDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.SourceDA]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -418,24 +386,6 @@
                           lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].Columns[City]"
                           name="City"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].Columns[createdDate]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
-                          lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].Columns[createdDate]"
-                          name="createdDate"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
-                          lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
-                          name="updatedDate"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -453,10 +403,6 @@
                           refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
                           dataType="dbTimeStamp"
                           name="createdDate" />
-                        <externalMetadataColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          name="updatedDate" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -471,22 +417,6 @@
                           lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[Branch]"
                           name="Branch" />
                         <outputColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[City]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[City]"
-                          name="City" />
-                        <outputColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[createdDate]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[createdDate]"
-                          name="createdDate" />
-                        <outputColumn
-                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
-                          name="updatedDate" />
-                        <outputColumn
                           refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
                           lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
@@ -498,6 +428,12 @@
                           lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
+                        <outputColumn
+                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[City]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[City]"
+                          name="City" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -507,7 +443,7 @@
               <paths>
                 <path
                   refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage.Paths[OLE DB Source Output]"
-                  endId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage.Inputs[OLE DB Destination Input]"
+                  endId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage.Inputs[OLE DB Destination Input]"
                   name="OLE DB Source Output"
                   startId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output]" />
               </paths>
@@ -523,11 +459,11 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET CET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:Connection="{9FD3E274-467E-46AA-B0A6-ED20BA14F61C}"
               SQLTask:SqlStatementSource="update data_flow set CET = getdate() where Name = 'City';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -540,29 +476,29 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET LSET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:Connection="{9FD3E274-467E-46AA-B0A6-ED20BA14F61C}"
               SQLTask:SqlStatementSource="update data_flow set LSET = getdate() where Name = 'City';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\From City_Source to City_Stage\Truncate Table City_Stage"
+          DTS:refId="Package\From City_Source to City_Stage\Truncate Table Branch_Stage"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{F1CAE4C6-7D2E-4B0F-9EEA-841CA4C04A01}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Truncate Table City_Stage"
+          DTS:ObjectName="Truncate Table Branch_Stage"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{2F97ED4B-E59A-4BBC-82DC-497D030C225F}"
-              SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'City_Stage')&#xA;BEGIN&#xA;    TRUNCATE table City_Stage;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:Connection="{7CAEAD18-A9EB-4422-80D3-B274B1907AC2}"
+              SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Branch_Stage')&#xA;BEGIN&#xA;    TRUNCATE table Branch_Stage;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -574,12 +510,12 @@
           DTS:From="Package\From City_Source to City_Stage\SET CET to Metadata"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\From City_Source to City_Stage\Truncate Table City_Stage" />
+          DTS:To="Package\From City_Source to City_Stage\Truncate Table Branch_Stage" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\From City_Source to City_Stage.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
           DTS:DTSID="{1F8FD306-E041-4157-BAFB-F2F50070BC57}"
-          DTS:From="Package\From City_Source to City_Stage\Truncate Table City_Stage"
+          DTS:From="Package\From City_Source to City_Stage\Truncate Table Branch_Stage"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\From City_Source to City_Stage\GET LSET, CET from data_flow of Metadata" />
@@ -620,11 +556,11 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET, CET from data_flow of Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:Connection="{9FD3E274-467E-46AA-B0A6-ED20BA14F61C}"
               SQLTask:SqlStatementSource="SELECT LSET, CET from data_flow where Name = 'ProductLine'"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
@@ -651,11 +587,11 @@
               version="1">
               <components>
                 <component
-                  refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source"
+                  refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
-                  name="OLE DB Destination ProductLine_Source"
+                  name="OLE DB Destination ProductLine_Stage"
                   usesDispositions="true"
                   version="4">
                   <properties>
@@ -688,7 +624,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">3</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -700,7 +636,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions"></property>
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -708,88 +644,68 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.StageDA.sa]"
-                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.StageDA.sa]"
+                      refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.StageDA1]"
+                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.StageDA1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input]"
+                      refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input].Columns[Product line]"
+                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Inputs[OLE DB Destination Input].Columns[Product line]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Product line"
-                          externalMetadataColumnId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input].ExternalColumns[Product line]"
+                          externalMetadataColumnId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Product line]"
                           lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].Columns[Product line]" />
                         <inputColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input].Columns[ProductLineID]"
+                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Inputs[OLE DB Destination Input].Columns[ProductLineID]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="ProductLineID"
-                          externalMetadataColumnId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input].ExternalColumns[ProductLineID]"
+                          externalMetadataColumnId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ProductLineID]"
                           lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].Columns[ProductLineID]" />
-                        <inputColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input].Columns[createdDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="createdDate"
-                          externalMetadataColumnId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
-                          lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].Columns[createdDate]" />
-                        <inputColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input].Columns[updatedDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="updatedDate"
-                          externalMetadataColumnId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
-                          lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].Columns[updatedDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input].ExternalColumns[Product line]"
+                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Product line]"
                           dataType="wstr"
                           length="255"
                           name="Product line" />
                         <externalMetadataColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input].ExternalColumns[ProductLineID]"
+                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ProductLineID]"
                           dataType="wstr"
                           length="255"
                           name="ProductLineID" />
-                        <externalMetadataColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
-                          dataType="dbTimeStamp"
-                          name="createdDate" />
-                        <externalMetadataColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          name="updatedDate" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -813,7 +729,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset"></property>
+                      name="OpenRowset">[dbo].[ProductLine_Source]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -839,7 +755,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">2</property>
+                      typeConverter="AccessMode">0</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
@@ -848,8 +764,8 @@
                   <connections>
                     <connection
                       refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.SourceDA.sa]"
-                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.SourceDA.sa]"
+                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.SourceDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.SourceDA]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -878,24 +794,6 @@
                           lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].Columns[ProductLineID]"
                           name="ProductLineID"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].Columns[createdDate]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
-                          lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].Columns[createdDate]"
-                          name="createdDate"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
-                          lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
-                          name="updatedDate"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -913,10 +811,6 @@
                           refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
                           dataType="dbTimeStamp"
                           name="createdDate" />
-                        <externalMetadataColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          name="updatedDate" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -936,16 +830,6 @@
                           length="255"
                           lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Error Output].Columns[ProductLineID]"
                           name="ProductLineID" />
-                        <outputColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Error Output].Columns[createdDate]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Error Output].Columns[createdDate]"
-                          name="createdDate" />
-                        <outputColumn
-                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
-                          name="updatedDate" />
                         <outputColumn
                           refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -967,7 +851,7 @@
               <paths>
                 <path
                   refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage.Paths[OLE DB Source Output]"
-                  endId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source.Inputs[OLE DB Destination Input]"
+                  endId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage.Inputs[OLE DB Destination Input]"
                   name="OLE DB Source Output"
                   startId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output]" />
               </paths>
@@ -983,11 +867,11 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET CET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:Connection="{9FD3E274-467E-46AA-B0A6-ED20BA14F61C}"
               SQLTask:SqlStatementSource="update data_flow set CET = getdate() where Name = 'ProductLine';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1000,11 +884,11 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET LSET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:Connection="{9FD3E274-467E-46AA-B0A6-ED20BA14F61C}"
               SQLTask:SqlStatementSource="update data_flow set LSET = getdate() where Name = 'ProductLine';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1017,11 +901,11 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Table ProductLine_Stage"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{2F97ED4B-E59A-4BBC-82DC-497D030C225F}"
+              SQLTask:Connection="{7CAEAD18-A9EB-4422-80D3-B274B1907AC2}"
               SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ProductLine_Stage')&#xA;BEGIN&#xA;    TRUNCATE table ProductLine_Stage;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1084,7 +968,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:Connection="{9FD3E274-467E-46AA-B0A6-ED20BA14F61C}"
               SQLTask:SqlStatementSource="SELECT LSET, CET from data_flow where Name = 'Product'"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
@@ -1148,7 +1032,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">3</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -1160,7 +1044,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions"></property>
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -1169,8 +1053,8 @@
                   <connections>
                     <connection
                       refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.StageDA.sa]"
-                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.StageDA.sa]"
+                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.StageDA1]"
+                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.StageDA1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1191,22 +1075,17 @@
                           lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[ProductID]" />
                         <inputColumn
                           refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage.Inputs[OLE DB Destination Input].Columns[Unit price]"
-                          cachedDataType="r8"
+                          cachedDataType="cy"
                           cachedName="Unit price"
                           externalMetadataColumnId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Unit price]"
                           lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[Unit price]" />
                         <inputColumn
-                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage.Inputs[OLE DB Destination Input].Columns[createdDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="createdDate"
-                          externalMetadataColumnId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
-                          lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[createdDate]" />
-                        <inputColumn
-                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage.Inputs[OLE DB Destination Input].Columns[updatedDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="updatedDate"
-                          externalMetadataColumnId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
-                          lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[updatedDate]" />
+                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage.Inputs[OLE DB Destination Input].Columns[ProductLine]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ProductLine"
+                          externalMetadataColumnId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ProductLine]"
+                          lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[ProductLine]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1217,16 +1096,13 @@
                           name="ProductID" />
                         <externalMetadataColumn
                           refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Unit price]"
-                          dataType="r8"
+                          dataType="cy"
                           name="Unit price" />
                         <externalMetadataColumn
-                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
-                          dataType="dbTimeStamp"
-                          name="createdDate" />
-                        <externalMetadataColumn
-                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          name="updatedDate" />
+                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ProductLine]"
+                          dataType="wstr"
+                          length="255"
+                          name="ProductLine" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1297,7 +1173,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">2</property>
+                      typeConverter="AccessMode">0</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
@@ -1306,8 +1182,8 @@
                   <connections>
                     <connection
                       refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.SourceDA.sa]"
-                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.SourceDA.sa]"
+                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.SourceDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.SourceDA]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1328,7 +1204,7 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[Unit price]"
-                          dataType="r8"
+                          dataType="cy"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].ExternalColumns[Unit price]"
@@ -1336,22 +1212,14 @@
                           name="Unit price"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[createdDate]"
-                          dataType="dbTimeStamp"
+                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[ProductLine]"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
-                          lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[createdDate]"
-                          name="createdDate"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
-                          lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
-                          name="updatedDate"
+                          externalMetadataColumnId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].ExternalColumns[ProductLine]"
+                          length="255"
+                          lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[ProductLine]"
+                          name="ProductLine"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -1363,16 +1231,17 @@
                           name="ProductID" />
                         <externalMetadataColumn
                           refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].ExternalColumns[Unit price]"
-                          dataType="r8"
+                          dataType="cy"
                           name="Unit price" />
                         <externalMetadataColumn
                           refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
                           dataType="dbTimeStamp"
                           name="createdDate" />
                         <externalMetadataColumn
-                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          name="updatedDate" />
+                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].ExternalColumns[ProductLine]"
+                          dataType="wstr"
+                          length="255"
+                          name="ProductLine" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1388,19 +1257,15 @@
                           name="ProductID" />
                         <outputColumn
                           refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Error Output].Columns[Unit price]"
-                          dataType="r8"
+                          dataType="cy"
                           lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Error Output].Columns[Unit price]"
                           name="Unit price" />
                         <outputColumn
-                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Error Output].Columns[createdDate]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Error Output].Columns[createdDate]"
-                          name="createdDate" />
-                        <outputColumn
-                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
-                          name="updatedDate" />
+                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Error Output].Columns[ProductLine]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Error Output].Columns[ProductLine]"
+                          name="ProductLine" />
                         <outputColumn
                           refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -1442,7 +1307,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:Connection="{9FD3E274-467E-46AA-B0A6-ED20BA14F61C}"
               SQLTask:SqlStatementSource="update data_flow set CET = getdate() where Name = 'Product';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1459,7 +1324,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:Connection="{9FD3E274-467E-46AA-B0A6-ED20BA14F61C}"
               SQLTask:SqlStatementSource="update data_flow set LSET = getdate() where Name = 'Product';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1476,7 +1341,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{2F97ED4B-E59A-4BBC-82DC-497D030C225F}"
+              SQLTask:Connection="{7CAEAD18-A9EB-4422-80D3-B274B1907AC2}"
               SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Product_Stage')&#xA;BEGIN&#xA;    TRUNCATE table Product_Stage;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1539,7 +1404,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:Connection="{9FD3E274-467E-46AA-B0A6-ED20BA14F61C}"
               SQLTask:SqlStatementSource="SELECT LSET, CET from data_flow where Name = 'Sales'"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
@@ -1603,7 +1468,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">3</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -1615,7 +1480,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions"></property>
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -1624,8 +1489,8 @@
                   <connections>
                     <connection
                       refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.StageDA.sa]"
-                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.StageDA.sa]"
+                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.StageDA1]"
+                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.StageDA1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1661,7 +1526,7 @@
                         <inputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].Columns[Gender]"
                           cachedDataType="wstr"
-                          cachedLength="255"
+                          cachedLength="6"
                           cachedName="Gender"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[Gender]" />
@@ -1674,19 +1539,19 @@
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[ProductID]" />
                         <inputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].Columns[Quantity]"
-                          cachedDataType="r8"
+                          cachedDataType="i4"
                           cachedName="Quantity"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[Quantity]" />
                         <inputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].Columns[Tax 5%]"
-                          cachedDataType="r8"
+                          cachedDataType="cy"
                           cachedName="Tax 5%"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Tax 5%]"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[Tax 5%]" />
                         <inputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].Columns[Total]"
-                          cachedDataType="r8"
+                          cachedDataType="cy"
                           cachedName="Total"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Total]"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[Total]" />
@@ -1699,19 +1564,19 @@
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[Payment]" />
                         <inputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].Columns[cogs]"
-                          cachedDataType="r8"
+                          cachedDataType="cy"
                           cachedName="cogs"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[cogs]"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[cogs]" />
                         <inputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].Columns[gross margin percentage]"
-                          cachedDataType="r8"
+                          cachedDataType="cy"
                           cachedName="gross margin percentage"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[gross margin percentage]"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[gross margin percentage]" />
                         <inputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].Columns[gross income]"
-                          cachedDataType="r8"
+                          cachedDataType="cy"
                           cachedName="gross income"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[gross income]"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[gross income]" />
@@ -1727,12 +1592,6 @@
                           cachedName="createdDate"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[createdDate]" />
-                        <inputColumn
-                          refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].Columns[updatedDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="updatedDate"
-                          externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
-                          lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[updatedDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1754,7 +1613,7 @@
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
                           dataType="wstr"
-                          length="255"
+                          length="6"
                           name="Gender" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
@@ -1763,15 +1622,15 @@
                           name="ProductID" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
-                          dataType="r8"
+                          dataType="i4"
                           name="Quantity" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Tax 5%]"
-                          dataType="r8"
+                          dataType="cy"
                           name="Tax 5%" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Total]"
-                          dataType="r8"
+                          dataType="cy"
                           name="Total" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Payment]"
@@ -1780,15 +1639,15 @@
                           name="Payment" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[cogs]"
-                          dataType="r8"
+                          dataType="cy"
                           name="cogs" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[gross margin percentage]"
-                          dataType="r8"
+                          dataType="cy"
                           name="gross margin percentage" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[gross income]"
-                          dataType="r8"
+                          dataType="cy"
                           name="gross income" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
@@ -1798,10 +1657,6 @@
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
                           dataType="dbTimeStamp"
                           name="createdDate" />
-                        <externalMetadataColumn
-                          refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          name="updatedDate" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1846,7 +1701,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset"></property>
+                      name="OpenRowset">[dbo].[Sales_Source]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1872,7 +1727,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">2</property>
+                      typeConverter="AccessMode">0</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
@@ -1881,8 +1736,8 @@
                   <connections>
                     <connection
                       refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.SourceDA.sa]"
-                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.SourceDA.sa]"
+                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.SourceDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.SourceDA]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1927,7 +1782,7 @@
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
-                          length="255"
+                          length="6"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[Gender]"
                           name="Gender"
                           truncationRowDisposition="FailComponent" />
@@ -1943,7 +1798,7 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[Quantity]"
-                          dataType="r8"
+                          dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
@@ -1952,7 +1807,7 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[Tax 5%]"
-                          dataType="r8"
+                          dataType="cy"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[Tax 5%]"
@@ -1961,7 +1816,7 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[Total]"
-                          dataType="r8"
+                          dataType="cy"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[Total]"
@@ -1980,7 +1835,7 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[cogs]"
-                          dataType="r8"
+                          dataType="cy"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[cogs]"
@@ -1989,7 +1844,7 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[gross margin percentage]"
-                          dataType="r8"
+                          dataType="cy"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[gross margin percentage]"
@@ -1998,7 +1853,7 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[gross income]"
-                          dataType="r8"
+                          dataType="cy"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[gross income]"
@@ -2023,15 +1878,6 @@
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[createdDate]"
                           name="createdDate"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
-                          lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
-                          name="updatedDate"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2053,7 +1899,7 @@
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
                           dataType="wstr"
-                          length="255"
+                          length="6"
                           name="Gender" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
@@ -2062,15 +1908,15 @@
                           name="ProductID" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
-                          dataType="r8"
+                          dataType="i4"
                           name="Quantity" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[Tax 5%]"
-                          dataType="r8"
+                          dataType="cy"
                           name="Tax 5%" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[Total]"
-                          dataType="r8"
+                          dataType="cy"
                           name="Total" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[Payment]"
@@ -2079,15 +1925,15 @@
                           name="Payment" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[cogs]"
-                          dataType="r8"
+                          dataType="cy"
                           name="cogs" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[gross margin percentage]"
-                          dataType="r8"
+                          dataType="cy"
                           name="gross margin percentage" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[gross income]"
-                          dataType="r8"
+                          dataType="cy"
                           name="gross income" />
                         <externalMetadataColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[Rating]"
@@ -2097,10 +1943,6 @@
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
                           dataType="dbTimeStamp"
                           name="createdDate" />
-                        <externalMetadataColumn
-                          refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          name="updatedDate" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2129,7 +1971,7 @@
                         <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[Gender]"
                           dataType="wstr"
-                          length="255"
+                          length="6"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[Gender]"
                           name="Gender" />
                         <outputColumn
@@ -2140,17 +1982,17 @@
                           name="ProductID" />
                         <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[Quantity]"
-                          dataType="r8"
+                          dataType="i4"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[Quantity]"
                           name="Quantity" />
                         <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[Tax 5%]"
-                          dataType="r8"
+                          dataType="cy"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[Tax 5%]"
                           name="Tax 5%" />
                         <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[Total]"
-                          dataType="r8"
+                          dataType="cy"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[Total]"
                           name="Total" />
                         <outputColumn
@@ -2161,17 +2003,17 @@
                           name="Payment" />
                         <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[cogs]"
-                          dataType="r8"
+                          dataType="cy"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[cogs]"
                           name="cogs" />
                         <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[gross margin percentage]"
-                          dataType="r8"
+                          dataType="cy"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[gross margin percentage]"
                           name="gross margin percentage" />
                         <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[gross income]"
-                          dataType="r8"
+                          dataType="cy"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[gross income]"
                           name="gross income" />
                         <outputColumn
@@ -2179,16 +2021,6 @@
                           dataType="r8"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[Rating]"
                           name="Rating" />
-                        <outputColumn
-                          refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[createdDate]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[createdDate]"
-                          name="createdDate" />
-                        <outputColumn
-                          refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
-                          name="updatedDate" />
                         <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -2201,6 +2033,11 @@
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
+                        <outputColumn
+                          refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                          name="createdDate" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -2230,7 +2067,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:Connection="{9FD3E274-467E-46AA-B0A6-ED20BA14F61C}"
               SQLTask:SqlStatementSource="update data_flow set CET = getdate() where Name = 'Sales';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -2247,7 +2084,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BE94487D-8BEA-4179-811B-D29973FDD1CA}"
+              SQLTask:Connection="{9FD3E274-467E-46AA-B0A6-ED20BA14F61C}"
               SQLTask:SqlStatementSource="update data_flow set LSET = getdate() where Name = 'Sales';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -2264,7 +2101,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{2F97ED4B-E59A-4BBC-82DC-497D030C225F}"
+              SQLTask:Connection="{7CAEAD18-A9EB-4422-80D3-B274B1907AC2}"
               SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Sales_Stage')&#xA;BEGIN&#xA;    TRUNCATE table Sales_Stage;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -2318,39 +2155,39 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="285.333333333334,42.6666666666667"
+          Size="285,43"
           Id="Package\From City_Source to City_Stage\GET LSET, CET from data_flow of Metadata"
           TopLeft="11.4687475203539,183.95832147797" />
         <NodeLayout
-          Size="195.333333333334,58"
+          Size="287,43"
           Id="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage"
-          TopLeft="57.3854127900365,266.979150820772" />
+          TopLeft="9.88541349784163,266.329150832395" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,43"
           Id="Package\From City_Source to City_Stage\SET CET to Metadata"
           TopLeft="58.166662755112,23.0666624514263" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,43"
           Id="Package\From City_Source to City_Stage\SET LSET to Metadata"
           TopLeft="68.3854116724496,359.020813225707" />
         <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\From City_Source to City_Stage\Truncate Table City_Stage"
-          TopLeft="68.5833289561174,103.194437574016" />
+          Size="219,43"
+          Id="Package\From City_Source to City_Stage\Truncate Table Branch_Stage"
+          TopLeft="42.3333293472729,102.544437585639" />
         <EdgeLayout
           Id="Package\From City_Source to City_Stage.PrecedenceConstraints[Constraint]"
-          TopLeft="149.374995855615,65.733329118093">
+          TopLeft="149.916662717859,65.733329118093">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.461108455923"
+              EndConnector="0,36.8111084675459"
               Start="0,0"
-              End="0,29.961108455923">
+              End="0,29.3111084675459">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.961108455923" />
+                    End="0,29.3111084675459" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2361,18 +2198,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\From City_Source to City_Stage.PrecedenceConstraints[Constraint 1]"
-          TopLeft="152.359371571569,145.861104240683">
+          TopLeft="152.901038433813,145.211104252306">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.0972172372874"
+              EndConnector="0,38.7472172256644"
               Start="0,0"
-              End="0,30.5972172372874">
+              End="0,31.2472172256644">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5972172372874" />
+                    End="0,31.2472172256644" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2383,18 +2220,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\From City_Source to City_Stage.PrecedenceConstraints[Constraint 2]"
-          TopLeft="154.593746821862,226.624988144637">
+          TopLeft="153.677080509098,226.624988144637">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.3541626761358"
+              EndConnector="0,39.7041626877582"
               Start="0,0"
-              End="0,32.8541626761358">
+              End="0,32.2041626877582">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.8541626761358" />
+                    End="0,32.2041626877582" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2405,18 +2242,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\From City_Source to City_Stage.PrecedenceConstraints[Constraint 3]"
-          TopLeft="156.718745564576,324.979150820772">
+          TopLeft="155.802079251812,308.995817499062">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.0416624049346"
+              EndConnector="0,50.0249957266454"
               Start="0,0"
-              End="0,26.5416624049346">
+              End="0,42.5249957266454">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5416624049346" />
+                    End="0,42.5249957266454" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2428,28 +2265,28 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="329.333333333334,457.333333333334"
-          Size="329.333333333334,500"
+          PanelSize="349,458"
+          Size="349,501"
           Id="Package\From City_Source to City_Stage"
-          TopLeft="43.4374980581924,20.3124990314245" />
+          TopLeft="43.4374980581924,15.3124990314245" />
         <NodeLayout
-          Size="222.666666666667,42.6666666666667"
+          Size="223,43"
           Id="Package\From Product_Source to Product_Stage\GET LSET, CET from data_flow of Metadata"
           TopLeft="33.6562156830924,183.416683868567" />
         <NodeLayout
-          Size="185.333333333334,52.6666666666667"
+          Size="185,53"
           Id="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage"
           TopLeft="58.2499639578177,260.854151208203" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,43"
           Id="Package\From Product_Source to Product_Stage\SET CET to Metadata"
           TopLeft="49.944442457623,25.750016478697" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,43"
           Id="Package\From Product_Source to Product_Stage\SET LSET to Metadata"
           TopLeft="61.9895434284903,349.583341236909" />
         <NodeLayout
-          Size="164,42.6666666666667"
+          Size="164,43"
           Id="Package\From Product_Source to Product_Stage\Truncate Table Product_Stage"
           TopLeft="64.2395470233952,101.861104240683" />
         <EdgeLayout
@@ -2543,12 +2380,12 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="326.666666666667,446.666666666667"
-          Size="326.666666666667,489.333333333334"
+          PanelSize="327,446"
+          Size="327,489"
           Id="Package\From Product_Source to Product_Stage"
-          TopLeft="814.739551083962,9.47501328110644" />
+          TopLeft="790.739551083962,15.4750132811064" />
         <NodeLayout
-          Size="212.666666666667,42"
+          Size="213,42"
           Id="Package\From ProductLine_Source to ProductLine_Stage\GET LSET, CET from data_flow of Metadata"
           TopLeft="31.2812488474884,171.624988764525" />
         <NodeLayout
@@ -2556,15 +2393,15 @@
           Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage"
           TopLeft="40.1978979121591,259.208317603668" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,43"
           Id="Package\From ProductLine_Source to ProductLine_Stage\SET CET to Metadata"
           TopLeft="54.1111089380251,19.5222183031507" />
         <NodeLayout
-          Size="235.333333333334,42.6666666666667"
+          Size="235,43"
           Id="Package\From ProductLine_Source to ProductLine_Stage\SET LSET to Metadata"
           TopLeft="22.6666465500997,351.583313961825" />
         <NodeLayout
-          Size="188,42.6666666666667"
+          Size="188,43"
           Id="Package\From ProductLine_Source to ProductLine_Stage\Truncate Table ProductLine_Stage"
           TopLeft="47.1770642668325,100.479179232319" />
         <EdgeLayout
@@ -2658,28 +2495,28 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="315.333333333334,450.666666666667"
-          Size="315.333333333334,494"
+          PanelSize="315,451"
+          Size="315,494"
           Id="Package\From ProductLine_Source to ProductLine_Stage"
           TopLeft="427.031230910215,11.666669456164" />
         <NodeLayout
-          Size="285.333333333334,42.6666666666667"
+          Size="285,43"
           Id="Package\From Sales_Source to Sales_Stage\GET LSET, CET from data_flow of Metadata"
           TopLeft="8.21869303798394,180.833322485288" />
         <NodeLayout
-          Size="300,42.6666666666667"
+          Size="300,43"
           Id="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage"
           TopLeft="1.59375017462366,275.916650394599" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,43"
           Id="Package\From Sales_Source to Sales_Stage\SET CET to Metadata"
           TopLeft="51.3333312844236,12.9166836619371" />
         <NodeLayout
-          Size="185.333333333334,42.6666666666667"
+          Size="185,43"
           Id="Package\From Sales_Source to Sales_Stage\SET LCET to Metadata"
           TopLeft="63.3749405723077,363.020840500792" />
         <NodeLayout
-          Size="164,42.6666666666667"
+          Size="164,43"
           Id="Package\From Sales_Source to Sales_Stage\Truncate Table Sales_Stage"
           TopLeft="62.1978660609275,92.9166593829794" />
         <EdgeLayout
@@ -2773,10 +2610,10 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="370.666666666667,474.666666666667"
-          Size="370.666666666667,518"
+          PanelSize="371,475"
+          Size="371,518"
           Id="Package\From Sales_Source to Sales_Stage"
-          TopLeft="1266.20828519327,4.06249980628496" />
+          TopLeft="1164.20828519327,16.062499806285" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2784,42 +2621,44 @@
     design-time-name="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="209.333333333334,42.6666666666667"
+          Size="209,43"
           Id="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source"
           TopLeft="117.499994747341,120.899994235039" />
         <NodeLayout
-          Size="225.333333333334,42.6666666666667"
-          Id="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage"
+          Size="240,43"
+          Id="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage"
           TopLeft="106.249995250255,240.499988532067" />
         <EdgeLayout
           Id="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage.Paths[OLE DB Source Output]"
-          TopLeft="220.541661665465,163.566660901706">
+          TopLeft="224.208328332131,163.566660901706">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,76.9333276303611"
+              EndConnector="0,76.9333276303613"
               Start="0,0"
-              End="0,69.4333276303611">
+              End="0,69.4333276303613">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.4333276303611" />
+                    End="0,69.4333276303613" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination City_Stage">
+    design-time-name="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2848,13 +2687,13 @@
     design-time-name="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="228,42.6666666666667"
+          Size="228,43"
           Id="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source"
           TopLeft="264.999992102385,243.999992728234" />
         <NodeLayout
-          Size="242.666666666667,42.6666666666667"
+          Size="243,43"
           Id="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage"
           TopLeft="257.999992311001,359.999989271164" />
         <EdgeLayout
@@ -2876,7 +2715,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2912,42 +2753,44 @@
     design-time-name="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="246.666666666667,42.6666666666667"
+          Size="247,43"
           Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source"
           TopLeft="279.99999165535,165.999995052815" />
         <NodeLayout
-          Size="268,42.6666666666667"
-          Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source"
-          TopLeft="266.99999204278,258.999992281199" />
+          Size="262,42"
+          Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage"
+          TopLeft="266.99999204278,259.999992281199" />
         <EdgeLayout
           Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage.Paths[OLE DB Source Output]"
-          TopLeft="402.166658515732,208.666661719481">
+          TopLeft="400.749991849065,208.999995052815">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.3333305617174"
+              EndConnector="0,50.999997228384"
               Start="0,0"
-              End="0,42.8333305617174">
+              End="0,43.499997228384">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.8333305617174" />
+                    End="0,43.499997228384" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Source">
+    design-time-name="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Destination ProductLine_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2965,6 +2808,11 @@
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
@@ -2973,11 +2821,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="216,42.6666666666667"
+          Size="216,43"
           Id="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source"
           TopLeft="314.999990612269,167.99999499321" />
         <NodeLayout
-          Size="232,42.6666666666667"
+          Size="232,43"
           Id="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage"
           TopLeft="300.999991029501,287.999991416931" />
         <EdgeLayout
@@ -3023,6 +2871,11 @@
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
