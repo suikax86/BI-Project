@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="96"
-  DTS:VersionGUID="{32441490-2291-452A-87A8-4A531382EDF0}">
+  DTS:VersionBuild="108"
+  DTS:VersionGUID="{654BC00C-028B-4BE4-BDEC-55C19DEB3705}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3231,6 +3231,152 @@ where [refTable].[ProductLine_NK] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add updatedDate column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column.Outputs[Derived Column Output].Columns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column.Outputs[Derived Column Output].Columns[updatedDate]"
+                      name="updatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add updatedDate column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1.Outputs[Derived Column Output].Columns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1.Outputs[Derived Column Output].Columns[updatedDate]"
+                      name="updatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Import Sales_Stage to Invoice_NDS\Convert &quot;F&quot; to Female, &quot;M' to Male"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -3440,6 +3586,42 @@ where [refTable].[ProductLine_NK] = ?</property>
                       cachedName="Product_SK"
                       externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
                       lineageId="Package\Import Sales_Stage to Invoice_NDS\Lookup Product.Outputs[Lookup Match Output].Columns[Product_SK]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].Columns[Tax 5%]"
+                      cachedDataType="cy"
+                      cachedName="Tax 5%"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Tax]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[Tax 5%]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].Columns[Total]"
+                      cachedDataType="cy"
+                      cachedName="Total"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Total]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[Total]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].Columns[gross margin percentage]"
+                      cachedDataType="cy"
+                      cachedName="gross margin percentage"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].ExternalColumns[GrossMarginPercentage]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[gross margin percentage]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].Columns[gross income]"
+                      cachedDataType="cy"
+                      cachedName="gross income"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].ExternalColumns[GrossIncome]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[gross income]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].Columns[Rating]"
+                      cachedDataType="r8"
+                      cachedName="Rating"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[Rating]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].Columns[createdDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="createdDate"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[createdDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3498,6 +3680,26 @@ where [refTable].[ProductLine_NK] = ?</property>
                       refId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
                       dataType="dbTimeStamp"
                       name="updatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Tax]"
+                      dataType="cy"
+                      name="Tax" />
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Total]"
+                      dataType="cy"
+                      name="Total" />
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].ExternalColumns[GrossMarginPercentage]"
+                      dataType="cy"
+                      name="GrossMarginPercentage" />
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].ExternalColumns[GrossIncome]"
+                      dataType="cy"
+                      name="GrossIncome" />
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                      dataType="r8"
+                      name="Rating" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3710,6 +3912,15 @@ where [refTable].[ProductLine_NK] = ?</property>
                       lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[Rating]"
                       name="Rating"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[createdDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[createdDate]"
+                      name="createdDate"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3771,6 +3982,10 @@ where [refTable].[ProductLine_NK] = ?</property>
                       refId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].ExternalColumns[Rating]"
                       dataType="r8"
                       name="Rating" />
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                      dataType="dbTimeStamp"
+                      name="createdDate" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3851,6 +4066,11 @@ where [refTable].[ProductLine_NK] = ?</property>
                       dataType="cy"
                       lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Error Output].Columns[gross margin percentage]"
                       name="gross margin percentage" />
+                    <outputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                      name="createdDate" />
                     <outputColumn
                       refId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Error Output].Columns[gross income]"
                       dataType="cy"
@@ -4203,7 +4423,7 @@ where [refTable].[Invoice_NK] = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[PaymentType_NDS]) [refTable]
-where [refTable].[Name] = ?</property>
+where [refTable].[PaymentType_NK] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -4218,7 +4438,7 @@ where [refTable].[Name] = ?</property>
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
                   name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
+                  typeConverter="LookupNoMatchBehavior">1</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
@@ -4234,7 +4454,7 @@ where [refTable].[Name] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PaymentType_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PaymentType_NK" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Name" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Source" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Status" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="createdDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="updatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PaymentType_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PaymentType_NK" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Source" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Status" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="createdDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="updatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -4272,7 +4492,7 @@ where [refTable].[Name] = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Name</property>
+                          name="JoinToReferenceColumn">PaymentType_NK</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -4287,7 +4507,6 @@ where [refTable].[Name] = ?</property>
                 <output
                   refId="Package\Import Sales_Stage to Invoice_NDS\Lookup Payment.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Import Sales_Stage to Invoice_NDS\Lookup Payment.Inputs[Lookup Input]">
@@ -4499,6 +4718,379 @@ where [refTable].[Product_NK] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update Invoice_NDS"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Invoice_NDS SET Invoice_NK = ?, ProductId = ?, MemberType = ?, Gender = ?, Quantity = ?, Crogs = ?, Tax = ?, Total = ?, GrossMarginPercentage = ?, GrossIncome = ?, Rating = ?, BranchId = ?, PaymentId = ?, Source = ?, Status = ?, updatedDate = ? WHERE Invoice_SK = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[WATERMELONX86.NDSDA]"
+                  connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.NDSDA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[Invoice_SK]"
+                      cachedDataType="i4"
+                      cachedName="Invoice_SK"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Lookup InvoiceId.Outputs[Lookup Match Output].Columns[Invoice_SK]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[updatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="updatedDate"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1.Outputs[Derived Column Output].Columns[updatedDate]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[Status]"
+                      cachedDataType="i4"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Add Source, Status columns.Outputs[Derived Column Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[Source]"
+                      cachedDataType="i4"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Add Source, Status columns.Outputs[Derived Column Output].Columns[Source]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[PaymentType_SK]"
+                      cachedDataType="i4"
+                      cachedName="PaymentType_SK"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Lookup Payment.Outputs[Lookup Match Output].Columns[PaymentType_SK]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[Branch_SK]"
+                      cachedDataType="i4"
+                      cachedName="Branch_SK"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Lookup Branch.Outputs[Lookup Match Output].Columns[Branch_SK]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[Rating]"
+                      cachedDataType="r8"
+                      cachedName="Rating"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[Rating]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[gross income]"
+                      cachedDataType="cy"
+                      cachedName="gross income"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[gross income]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[gross margin percentage]"
+                      cachedDataType="cy"
+                      cachedName="gross margin percentage"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[gross margin percentage]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[Total]"
+                      cachedDataType="cy"
+                      cachedName="Total"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[Total]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[Tax 5%]"
+                      cachedDataType="cy"
+                      cachedName="Tax 5%"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[Tax 5%]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[cogs]"
+                      cachedDataType="cy"
+                      cachedName="cogs"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[cogs]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[Customer type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Customer type"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[Customer type]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[Product_SK]"
+                      cachedDataType="i4"
+                      cachedName="Product_SK"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Lookup Product.Outputs[Lookup Match Output].Columns[Product_SK]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].Columns[Invoice ID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Invoice ID"
+                      externalMetadataColumnId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].Columns[Invoice ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="6"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="cy"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="cy"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="cy"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="cy"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      dataType="cy"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      dataType="r8"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      dataType="i4"
+                      name="Param_11">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      dataType="i4"
+                      name="Param_12">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      dataType="i4"
+                      name="Param_13">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      dataType="i4"
+                      name="Param_14">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      dataType="dbTimeStamp"
+                      name="Param_15">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      dataType="i4"
+                      name="Param_16">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -4511,6 +5103,16 @@ where [refTable].[Product_NK] = ?</property>
               endId="Package\Import Sales_Stage to Invoice_NDS\Lookup InvoiceId.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Import Sales_Stage to Invoice_NDS\Add Source, Status columns.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output2]"
+              endId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output3]"
+              endId="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1.Outputs[Derived Column Output]" />
             <path
               refId="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output]"
               endId="Package\Import Sales_Stage to Invoice_NDS\Lookup Payment.Inputs[Lookup Input]"
@@ -4527,8 +5129,13 @@ where [refTable].[Product_NK] = ?</property>
               name="Lookup Match Output"
               startId="Package\Import Sales_Stage to Invoice_NDS\Lookup Product.Outputs[Lookup Match Output]" />
             <path
+              refId="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output3]"
+              endId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Import Sales_Stage to Invoice_NDS\Lookup InvoiceId.Outputs[Lookup Match Output]" />
+            <path
               refId="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup No Match Output]"
-              endId="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS.Inputs[OLE DB Destination Input]"
+              endId="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
               startId="Package\Import Sales_Stage to Invoice_NDS\Lookup InvoiceId.Outputs[Lookup No Match Output]" />
             <path
@@ -4818,80 +5425,6 @@ where [refTable].[Product_NK] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Import Sales_Stage to PaymentType_NDS\Derived Column"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Import Sales_Stage to PaymentType_NDS\Derived Column.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Import Sales_Stage to PaymentType_NDS\Derived Column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Import Sales_Stage to PaymentType_NDS\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Sales_Stage to PaymentType_NDS\Derived Column.Outputs[Derived Column Output].Columns[PaymentTypeId]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="3"
-                      lineageId="Package\Import Sales_Stage to PaymentType_NDS\Derived Column.Outputs[Derived Column Output].Columns[PaymentTypeId]"
-                      name="PaymentTypeId"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">"NK_"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"NK_"</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Import Sales_Stage to PaymentType_NDS\Derived Column.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Import Sales_Stage to PaymentType_NDS\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Sales_Stage to PaymentType_NDS\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Import Sales_Stage to PaymentType_NDS\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Import Sales_Stage to PaymentType_NDS\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import Sales_Stage to PaymentType_NDS\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Import Sales_Stage to PaymentType_NDS\Insert Into PaymentType_NDS"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -4993,7 +5526,7 @@ where [refTable].[Product_NK] = ?</property>
                       cachedLength="255"
                       cachedName="Payment"
                       cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Import Sales_Stage to PaymentType_NDS\Insert Into PaymentType_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      externalMetadataColumnId="Package\Import Sales_Stage to PaymentType_NDS\Insert Into PaymentType_NDS.Inputs[OLE DB Destination Input].ExternalColumns[PaymentType_NK]"
                       lineageId="Package\Import Sales_Stage to PaymentType_NDS\Sort and Select Distince Value.Outputs[Sort Output].Columns[Payment]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -5004,13 +5537,9 @@ where [refTable].[Product_NK] = ?</property>
                       name="PaymentType_SK" />
                     <externalMetadataColumn
                       refId="Package\Import Sales_Stage to PaymentType_NDS\Insert Into PaymentType_NDS.Inputs[OLE DB Destination Input].ExternalColumns[PaymentType_NK]"
-                      dataType="i4"
-                      name="PaymentType_NK" />
-                    <externalMetadataColumn
-                      refId="Package\Import Sales_Stage to PaymentType_NDS\Insert Into PaymentType_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
                       dataType="wstr"
                       length="255"
-                      name="Name" />
+                      name="PaymentType_NK" />
                     <externalMetadataColumn
                       refId="Package\Import Sales_Stage to PaymentType_NDS\Insert Into PaymentType_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Source]"
                       dataType="i4"
@@ -5187,6 +5716,10 @@ where [refTable].[Product_NK] = ?</property>
                       refId="Package\Import Sales_Stage to PaymentType_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].ExternalColumns[Rating]"
                       dataType="r8"
                       name="Rating" />
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to PaymentType_NDS\Load from Sales_Stage.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                      dataType="dbTimeStamp"
+                      name="createdDate" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -5238,7 +5771,7 @@ where [refTable].[Product_NK] = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[PaymentType_NDS]) [refTable]
-where [refTable].[Name] = ?</property>
+where [refTable].[PaymentType_NK] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -5269,7 +5802,7 @@ where [refTable].[Name] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PaymentType_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PaymentType_NK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Name" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Source" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Status" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="createdDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="updatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PaymentType_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PaymentType_NK" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Source" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Status" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="createdDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="updatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -5308,7 +5841,7 @@ where [refTable].[Name] = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Name</property>
+                          name="JoinToReferenceColumn">PaymentType_NK</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -5446,6 +5979,172 @@ where [refTable].[Name] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update PaymentType"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE PaymentType_NDS SET PaymentType_NK = ?, Source = ?, Status = ?, updatedDate = ? WHERE PaymentType_SK = ?;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[WATERMELONX86.NDSDA]"
+                  connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.NDSDA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].Columns[Payment]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Payment"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Import Sales_Stage to PaymentType_NDS\Sort and Select Distince Value.Outputs[Sort Output].Columns[Payment]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].Columns[Source]"
+                      cachedDataType="i4"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Import Sales_Stage to PaymentType_NDS\Add Source, Status columns.Outputs[Derived Column Output].Columns[Source]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].Columns[Status]"
+                      cachedDataType="i4"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Import Sales_Stage to PaymentType_NDS\Add Source, Status columns.Outputs[Derived Column Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].Columns[updatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="updatedDate"
+                      externalMetadataColumnId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Import Sales_Stage to PaymentType_NDS\Add updatedDate.Outputs[Derived Column Output].Columns[updatedDate]" />
+                    <inputColumn
+                      refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].Columns[PaymentType_SK]"
+                      cachedDataType="i4"
+                      cachedName="PaymentType_SK"
+                      externalMetadataColumnId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Import Sales_Stage to PaymentType_NDS\Lookup PaymentType.Outputs[Lookup Match Output].Columns[PaymentType_SK]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="dbTimeStamp"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -5460,9 +6159,9 @@ where [refTable].[Name] = ?</property>
               startId="Package\Import Sales_Stage to PaymentType_NDS\Add Source, Status columns.Outputs[Derived Column Output]" />
             <path
               refId="Package\Import Sales_Stage to PaymentType_NDS.Paths[Derived Column Output2]"
-              endId="Package\Import Sales_Stage to PaymentType_NDS\Add createdDate, updateDate Columns.Inputs[Derived Column Input]"
+              endId="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType.Inputs[OLE DB Command Input]"
               name="Derived Column Output"
-              startId="Package\Import Sales_Stage to PaymentType_NDS\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Import Sales_Stage to PaymentType_NDS\Add updatedDate.Outputs[Derived Column Output]" />
             <path
               refId="Package\Import Sales_Stage to PaymentType_NDS.Paths[Lookup Match Output]"
               endId="Package\Import Sales_Stage to PaymentType_NDS\Add updatedDate.Inputs[Derived Column Input]"
@@ -5470,7 +6169,7 @@ where [refTable].[Name] = ?</property>
               startId="Package\Import Sales_Stage to PaymentType_NDS\Lookup PaymentType.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Import Sales_Stage to PaymentType_NDS.Paths[Lookup No Match Output]"
-              endId="Package\Import Sales_Stage to PaymentType_NDS\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\Import Sales_Stage to PaymentType_NDS\Add createdDate, updateDate Columns.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
               startId="Package\Import Sales_Stage to PaymentType_NDS\Lookup PaymentType.Outputs[Lookup No Match Output]" />
             <path
@@ -5513,23 +6212,23 @@ where [refTable].[Name] = ?</property>
         <NodeLayout
           Size="254,42"
           Id="Package\Import Branch_Stage to Branch_NDS"
-          TopLeft="83.7499987520278,61.749998895824" />
+          TopLeft="90.7499987520278,74.749998895824" />
         <NodeLayout
-          Size="261.333333333334,42.6666666666667"
+          Size="261,43"
           Id="Package\Import Product_Stage to Product_NDS"
           TopLeft="406.624984232709,143.516667181949" />
         <NodeLayout
-          Size="300,42.6666666666667"
+          Size="300,43"
           Id="Package\Import ProductLine_Stage to ProductLine_NDS"
           TopLeft="388.499984987081,68.6000003603105" />
         <NodeLayout
-          Size="277.333333333334,42"
-          Id="Package\Import Sales_Stage to PaymentType_NDS"
-          TopLeft="82.1249985191971,120.86666961501" />
-        <NodeLayout
-          Size="248,42.6666666666667"
+          Size="248,43"
           Id="Package\Import Sales_Stage to Invoice_NDS"
-          TopLeft="75.6249966192991,209.299990019799" />
+          TopLeft="89.6249966192991,271.299990019799" />
+        <NodeLayout
+          Size="277,42"
+          Id="Package\Import Sales_Stage to PaymentType_NDS"
+          TopLeft="79.1249985191971,145.86666961501" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="537.895817943228,111.266667026977">
@@ -5561,31 +6260,31 @@ where [refTable].[Name] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="149.333333333334,42.6666666666667"
+          Size="149,43"
           Id="Package\Import Branch_Stage to Branch_NDS\Lookup Branch"
           TopLeft="161.607143173793,212.80952427444" />
         <NodeLayout
-          Size="210.666666666667,42.6666666666667"
+          Size="211,43"
           Id="Package\Import Branch_Stage to Branch_NDS\Add Source, Status columns"
           TopLeft="132.142857142857,132.380952380952" />
         <NodeLayout
-          Size="161.333333333334,42.6666666666667"
+          Size="161,43"
           Id="Package\Import Branch_Stage to Branch_NDS\Add updatedDate"
           TopLeft="48.1249992828817,331.466664899985" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,43"
           Id="Package\Import Branch_Stage to Branch_NDS\UPDATE Branch_NDS"
           TopLeft="42.7678571335439,412.380952380952" />
         <NodeLayout
-          Size="196,42.6666666666667"
+          Size="196,43"
           Id="Package\Import Branch_Stage to Branch_NDS\Load from Branch_Stage"
           TopLeft="145,62" />
         <NodeLayout
-          Size="262.666666666667,42.6666666666667"
+          Size="263,43"
           Id="Package\Import Branch_Stage to Branch_NDS\Add createdDate, updateDate Columns"
           TopLeft="297.857142857143,332.619047619048" />
         <NodeLayout
-          Size="190.666666666667,42.6666666666667"
+          Size="191,43"
           Id="Package\Import Branch_Stage to Branch_NDS\Insert into Branch_NDS"
           TopLeft="334.196428711127,413.288095272964" />
         <EdgeLayout
@@ -5806,11 +6505,11 @@ where [refTable].[Name] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="181.333333333334,42"
+          Size="181,42"
           Id="Package\Import Product_Stage to Product_NDS\Lookup ProductLineId"
           TopLeft="149,222" />
         <NodeLayout
-          Size="210.666666666667,42.6666666666667"
+          Size="211,43"
           Id="Package\Import Product_Stage to Product_NDS\Add Source, Status columns"
           TopLeft="132.767857133544,142.780952194986" />
         <NodeLayout
@@ -5826,15 +6525,15 @@ where [refTable].[Name] = ?</property>
           Id="Package\Import Product_Stage to Product_NDS\Update Product_NDS"
           TopLeft="60.7692307692308,490.769230769231" />
         <NodeLayout
-          Size="266.666666666667,42"
+          Size="267,42"
           Id="Package\Import Product_Stage to Product_NDS\Add createdDate, updatedDate columns"
           TopLeft="287,401" />
         <NodeLayout
-          Size="193.333333333334,42"
+          Size="193,42"
           Id="Package\Import Product_Stage to Product_NDS\Insert into Product_NDS"
           TopLeft="330,488" />
         <NodeLayout
-          Size="198.666666666667,42.6666666666667"
+          Size="199,43"
           Id="Package\Import Product_Stage to Product_NDS\Load from Product_Stage"
           TopLeft="145,62" />
         <EdgeLayout
@@ -6102,11 +6801,11 @@ where [refTable].[Name] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="182.666666666667,42.6666666666667"
+          Size="183,43"
           Id="Package\Import ProductLine_Stage to ProductLine_NDS\Lookup ProductLineId"
           TopLeft="170.857142857143,226.809523809524" />
         <NodeLayout
-          Size="210.666666666667,42.6666666666667"
+          Size="211,43"
           Id="Package\Import ProductLine_Stage to ProductLine_NDS\Add Source, Status columns"
           TopLeft="155.642857142857,133.380952380952" />
         <NodeLayout
@@ -6114,15 +6813,15 @@ where [refTable].[Name] = ?</property>
           Id="Package\Import ProductLine_Stage to ProductLine_NDS\Add updatedDate column"
           TopLeft="63,338" />
         <NodeLayout
-          Size="197.333333333334,42"
+          Size="197,42"
           Id="Package\Import ProductLine_Stage to ProductLine_NDS\Update ProductLine_NDS"
           TopLeft="61.1428571428571,417.380952380952" />
         <NodeLayout
-          Size="218.666666666667,42.6666666666667"
+          Size="219,43"
           Id="Package\Import ProductLine_Stage to ProductLine_NDS\Load from ProductLine_Stage"
           TopLeft="145,62" />
         <NodeLayout
-          Size="261.333333333334,42"
+          Size="261,42"
           Id="Package\Import ProductLine_Stage to ProductLine_NDS\Add createdDate, updateDate columns"
           TopLeft="297.857142857143,332.619047619048" />
         <NodeLayout
@@ -6342,12 +7041,443 @@ where [refTable].[Name] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Import Sales_Stage to Invoice_NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup Branch"
+          TopLeft="163.999995112419,148.666662255923" />
+        <NodeLayout
+          Size="243,43"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Convert &quot;F&quot; to Female, &quot;M' to Male"
+          TopLeft="116.999996334315,374.999988913536" />
+        <NodeLayout
+          Size="161,43"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup InvoiceId"
+          TopLeft="157.999995291233,534.999984055758" />
+        <NodeLayout
+          Size="188,43"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage"
+          TopLeft="146.999995619059,66.9999980032445" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS"
+          TopLeft="356.99999126792,716.999981671572" />
+        <NodeLayout
+          Size="153,43"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup Product"
+          TopLeft="164.999995082617,303.999990940094" />
+        <NodeLayout
+          Size="211,43"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Add Source, Status columns"
+          TopLeft="136.999995917082,444.666659216086" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup Payment"
+          TopLeft="163.999995112419,226.999993234873" />
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output1]"
+          TopLeft="241.999995097518,268.999993234873">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.999997705221"
+              Start="0,0"
+              End="0,27.499997705221">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.499997705221" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,7.9453113526105,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output]"
+          TopLeft="240.499995112419,190.666662255923">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.33333097895"
+              Start="0,0"
+              End="0,28.83333097895">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.83333097895" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,8.61197798947499,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output1]"
+          TopLeft="240.499995604158,487.333325882753">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.666658173005"
+              Start="0,0"
+              End="0,40.166658173005">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.166658173005" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output]"
+          TopLeft="240.499996125698,417.999988913536">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.66667030255"
+              Start="0,0"
+              End="0,19.16667030255">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.16667030255" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[OLE DB Source Output]"
+          TopLeft="239.833328699072,109.666664669911">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.999997586012"
+              Start="0,0"
+              End="0,31.499997586012">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.499997586012" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output2]"
+          TopLeft="239.999995708466,346.999990940094">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.999997973442"
+              Start="0,0"
+              End="0,20.499997973442">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.499997973442" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,4.44531148672101,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="createdDate lấy từ Stage"
+          ParentId="Package\Import Sales_Stage to Invoice_NDS"
+          FontInfo="{assembly:Null}"
+          Size="159,60"
+          Id="564c1454-e0f0-4ad4-8012-499cd3ca5896"
+          TopLeft="425,567" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column"
+          TopLeft="352,634" />
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup No Match Output]"
+          TopLeft="238.499995291233,577.999984055758">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="212.500004708767,56.000015944242"
+              Start="0,0"
+              End="212.500004708767,48.500015944242">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.000007972121" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.000007972121"
+                    Point2="0,28.000007972121"
+                    Point3="4,28.000007972121" />
+                  <mssgle:LineSegment
+                    End="208.500004708767,28.000007972121" />
+                  <mssgle:CubicBezierSegment
+                    Point1="208.500004708767,28.000007972121"
+                    Point2="212.500004708767,28.000007972121"
+                    Point3="212.500004708767,32.000007972121" />
+                  <mssgle:LineSegment
+                    End="212.500004708767,48.500015944242" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="50.4436156356335,33.000007972121,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output2]"
+          TopLeft="451.74999563396,676">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.999981671572"
+              Start="0,0"
+              End="0,33.499981671572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.499981671572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1"
+          TopLeft="76,638" />
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output3]"
+          TopLeft="212.999995291233,577.999984055758">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-37.999995291233,60.000015944242"
+              Start="0,0"
+              End="-37.999995291233,52.500015944242">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.354250014268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.354250014268"
+                    Point2="0,24.354250014268"
+                    Point3="-4,24.354250014268" />
+                  <mssgle:LineSegment
+                    End="-33.999995291233,24.354250014268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-33.999995291233,24.354250014268"
+                    Point2="-37.999995291233,24.354250014268"
+                    Point3="-37.999995291233,28.354250014268" />
+                  <mssgle:LineSegment
+                    End="-37.999995291233,52.500015944242" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-67.1913843643665,29.354250014268,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS"
+          TopLeft="89,722" />
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output3]"
+          TopLeft="176,680">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup Branch">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Branch_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup InvoiceId">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Invoice_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup Product">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Product_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup Payment">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[PaymentType_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Import Sales_Stage to PaymentType_NDS">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="210.666666666667,42.6666666666667"
+          Size="211,43"
           Id="Package\Import Sales_Stage to PaymentType_NDS\Add Source, Status columns"
           TopLeft="154.666666666667,198.555555555556" />
         <NodeLayout
@@ -6359,25 +7489,21 @@ where [refTable].[Name] = ?</property>
           Id="Package\Import Sales_Stage to PaymentType_NDS\Sort and Select Distince Value"
           TopLeft="155,126.333333333333" />
         <NodeLayout
-          Size="222.666666666667,42"
+          Size="223,42"
           Id="Package\Import Sales_Stage to PaymentType_NDS\Insert Into PaymentType_NDS"
-          TopLeft="301.333333333333,506.555555555556" />
+          TopLeft="335.333333333333,555.555555555556" />
         <NodeLayout
-          Size="161.333333333334,42"
+          Size="161,42"
           Id="Package\Import Sales_Stage to PaymentType_NDS\Add updatedDate"
           TopLeft="44,417" />
         <NodeLayout
-          Size="188,42.6666666666667"
+          Size="188,43"
           Id="Package\Import Sales_Stage to PaymentType_NDS\Load from Sales_Stage"
           TopLeft="172.333333333333,44.3333333333333" />
         <NodeLayout
-          Size="262.666666666667,42.6666666666667"
+          Size="263,43"
           Id="Package\Import Sales_Stage to PaymentType_NDS\Add createdDate, updateDate Columns"
-          TopLeft="282.333333333333,437" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Import Sales_Stage to PaymentType_NDS\Derived Column"
-          TopLeft="334,372" />
+          TopLeft="314.333333333333,446" />
         <EdgeLayout
           Id="Package\Import Sales_Stage to PaymentType_NDS.Paths[Sort Output]"
           TopLeft="262.583333333333,168.333333333333">
@@ -6423,42 +7549,6 @@ where [refTable].[Name] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Sales_Stage to PaymentType_NDS.Paths[Lookup No Match Output]"
-          TopLeft="288.333333333334,334.777777777778">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="122.666666666666,37.222222222222"
-              Start="0,0"
-              End="122.666666666666,29.722222222222">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.0856583455702" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.0856583455702"
-                    Point2="0,15.0856583455702"
-                    Point3="4,15.0856583455702" />
-                  <mssgle:LineSegment
-                    End="118.666666666666,15.0856583455702" />
-                  <mssgle:CubicBezierSegment
-                    Point1="118.666666666666,15.0856583455702"
-                    Point2="122.666666666666,15.0856583455702"
-                    Point3="122.666666666666,19.0856583455702" />
-                  <mssgle:LineSegment
-                    End="122.666666666666,29.722222222222" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="5.5269466145832,20.0856583455702,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Import Sales_Stage to PaymentType_NDS.Paths[Lookup Match Output]"
           TopLeft="231,334.777777777778">
           <EdgeLayout.Curve>
@@ -6495,28 +7585,6 @@ where [refTable].[Name] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Sales_Stage to PaymentType_NDS.Paths[Derived Column Output2]"
-          TopLeft="412.416666666667,414">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,23"
-              Start="0,0"
-              End="0,15.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Import Sales_Stage to PaymentType_NDS.Paths[Derived Column Output1]"
           TopLeft="259.916666666667,241.555555555556">
           <EdgeLayout.Curve>
@@ -6540,24 +7608,86 @@ where [refTable].[Name] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Sales_Stage to PaymentType_NDS.Paths[Derived Column Output]"
-          TopLeft="413.333333333333,480">
+          TopLeft="446.333333333333,489">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26.555555555556"
+              EndConnector="0,66.555555555556"
               Start="0,0"
-              End="0,19.055555555556">
+              End="0,59.055555555556">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.055555555556" />
+                    End="0,59.055555555556" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Import Sales_Stage to PaymentType_NDS\Update PaymentType"
+          TopLeft="38,522" />
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to PaymentType_NDS.Paths[Derived Column Output2]"
+          TopLeft="126.25,459">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to PaymentType_NDS.Paths[Lookup No Match Output]"
+          TopLeft="288.333333333334,334.777777777778">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="157.499999999999,111.222222222222"
+              Start="0,0"
+              End="157.499999999999,103.722222222222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.0768477728829" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.0768477728829"
+                    Point2="0,45.0768477728829"
+                    Point3="4,45.0768477728829" />
+                  <mssgle:LineSegment
+                    End="153.499999999999,45.0768477728829" />
+                  <mssgle:CubicBezierSegment
+                    Point1="153.499999999999,45.0768477728829"
+                    Point2="157.499999999999,45.0768477728829"
+                    Point3="157.499999999999,49.0768477728829" />
+                  <mssgle:LineSegment
+                    End="157.499999999999,103.722222222222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="22.9436132812497,50.0768477728829,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6569,7 +7699,7 @@ where [refTable].[Name] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6579,7 +7709,7 @@ where [refTable].[Name] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6609,338 +7739,6 @@ where [refTable].[Name] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Import Sales_Stage to Invoice_NDS">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="188,42.6666666666667"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage"
-          TopLeft="146.999995619059,66.9999980032445" />
-        <NodeLayout
-          Size="149.333333333334,42"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup Branch"
-          TopLeft="163.999995112419,148.666662255923" />
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[OLE DB Source Output]"
-          TopLeft="239.833328699072,109.666664669911">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.999997586012"
-              Start="0,0"
-              End="0,31.499997586012">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.499997586012" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup Payment"
-          TopLeft="163.999995112419,226.999993234873" />
-        <NodeLayout
-          Size="242.666666666667,42.6666666666667"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Convert &quot;F&quot; to Female, &quot;M' to Male"
-          TopLeft="122.999996334315,371.999988913536" />
-        <NodeLayout
-          Size="161.333333333334,42.6666666666667"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup InvoiceId"
-          TopLeft="157.999995291233,534.999984055758" />
-        <NodeLayout
-          Size="192,42.6666666666667"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS"
-          TopLeft="292.99999126792,636.999981671572" />
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup No Match Output]"
-          TopLeft="238.6666619579,577.666650722425">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="150.33332931002,59.3333309491476"
-              Start="0,0"
-              End="150.33332931002,51.8333309491476">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.6666654745738" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.6666654745738"
-                    Point2="0,29.6666654745738"
-                    Point3="4,29.6666654745738" />
-                  <mssgle:LineSegment
-                    End="146.33332931002,29.6666654745738" />
-                  <mssgle:CubicBezierSegment
-                    Point1="146.33332931002,29.6666654745738"
-                    Point2="150.33332931002,29.6666654745738"
-                    Point3="150.33332931002,33.6666654745738" />
-                  <mssgle:LineSegment
-                    End="150.33332931002,51.8333309491476" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="19.3602779362601,34.6666654745738,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="210.666666666667,42.6666666666667"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Add Source, Status columns"
-          TopLeft="136.999995917082,444.666659216086" />
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output]"
-          TopLeft="243.333329459032,414.666655580203">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.0000036358832"
-              Start="0,0"
-              End="0,22.5000036358832">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5000036358832" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output1]"
-          TopLeft="240.499995604158,487.333325882753">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.666658173005"
-              Start="0,0"
-              End="0,40.166658173005">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.166658173005" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output]"
-          TopLeft="240.666661779086,190.666662255923">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.3333309789498"
-              Start="0,0"
-              End="0,28.8333309789498">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.8333309789498" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,8.61197798947489,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="153.333333333334,42.6666666666667"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup Product"
-          TopLeft="164.999995082617,303.999990940094" />
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output1]"
-          TopLeft="242.166661764185,269.66665990154">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.3333310385547"
-              Start="0,0"
-              End="0,26.8333310385547">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.8333310385547" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,7.61197801927733,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output2]"
-          TopLeft="242.999995708466,346.666657606761">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,25.3333313067755"
-              Start="0,0"
-              End="0,17.8333313067755">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.8333313067755" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,3.11197815338775,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup Branch">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Branch_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup Payment">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[PaymentType_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup InvoiceId">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Invoice_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup Product">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Product_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

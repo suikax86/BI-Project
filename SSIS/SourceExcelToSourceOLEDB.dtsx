@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="56"
-  DTS:VersionGUID="{D7818E00-A752-4549-9268-B007D5492CA4}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{29C56B00-F617-473E-87C6-ACE7121A235E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1613,11 +1613,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales"
+              refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="SourceDA - supermaket_sales"
+              name="SourceDA - Sales_Source"
               usesDispositions="true"
               version="4">
               <properties>
@@ -1670,7 +1670,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Connections[OleDbConnection]"
+                  refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[WATERMELONX86.SourceDA.sa]"
                   connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.SourceDA.sa]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1678,165 +1678,165 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input]"
+                  refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].Columns[Branch]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[Branch]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Branch"
-                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
                       lineageId="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[Branch]" />
                     <inputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].Columns[Invoice ID]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[Invoice ID]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Invoice ID"
-                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Invoice ID]"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Invoice ID]"
                       lineageId="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[Invoice ID]" />
                     <inputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].Columns[Customer type]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[Customer type]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Customer type"
-                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Customer type]"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Customer type]"
                       lineageId="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[Customer type]" />
                     <inputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].Columns[Gender]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[Gender]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Gender"
-                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
                       lineageId="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[Gender]" />
                     <inputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[ProductID]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="ProductID"
-                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
                       lineageId="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[ProductID]" />
                     <inputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[Quantity]"
                       cachedDataType="r8"
                       cachedName="Quantity"
-                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
                       lineageId="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[Quantity]" />
                     <inputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].Columns[Tax 5%]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[Tax 5%]"
                       cachedDataType="r8"
                       cachedName="Tax 5%"
-                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Tax 5%]"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Tax 5%]"
                       lineageId="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[Tax 5%]" />
                     <inputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].Columns[Total]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[Total]"
                       cachedDataType="r8"
                       cachedName="Total"
-                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Total]"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Total]"
                       lineageId="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[Total]" />
                     <inputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].Columns[Payment]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[Payment]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Payment"
-                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Payment]"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Payment]"
                       lineageId="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[Payment]" />
                     <inputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].Columns[cogs]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[cogs]"
                       cachedDataType="r8"
                       cachedName="cogs"
-                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[cogs]"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[cogs]"
                       lineageId="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[cogs]" />
                     <inputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].Columns[gross margin percentage]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[gross margin percentage]"
                       cachedDataType="r8"
                       cachedName="gross margin percentage"
-                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[gross margin percentage]"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[gross margin percentage]"
                       lineageId="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[gross margin percentage]" />
                     <inputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].Columns[gross income]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[gross income]"
                       cachedDataType="r8"
                       cachedName="gross income"
-                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[gross income]"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[gross income]"
                       lineageId="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[gross income]" />
                     <inputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].Columns[Rating]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[Rating]"
                       cachedDataType="r8"
                       cachedName="Rating"
-                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
                       lineageId="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[Rating]" />
                     <inputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].Columns[createdDate]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[createdDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="createdDate"
-                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
                       lineageId="Package\Source Excel to Source OLE DB\Data Conversion.Outputs[Data Conversion Output].Columns[createdDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
                       dataType="wstr"
                       length="255"
                       name="Branch" />
                     <externalMetadataColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Invoice ID]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Invoice ID]"
                       dataType="wstr"
                       length="255"
                       name="Invoice ID" />
                     <externalMetadataColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Customer type]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Customer type]"
                       dataType="wstr"
                       length="255"
                       name="Customer type" />
                     <externalMetadataColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
                       dataType="wstr"
                       length="6"
                       name="Gender" />
                     <externalMetadataColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
                       dataType="wstr"
                       length="255"
                       name="ProductID" />
                     <externalMetadataColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
                       dataType="i4"
                       name="Quantity" />
                     <externalMetadataColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Tax 5%]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Tax 5%]"
                       dataType="cy"
                       name="Tax 5%" />
                     <externalMetadataColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Total]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Total]"
                       dataType="cy"
                       name="Total" />
                     <externalMetadataColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Payment]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Payment]"
                       dataType="wstr"
                       length="255"
                       name="Payment" />
                     <externalMetadataColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[cogs]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[cogs]"
                       dataType="cy"
                       name="cogs" />
                     <externalMetadataColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[gross margin percentage]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[gross margin percentage]"
                       dataType="cy"
                       name="gross margin percentage" />
                     <externalMetadataColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[gross income]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[gross income]"
                       dataType="cy"
                       name="gross income" />
                     <externalMetadataColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
                       dataType="r8"
                       name="Rating" />
                     <externalMetadataColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
                       dataType="dbTimeStamp"
                       name="createdDate" />
                   </externalMetadataColumns>
@@ -1844,22 +1844,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1871,7 +1871,7 @@
           <paths>
             <path
               refId="Package\Source Excel to Source OLE DB.Paths[Data Conversion Output]"
-              endId="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales.Inputs[OLE DB Destination Input]"
+              endId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\Source Excel to Source OLE DB\Data Conversion.Outputs[Data Conversion Output]" />
             <path
@@ -2045,8 +2045,8 @@
           Id="Package\Source Excel to Source OLE DB\Add Column createdDate"
           TopLeft="345.535698839065,97.4999953508378" />
         <NodeLayout
-          Size="220,43"
-          Id="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales"
+          Size="197,42"
+          Id="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source"
           TopLeft="842.187462351286,298.312492212653" />
         <EdgeLayout
           Id="Package\Source Excel to Source OLE DB.Paths[Derived Column Output3]"
@@ -2138,18 +2138,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Source Excel to Source OLE DB.Paths[Data Conversion Output]"
-          TopLeft="776.976162775997,320.561004601703">
+          TopLeft="776.642829442664,320.477671268369">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="65.2112995752885,0"
+              EndConnector="65.5446329086219,0"
               Start="0,0"
-              End="57.7112995752885,0">
+              End="58.0446329086219,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="57.7112995752885,0" />
+                    End="58.0446329086219,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2341,7 +2341,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Source Excel to Source OLE DB\SourceDA - supermaket_sales">
+    design-time-name="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
