@@ -7,16 +7,38 @@
   DTS:CreatorName="WATERMELONX86\water"
   DTS:DTSID="{F0D5CF73-E6BC-4360-9F75-8AC0FC987205}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5396.0"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{9834C11E-9398-452D-81DC-EAF8CF3537BC}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{11974E77-82A4-4CCC-B5AE-FD07EC0C509B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Invoice_NDS]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{D9A33AE7-403F-41B1-8367-CC4EF62E4075}"
+      DTS:ObjectName="Invoice_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="E:\source\Project\BI-Project\SSIS\DataProfilingTask\Invoice_NDS" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Product_NDS]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{E7DBF2FC-20B0-4225-A522-E52F2FCBE037}"
+      DTS:ObjectName="Product_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="E:\source\Project\BI-Project\SSIS\DataProfilingTask\Product_NDS" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[WATERMELONX86.MetadataDA.sa]"
       DTS:CreationName="OLEDB"
@@ -27,6 +49,16 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=WATERMELONX86;Initial Catalog=MetadataDA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{BB1CD48B-5B6C-4C82-8818-858815F517F9}WATERMELONX86.MetadataDA.sa;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WATERMELONX86.NDSDA]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}"
+      DTS:ObjectName="WATERMELONX86.NDSDA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=WATERMELONX86;Initial Catalog=NDSDA;Integrated Security=True;Encrypt=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -44,6 +76,174 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Profiling Task Product_NDS"
+      DTS:CreationName="Microsoft.DataProfilingTask"
+      DTS:Description="Data Profiling Task"
+      DTS:DTSID="{EBF8662E-759B-428C-A375-95E8B51AEBFB}"
+      DTS:ExecutableType="Microsoft.DataProfilingTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Profiling Task Product_NDS"
+      DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2022; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <DataProfilingTaskData
+          Destination="Product_NDS">
+          <ProfileInput><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources />
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Product_NDS" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Product_NDS" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Product_NDS" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Product_NDS" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Product_NDS" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles />
+  </DataProfileOutput>
+</DataProfile>]]></ProfileInput>
+        </DataProfilingTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data Profiling Task Sales_NDS"
+      DTS:CreationName="Microsoft.DataProfilingTask"
+      DTS:Description="Data Profiling Task"
+      DTS:DTSID="{BE06178B-17DC-4EEC-9115-46D607F0C198}"
+      DTS:ExecutableType="Microsoft.DataProfilingTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Profiling Task Sales_NDS"
+      DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2022; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <DataProfilingTaskData
+          Destination="Invoice_NDS"
+          OverwriteDestination="True">
+          <ProfileInput><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources />
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles />
+  </DataProfileOutput>
+</DataProfile>]]></ProfileInput>
+        </DataProfilingTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Set NULL for CET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -87,7 +287,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Set UpdatedDate of Source to null"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -107,19 +307,27 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="161.333333333334,42.6666666666667"
+          Size="221,42"
+          Id="Package\Data Profiling Task Sales_NDS"
+          TopLeft="91,279" />
+        <NodeLayout
+          Size="161,43"
           Id="Package\Set NULL for CET"
           TopLeft="77.4999931268398,88.3666593093678" />
         <NodeLayout
-          Size="166.666666666667,42.6666666666667"
+          Size="167,43"
           Id="Package\Set NULL for LSET"
           TopLeft="76.8749932479114,21.7166714669267" />
         <NodeLayout
-          Size="240,42.6666666666667"
+          Size="240,43"
           Id="Package\Set UpdatedDate of Source to null"
           TopLeft="78.7499958276749,169.649993208349" />
+        <NodeLayout
+          Size="233,42"
+          Id="Package\Data Profiling Task Product_NDS"
+          TopLeft="86,352" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
