@@ -12,8 +12,8 @@
   DTS:ObjectName="NDStoDDS"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{8DE01914-E67D-4F32-B32A-26522FEEA757}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{5186C960-E724-43DD-AD99-A2BD834C99B5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -102,6 +102,24 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{EF1B4F55-AD73-41CC-A192-0F22EDA95648}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_Branch">
+      <DTS:VariableValue
+        DTS:DataType="7">12/16/2023 3:42:38 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CF2882EF-5F5F-4D6B-BDD5-8B9B4BDD63C2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_Payment">
+      <DTS:VariableValue
+        DTS:DataType="7">12/16/2023 3:48:20 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{33DC4B0F-40CA-4A00-B3BC-D1A3F0010D75}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -111,6 +129,40 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Get LSET Branch"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{dd846087-b9c6-4c05-a0a1-7e085426f662}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get LSET Branch"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BEB3E7F5-B325-4B2B-A16F-C7EDEC8CBBC1}"
+          SQLTask:SqlStatementSource="SELECT LSET  from data_flow where Name = 'Branch&#xA;'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get LSET PaymentMethod"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{607345d5-9073-4cb0-887e-a656f52f1367}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get LSET PaymentMethod"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BEB3E7F5-B325-4B2B-A16F-C7EDEC8CBBC1}"
+          SQLTask:SqlStatementSource="SELECT LSET  from data_flow where Name = 'PaymentMethod'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Get LSET Product"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -150,22 +202,854 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <pipeline
-              version="1" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Sequence Container\Handle Dim_Customer"
-          DTS:CreationName="Microsoft.Pipeline"
-          DTS:Description="Data Flow Task"
-          DTS:DTSID="{83E0DF94-6AEB-4C52-893F-E4603D69FF96}"
-          DTS:ExecutableType="Microsoft.Pipeline"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Handle Dim_Customer"
-          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <pipeline
-              version="1" />
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Handle Dim_Branch\Insert Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Insert Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Dim_Branch]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input].Columns[Branch_SK]"
+                          cachedDataType="i4"
+                          cachedName="Branch_SK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Branch_SK]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input].Columns[Branch_NK]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="Branch_NK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Branch_NK]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Branch_NK]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input].Columns[Name]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Name]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input].Columns[Status]"
+                          cachedDataType="i4"
+                          cachedName="Status"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Status]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Branch_SK]"
+                          dataType="i4"
+                          name="Branch_SK" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Branch_NK]"
+                          dataType="wstr"
+                          length="5"
+                          name="Branch_NK" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                          dataType="wstr"
+                          length="255"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                          dataType="i4"
+                          name="Status" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Load Branch_NDS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT  * FROM Branch_NDS WHERE ((createdDate &gt;= ?  AND createdDate &lt; ?) OR ( updatedDate &gt;= ? AND updatedDate &lt; ?))</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"Parameter0:Input",{EF1B4F55-AD73-41CC-A192-0F22EDA95648};"Parameter1:Input",{C8BC75CA-B657-4390-BD28-73745A09CF90};"Parameter2:Input",{EF1B4F55-AD73-41CC-A192-0F22EDA95648};"Parameter3:Input",{C8BC75CA-B657-4390-BD28-73745A09CF90};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC\SQLSERVERA.NDSDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC\SQLSERVERA.NDSDA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].ExternalColumns[Branch_SK]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]"
+                          name="Branch_SK"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Branch_NK]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].ExternalColumns[Branch_NK]"
+                          length="5"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Branch_NK]"
+                          name="Branch_NK"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Name]"
+                          name="Name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Source]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].ExternalColumns[Source]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Source]"
+                          name="Source"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Status]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Status]"
+                          name="Status"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[createdDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[createdDate]"
+                          name="createdDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                          name="updatedDate"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].ExternalColumns[Branch_SK]"
+                          dataType="i4"
+                          name="Branch_SK" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].ExternalColumns[Branch_NK]"
+                          dataType="wstr"
+                          length="5"
+                          name="Branch_NK" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                          dataType="wstr"
+                          length="50"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].ExternalColumns[Source]"
+                          dataType="i4"
+                          name="Source" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                          dataType="i4"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                          dataType="dbTimeStamp"
+                          name="createdDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          name="updatedDate" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[Branch_SK]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[Branch_SK]"
+                          name="Branch_SK" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[Branch_NK]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[Branch_NK]"
+                          name="Branch_NK" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[Name]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[Name]"
+                          name="Name" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[Source]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[Source]"
+                          name="Source" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[Status]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[Status]"
+                          name="Status" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                          name="createdDate" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                          name="updatedDate" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Branch] SET [Branch_NK] = ?,[Name] = ?,[Status] = ? WHERE [Branch_SK] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].Columns[Branch_NK]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="Branch_NK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Branch_NK]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].Columns[Branch_SK]"
+                          cachedDataType="i4"
+                          cachedName="Branch_SK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].Columns[Name]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Name]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].Columns[Status]"
+                          cachedDataType="i4"
+                          cachedName="Status"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Status]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="wstr"
+                          length="5"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="wstr"
+                          length="255"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="i4"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="i4"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command 1"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Branch] SET [Branch_NK] = ?,[Name] = ? WHERE [Branch_SK] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Branch_NK]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="Branch_NK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Branch_NK]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Branch_SK]"
+                          cachedDataType="i4"
+                          cachedName="Branch_SK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Name]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Name]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="wstr"
+                          length="5"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="wstr"
+                          length="255"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="i4"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension"
+                  componentClassID="Microsoft.SCD"
+                  contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+                  description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+                  name="Slowly Changing Dimension"
+                  version="3">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SELECT statement used to create a schema rowset."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Branch_NK], [Branch_SK], [Name] FROM [dbo].[Dim_Branch]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                      name="CurrentRowWhere"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                      name="UpdateChangingAttributeHistory">true</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                      name="FailOnFixedAttributeChange">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the column name for the inferred member."
+                      name="InferredMemberIndicator"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether inferred member updates are detected."
+                      name="EnableInferredMember">true</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                      name="FailOnLookupFailure">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies that all rows in the input are new or the transformation detects the change type."
+                      name="IncomingRowChangeType"
+                      typeConverter="IncomingRowChangeType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Connections[LookupConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      description="Defines the connection to use for lookups in the dimension table"
+                      name="LookupConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                      name="Slowly Changing Dimension Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Branch_NK]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="Branch_NK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Branch_NK]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Branch_NK]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Branch_SK]"
+                          cachedDataType="i4"
+                          cachedName="Branch_SK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Branch_SK]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Name]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Name]"
+                          lineageId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Name]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Branch_NK]"
+                          dataType="wstr"
+                          length="5"
+                          name="Branch_NK" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Branch_SK]"
+                          dataType="i4"
+                          name="Branch_SK" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Name]"
+                          dataType="wstr"
+                          length="255"
+                          name="Name" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                      description="Unchanged rows"
+                      exclusionGroup="1"
+                      name="Unchanged Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Outputs[New Output]"
+                      description="New rows"
+                      exclusionGroup="1"
+                      name="New Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                      description="Rows with changes in columns tagged FixedAttribute"
+                      exclusionGroup="1"
+                      name="Fixed Attribute Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                      description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                      exclusionGroup="1"
+                      name="Changing Attribute Updates Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                      description="HistoricalAttribute (Type 2) changes result in these new rows"
+                      exclusionGroup="2"
+                      name="Historical Attribute Inserts Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                      description="Information to update unpopulated initial dimension row"
+                      exclusionGroup="1"
+                      name="Inferred Member Updates Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Handle Dim_Branch.Paths[Changing Attribute Updates Output]"
+                  endId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  name="Changing Attribute Updates Output"
+                  startId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+                <path
+                  refId="Package\Sequence Container\Handle Dim_Branch.Paths[Inferred Member Updates Output]"
+                  endId="Package\Sequence Container\Handle Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Inferred Member Updates Output"
+                  startId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]" />
+                <path
+                  refId="Package\Sequence Container\Handle Dim_Branch.Paths[New Output]"
+                  endId="Package\Sequence Container\Handle Dim_Branch\Insert Destination.Inputs[OLE DB Destination Input]"
+                  name="New Output"
+                  startId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Outputs[New Output]" />
+                <path
+                  refId="Package\Sequence Container\Handle Dim_Branch.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -195,7 +1079,843 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <pipeline
-              version="1" />
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Insert Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Dim_PaymentMethod]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input].Columns[PaymentType_SK]"
+                          cachedDataType="i4"
+                          cachedName="PaymentType_SK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Payment_SK]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentType_SK]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input].Columns[PaymentType_NK]"
+                          cachedDataType="i4"
+                          cachedName="PaymentType_NK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Payment_NK]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentType_NK]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input].Columns[Name]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PaymentType]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input].Columns[Status]"
+                          cachedDataType="i4"
+                          cachedName="Status"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Payment_SK]"
+                          dataType="i4"
+                          name="Payment_SK" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Payment_NK]"
+                          dataType="i4"
+                          name="Payment_NK" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PaymentType]"
+                          dataType="wstr"
+                          length="255"
+                          name="PaymentType" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                          dataType="i4"
+                          name="Status" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_PaymentMethod] SET [Payment_NK] = ?,[PaymentType] = ?,[Status] = ? WHERE [Payment_SK] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input].Columns[PaymentType_NK]"
+                          cachedDataType="i4"
+                          cachedName="PaymentType_NK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentType_NK]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input].Columns[PaymentType_SK]"
+                          cachedDataType="i4"
+                          cachedName="PaymentType_SK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentType_SK]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input].Columns[Name]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input].Columns[Status]"
+                          cachedDataType="i4"
+                          cachedName="Status"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="i4"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="wstr"
+                          length="255"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="i4"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="i4"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command 1"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_PaymentMethod] SET [Payment_NK] = ?,[PaymentType] = ? WHERE [Payment_SK] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[PaymentType_NK]"
+                          cachedDataType="i4"
+                          cachedName="PaymentType_NK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentType_NK]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[PaymentType_SK]"
+                          cachedDataType="i4"
+                          cachedName="PaymentType_SK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentType_SK]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Name]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="i4"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="wstr"
+                          length="255"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="i4"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT  * FROM PaymentType_NDS WHERE ((createdDate &gt;= ?  AND createdDate &lt; ?) OR ( updatedDate &gt;= ? AND updatedDate &lt; ?))</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"Parameter0:Input",{CF2882EF-5F5F-4D6B-BDD5-8B9B4BDD63C2};"Parameter1:Input",{2262AB11-67E1-4240-B48F-2DDFF8D77907};"Parameter2:Input",{CF2882EF-5F5F-4D6B-BDD5-8B9B4BDD63C2};"Parameter3:Input",{2262AB11-67E1-4240-B48F-2DDFF8D77907};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC\SQLSERVERA.NDSDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC\SQLSERVERA.NDSDA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentType_SK]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PaymentType_SK]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentType_SK]"
+                          name="PaymentType_SK"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentType_NK]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PaymentType_NK]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentType_NK]"
+                          name="PaymentType_NK"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]"
+                          name="Name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[Source]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Source]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[Source]"
+                          name="Source"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]"
+                          name="Status"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[createdDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[createdDate]"
+                          name="createdDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                          name="updatedDate"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PaymentType_SK]"
+                          dataType="i4"
+                          name="PaymentType_SK" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PaymentType_NK]"
+                          dataType="i4"
+                          name="PaymentType_NK" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                          dataType="wstr"
+                          length="50"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Source]"
+                          dataType="i4"
+                          name="Source" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                          dataType="i4"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                          dataType="dbTimeStamp"
+                          name="createdDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          name="updatedDate" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PaymentType_SK]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PaymentType_SK]"
+                          name="PaymentType_SK" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PaymentType_NK]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PaymentType_NK]"
+                          name="PaymentType_NK" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                          name="Name" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Source]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Source]"
+                          name="Source" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Status]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Status]"
+                          name="Status" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                          name="createdDate" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                          name="updatedDate" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension"
+                  componentClassID="Microsoft.SCD"
+                  contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+                  description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+                  name="Slowly Changing Dimension"
+                  version="3">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SELECT statement used to create a schema rowset."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Payment_NK], [Payment_SK], [PaymentType] FROM [dbo].[Dim_PaymentMethod]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                      name="CurrentRowWhere"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                      name="UpdateChangingAttributeHistory">true</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                      name="FailOnFixedAttributeChange">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the column name for the inferred member."
+                      name="InferredMemberIndicator"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether inferred member updates are detected."
+                      name="EnableInferredMember">true</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                      name="FailOnLookupFailure">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies that all rows in the input are new or the transformation detects the change type."
+                      name="IncomingRowChangeType"
+                      typeConverter="IncomingRowChangeType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Connections[LookupConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC\SQLSERVERA.DDSDA]"
+                      description="Defines the connection to use for lookups in the dimension table"
+                      name="LookupConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                      name="Slowly Changing Dimension Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[PaymentType_NK]"
+                          cachedDataType="i4"
+                          cachedName="PaymentType_NK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Payment_NK]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentType_NK]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[PaymentType_SK]"
+                          cachedDataType="i4"
+                          cachedName="PaymentType_SK"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Payment_SK]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentType_SK]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Name]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PaymentType]"
+                          lineageId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Payment_NK]"
+                          dataType="i4"
+                          name="Payment_NK" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Payment_SK]"
+                          dataType="i4"
+                          name="Payment_SK" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PaymentType]"
+                          dataType="wstr"
+                          length="255"
+                          name="PaymentType" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                      description="Unchanged rows"
+                      exclusionGroup="1"
+                      name="Unchanged Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Outputs[New Output]"
+                      description="New rows"
+                      exclusionGroup="1"
+                      name="New Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                      description="Rows with changes in columns tagged FixedAttribute"
+                      exclusionGroup="1"
+                      name="Fixed Attribute Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                      description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                      exclusionGroup="1"
+                      name="Changing Attribute Updates Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                      description="HistoricalAttribute (Type 2) changes result in these new rows"
+                      exclusionGroup="2"
+                      name="Historical Attribute Inserts Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                      description="Information to update unpopulated initial dimension row"
+                      exclusionGroup="1"
+                      name="Inferred Member Updates Output"
+                      synchronousInputId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Handle Dim_Paymentmethod.Paths[Changing Attribute Updates Output]"
+                  endId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  name="Changing Attribute Updates Output"
+                  startId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+                <path
+                  refId="Package\Sequence Container\Handle Dim_Paymentmethod.Paths[Inferred Member Updates Output]"
+                  endId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Inferred Member Updates Output"
+                  startId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]" />
+                <path
+                  refId="Package\Sequence Container\Handle Dim_Paymentmethod.Paths[New Output]"
+                  endId="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination.Inputs[OLE DB Destination Input]"
+                  name="New Output"
+                  startId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Outputs[New Output]" />
+                <path
+                  refId="Package\Sequence Container\Handle Dim_Paymentmethod.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -1585,18 +3305,10 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{F6423A2E-01C2-448E-984E-52F3930A8E39}"
+          DTS:DTSID="{9B199B0F-6B67-408B-A37A-F4BD661437F3}"
           DTS:From="Package\Sequence Container\Handle Dim_Branch"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Sequence Container\Handle Dim_Customer" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
-          DTS:CreationName=""
-          DTS:DTSID="{CFAC5CB5-54DF-4393-AFFE-35AC696EC1B8}"
-          DTS:From="Package\Sequence Container\Handle Dim_Customer"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 2"
           DTS:To="Package\Sequence Container\Handle Dim_Paymentmethod" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
@@ -1615,6 +3327,40 @@
           DTS:ObjectName="Constraint 4"
           DTS:To="Package\Sequence Container\Handle Fact_Sale" />
       </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set CET Branch"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{ffbc43e0-3ec7-4af5-8c30-59b58b462462}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET Branch"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BEB3E7F5-B325-4B2B-A16F-C7EDEC8CBBC1}"
+          SQLTask:SqlStatementSource="update data_flow set CET = getdate() where Name = 'Branch';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set CET PaymentMethod"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{ebdb86d1-18d3-4108-8688-9b3e4c9b8260}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET PaymentMethod"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BEB3E7F5-B325-4B2B-A16F-C7EDEC8CBBC1}"
+          SQLTask:SqlStatementSource="update data_flow set CET = getdate() where Name = 'PaymentMethod';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Set CET Product"
@@ -1651,6 +3397,38 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Sequence Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{dc6f84f2-039a-4284-9b79-1c0f95ad7723}"
+      DTS:From="Package\Set CET Branch"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Get LSET Branch" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{05790f9a-f0d7-47ca-9dd7-80a7cc7335c9}"
+      DTS:From="Package\Set CET PaymentMethod"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Get LSET PaymentMethod" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{06A7B295-70AE-402C-AFCB-131ABE4CF8B9}"
+      DTS:From="Package\Get LSET Branch"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Sequence Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{F2475493-D440-4532-8901-42AEE25141DB}"
+      DTS:From="Package\Get LSET PaymentMethod"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Sequence Container" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1663,7 +3441,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="160.8,41.6"
           Id="Package\Get LSET Product"
@@ -1671,19 +3449,15 @@
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Sequence Container\Handle Dim_Branch"
-          TopLeft="38.228572027659,94.1294113645401" />
-        <NodeLayout
-          Size="184,41.6"
-          Id="Package\Sequence Container\Handle Dim_Customer"
-          TopLeft="41.0857148908839,164.541176040259" />
+          TopLeft="36.8000005960465,107.129411353145" />
         <NodeLayout
           Size="160.8,41.6"
           Id="Package\Sequence Container\Handle Dim_Date"
-          TopLeft="64.65714351249,314.505881944732" />
+          TopLeft="47.5142863331402,289.270587849205" />
         <NodeLayout
           Size="215.2,41.6"
           Id="Package\Sequence Container\Handle Dim_Paymentmethod"
-          TopLeft="36.0857148802402,242.505881853572" />
+          TopLeft="17.514286269278,198.917646597661" />
         <NodeLayout
           Size="174.4,41.6"
           Id="Package\Sequence Container\Handle Dim_Product"
@@ -1694,86 +3468,18 @@
           TopLeft="48.9428577647524,397.647058383816" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
-          TopLeft="126.414286317175,68.105881990312">
+          TopLeft="125.700000601368,68.105881990312">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26.0235293742282"
+              EndConnector="0,39.0235293628331"
               Start="0,0"
-              End="0,18.5235293742282">
+              End="0,31.5235293628331">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5235293742282" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="123.828572027659,135.72941136454">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.25714286322497,28.8117646757191"
-              Start="0,0"
-              End="9.25714286322497,21.3117646757191">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.4058823378596" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.4058823378596"
-                    Point2="0,14.4058823378596"
-                    Point3="4,14.4058823378596" />
-                  <mssgle:LineSegment
-                    End="5.25714286322497,14.4058823378596" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.25714286322497,14.4058823378596"
-                    Point2="9.25714286322497,14.4058823378596"
-                    Point3="9.25714286322497,18.4058823378596" />
-                  <mssgle:LineSegment
-                    End="9.25714286322497,21.3117646757191" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
-          TopLeft="133.085714890884,206.141176040259">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10.5999999893563,36.3647058133127"
-              Start="0,0"
-              End="10.5999999893563,28.8647058133127">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.1823529066563" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.1823529066563"
-                    Point2="0,18.1823529066563"
-                    Point3="4,18.1823529066563" />
-                  <mssgle:LineSegment
-                    End="6.59999998935629,18.1823529066563" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.59999998935629,18.1823529066563"
-                    Point2="10.5999999893563,18.1823529066563"
-                    Point3="10.5999999893563,22.1823529066563" />
-                  <mssgle:LineSegment
-                    End="10.5999999893563,28.8647058133127" />
+                    End="0,31.5235293628331" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1784,18 +3490,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
-          TopLeft="144.371429196365,284.105881853572">
+          TopLeft="126.514286301209,240.517646597661">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.4000000911602"
+              EndConnector="0,48.7529412515435"
               Start="0,0"
-              End="0,22.9000000911602">
+              End="0,41.2529412515435">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.9000000911602" />
+                    End="0,41.2529412515435" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1806,30 +3512,40 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
-          TopLeft="145.05714351249,356.105881944732">
+          TopLeft="128.228572048946,330.870587849205">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-16.5142857477376,41.5411764390843"
+              EndConnector="0,66.7764705346112"
               Start="0,0"
-              End="-16.5142857477376,34.0411764390843">
+              End="0,59.2764705346112">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.7705882195422" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.7705882195422"
-                    Point2="0,20.7705882195422"
-                    Point3="-4,20.7705882195422" />
+                    End="0,59.2764705346112" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="123.757143432662,148.729411353145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.1882352445162"
+              Start="0,0"
+              End="0,42.6882352445162">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-12.5142857477376,20.7705882195422" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-12.5142857477376,20.7705882195422"
-                    Point2="-16.5142857477376,20.7705882195422"
-                    Point3="-16.5142857477376,24.7705882195422" />
-                  <mssgle:LineSegment
-                    End="-16.5142857477376,34.0411764390843" />
+                    End="0,42.6882352445162" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1877,26 +3593,154 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="294.428571910579,53.9882352103309"
+              EndConnector="222.228571910578,53.988235210331"
               Start="0,0"
-              End="294.428571910579,46.4882352103309">
+              End="222.228571910578,46.488235210331">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.9941176051654" />
+                    End="0,31.6716567462739" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.9941176051654"
-                    Point2="0,26.9941176051654"
-                    Point3="4,26.9941176051654" />
+                    Point1="0,31.6716567462739"
+                    Point2="0,35.6716567462739"
+                    Point3="4,35.6716567462739" />
                   <mssgle:LineSegment
-                    End="290.428571910579,26.9941176051654" />
+                    End="218.228571910578,35.6716567462739" />
                   <mssgle:CubicBezierSegment
-                    Point1="290.428571910579,26.9941176051654"
-                    Point2="294.428571910579,26.9941176051654"
-                    Point3="294.428571910579,30.9941176051654" />
+                    Point1="218.228571910578,35.6716567462739"
+                    Point2="222.228571910578,35.6716567462739"
+                    Point3="222.228571910578,39.6716567462739" />
                   <mssgle:LineSegment
-                    End="294.428571910579,46.4882352103309" />
+                    End="222.228571910578,46.488235210331" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="157.6,41.6"
+          Id="Package\Get LSET Branch"
+          TopLeft="280.000000596047,240.517647372521" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Set CET Branch"
+          TopLeft="282.142857743465,158.694118032478" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="358.271429169756,200.294118032478">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.2235293400427"
+              Start="0,0"
+              End="0,32.7235293400427">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.7235293400427" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="200.8,41.6"
+          Id="Package\Get LSET PaymentMethod"
+          TopLeft="524.285715401781,203.682353299783" />
+        <NodeLayout
+          Size="194.4,41.6"
+          Id="Package\Set CET PaymentMethod"
+          TopLeft="523.571429685975,122.623529841423" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="622.728572543878,164.223529841423">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4588234583597"
+              Start="0,0"
+              End="0,31.9588234583597">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9588234583597" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="358.800000596047,282.117647372521">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.1714284938814,61.9999993846704"
+              Start="0,0"
+              End="33.1714284938814,54.4999993846704">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.9999996923352" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.9999996923352"
+                    Point2="0,30.9999996923352"
+                    Point3="4,30.9999996923352" />
+                  <mssgle:LineSegment
+                    End="29.1714284938814,30.9999996923352" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.1714284938814,30.9999996923352"
+                    Point2="33.1714284938814,30.9999996923352"
+                    Point3="33.1714284938814,34.9999996923352" />
+                  <mssgle:LineSegment
+                    End="33.1714284938814,54.4999993846704" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="624.685715401781,245.282353299783">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-160.514286311853,98.8352934574081"
+              Start="0,0"
+              End="-160.514286311853,91.3352934574081">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.3034619282251" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,61.3034619282251"
+                    Point2="0,65.3034619282251"
+                    Point3="-4,65.3034619282251" />
+                  <mssgle:LineSegment
+                    End="-156.514286311853,65.3034619282251" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-156.514286311853,65.3034619282251"
+                    Point2="-160.514286311853,65.3034619282251"
+                    Point3="-160.514286311853,69.3034619282251" />
+                  <mssgle:LineSegment
+                    End="-160.514286311853,91.3352934574081" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1909,6 +3753,306 @@
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Sequence Container\Handle Dim_Branch">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS"
+          TopLeft="229.1,5.49999999999984" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension"
+          TopLeft="206.7,107.1" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Handle Dim_Branch.Paths[OLE DB Source Output]"
+          TopLeft="310.7,47.0999999999998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Sequence Container\Handle Dim_Branch\Insert Destination"
+          TopLeft="5.5000000000001,208.7" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Handle Dim_Branch.Paths[New Output]"
+          TopLeft="260.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-174,60"
+              Start="0,0"
+              End="-174,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="-4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="-170,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-170,20.506329113924"
+                    Point2="-174,20.506329113924"
+                    Point3="-174,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="-174,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-114.09138671875,25.506329113924,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Sequence Container\Handle Dim_Branch\OLE DB Command"
+          TopLeft="228.3,208.7" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Handle Dim_Branch.Paths[Inferred Member Updates Output]"
+          TopLeft="310.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-74.40298828125,20.4208984375,148.8059765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Sequence Container\Handle Dim_Branch\OLE DB Command 1"
+          TopLeft="453.5,208.7" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Handle Dim_Branch.Paths[Changing Attribute Updates Output]"
+          TopLeft="360.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="180,60"
+              Start="0,0"
+              End="180,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="176,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="176,20.506329113924"
+                    Point2="180,20.506329113924"
+                    Point3="180,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="180,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="11.46609375,25.506329113924,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Handle Dim_Branch\Load Branch_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Handle Dim_Paymentmethod">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source"
+          TopLeft="235.9,5.49999999999984" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension"
+          TopLeft="206.7,107.1" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Handle Dim_Paymentmethod.Paths[OLE DB Source Output]"
+          TopLeft="310.7,47.0999999999998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Sequence Container\Handle Dim_Paymentmethod\Insert Destination"
+          TopLeft="5.5000000000001,208.7" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Handle Dim_Paymentmethod.Paths[New Output]"
+          TopLeft="260.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-174,60"
+              Start="0,0"
+              End="-174,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="-4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="-170,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-170,20.506329113924"
+                    Point2="-174,20.506329113924"
+                    Point3="-174,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="-174,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-114.09138671875,25.506329113924,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command"
+          TopLeft="228.3,208.7" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Handle Dim_Paymentmethod.Paths[Inferred Member Updates Output]"
+          TopLeft="310.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-74.40298828125,20.4208984375,148.8059765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Command 1"
+          TopLeft="453.5,208.7" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Handle Dim_Paymentmethod.Paths[Changing Attribute Updates Output]"
+          TopLeft="360.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="180,60"
+              Start="0,0"
+              End="180,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="176,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="176,20.506329113924"
+                    Point2="180,20.506329113924"
+                    Point3="180,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="180,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="11.46609375,25.506329113924,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
     design-time-name="Package\Sequence Container\Handle Dim_Product">
     <LayoutInfo>
       <GraphLayout
@@ -1918,12 +4062,36 @@
           Id="Package\Sequence Container\Handle Dim_Product\Get Product_NDS"
           TopLeft="150.9,5.49999999999995" />
         <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Sequence Container\Handle Dim_Product\OLE DB Command 1"
+          TopLeft="291.7,208.7" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Sequence Container\Handle Dim_Product\Derived Column 1"
+          TopLeft="149.7,513.5" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Sequence Container\Handle Dim_Product\Insert Destination"
+          TopLeft="149.7,615.099999999999" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Sequence Container\Handle Dim_Product\Union All"
+          TopLeft="170.9,411.9" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Sequence Container\Handle Dim_Product\OLE DB Command"
+          TopLeft="5.50000000000003,310.3" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Sequence Container\Handle Dim_Product\Derived Column"
+          TopLeft="17.5,208.7" />
+        <NodeLayout
           Size="208,41.6"
           Id="Package\Sequence Container\Handle Dim_Product\Slowly Changing Dimension"
           TopLeft="126.9,107.1" />
         <EdgeLayout
-          Id="Package\Sequence Container\Handle Dim_Product.Paths[OLE DB Source Output]"
-          TopLeft="230.9,47.1">
+          Id="Package\Sequence Container\Handle Dim_Product.Paths[Derived Column Output1]"
+          TopLeft="230.9,555.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1943,50 +4111,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Sequence Container\Handle Dim_Product\Derived Column"
-          TopLeft="17.5,208.7" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Handle Dim_Product.Paths[Historical Attribute Inserts Output]"
-          TopLeft="180.9,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-87,59.9999999999999"
-              Start="0,0"
-              End="-87,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.506329113924" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.506329113924"
-                    Point2="0,20.506329113924"
-                    Point3="-4,20.506329113924" />
-                  <mssgle:LineSegment
-                    End="-83,20.506329113924" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-83,20.506329113924"
-                    Point2="-87,20.506329113924"
-                    Point3="-87,24.506329113924" />
-                  <mssgle:LineSegment
-                    End="-87,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-118.55638671875,25.506329113924,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Sequence Container\Handle Dim_Product\OLE DB Command"
-          TopLeft="5.50000000000003,310.3" />
         <EdgeLayout
           Id="Package\Sequence Container\Handle Dim_Product.Paths[Derived Column Output]"
           TopLeft="90.9,250.3">
@@ -2009,10 +4133,84 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\Sequence Container\Handle Dim_Product\Union All"
-          TopLeft="170.9,411.9" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Handle Dim_Product.Paths[Union All Output 1]"
+          TopLeft="230.9,453.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Handle Dim_Product.Paths[OLE DB Source Output]"
+          TopLeft="230.9,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Handle Dim_Product.Paths[OLE DB Command Output]"
+          TopLeft="87.9,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124.333333333333,59.9999999999999"
+              Start="0,0"
+              End="124.333333333333,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5263157894736" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5263157894736"
+                    Point2="0,35.5263157894736"
+                    Point3="4,35.5263157894736" />
+                  <mssgle:LineSegment
+                    End="120.333333333333,35.5263157894736" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.333333333333,35.5263157894736"
+                    Point2="124.333333333333,35.5263157894736"
+                    Point3="124.333333333333,39.5263157894736" />
+                  <mssgle:LineSegment
+                    End="124.333333333333,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Handle Dim_Product.Paths[New Output]"
           TopLeft="230.9,148.7">
@@ -2050,96 +4248,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence Container\Handle Dim_Product.Paths[OLE DB Command Output]"
-          TopLeft="87.9,351.9">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="124.333333333333,59.9999999999999"
-              Start="0,0"
-              End="124.333333333333,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5263157894736" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5263157894736"
-                    Point2="0,35.5263157894736"
-                    Point3="4,35.5263157894736" />
-                  <mssgle:LineSegment
-                    End="120.333333333333,35.5263157894736" />
-                  <mssgle:CubicBezierSegment
-                    Point1="120.333333333333,35.5263157894736"
-                    Point2="124.333333333333,35.5263157894736"
-                    Point3="124.333333333333,39.5263157894736" />
-                  <mssgle:LineSegment
-                    End="124.333333333333,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Sequence Container\Handle Dim_Product\Derived Column 1"
-          TopLeft="149.7,513.5" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Handle Dim_Product.Paths[Union All Output 1]"
-          TopLeft="230.9,453.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Sequence Container\Handle Dim_Product\Insert Destination"
-          TopLeft="149.7,615.099999999999" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Handle Dim_Product.Paths[Derived Column Output1]"
-          TopLeft="230.9,555.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="174.4,41.6"
-          Id="Package\Sequence Container\Handle Dim_Product\OLE DB Command 1"
-          TopLeft="291.7,208.7" />
-        <EdgeLayout
           Id="Package\Sequence Container\Handle Dim_Product.Paths[Inferred Member Updates Output]"
           TopLeft="280.9,148.7">
           <EdgeLayout.Curve>
@@ -2172,6 +4280,42 @@
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-25.40298828125,25.506329113924,148.8059765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Handle Dim_Product.Paths[Historical Attribute Inserts Output]"
+          TopLeft="180.9,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87,59.9999999999999"
+              Start="0,0"
+              End="-87,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="-4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="-83,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83,20.506329113924"
+                    Point2="-87,20.506329113924"
+                    Point3="-87,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="-87,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-118.55638671875,25.506329113924,150.1127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2249,6 +4393,126 @@
   &lt;InferredIndicatorColumn /&gt;
   &lt;ValueCurrent&gt;1&lt;/ValueCurrent&gt;
   &lt;ValueExpired&gt;0&lt;/ValueExpired&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Handle Dim_Branch\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{F06014BB-1A8B-4BF1-B85E-C7B08F8AB287}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Dim_Branch]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Branch_NK]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Branch_NK&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Branch_SK&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Load Branch_NDS.Outputs[OLE DB Source Output].Columns[Status]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Status&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Handle Dim_Paymentmethod\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Handle Dim_Paymentmethod\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{F06014BB-1A8B-4BF1-B85E-C7B08F8AB287}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Dim_PaymentMethod]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentType_NK]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Payment_NK&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentType_SK]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Payment_SK&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;PaymentType&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Status&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
   &lt;StartDateColumn /&gt;
   &lt;EndDateColumn /&gt;
   &lt;DateVariable /&gt;
