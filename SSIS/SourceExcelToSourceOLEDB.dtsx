@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{29C56B00-F617-473E-87C6-ACE7121A235E}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{5E4FBA59-65A6-4382-ABB4-CF209B9080CF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
