@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="110"
-  DTS:VersionGUID="{37F09B9F-2629-42A4-9CC7-56F1BCC965DE}">
+  DTS:VersionBuild="116"
+  DTS:VersionGUID="{223E26D8-2167-4BBD-8FF1-AA82952FF89B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2080,6 +2080,450 @@ where [refTable].[Product_NK] = ?</property>
       DTS:ObjectName="Sequence Container">
       <DTS:Variables />
       <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Add PaymentType_NK"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{9C10A857-C8D7-4095-A381-B3259346E252}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Add PaymentType_NK"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Add PaymentType_NDS Colums"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums.Inputs[Derived Column Input].Columns[PaymentType_NK]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="PaymentType_NK"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[PaymentType_NK]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">"PMT" + (DT_WSTR,10)#{Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[PaymentType_SK]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"PMT" + (DT_WSTR,10)PaymentType_SK</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums.Inputs[Derived Column Input].Columns[PaymentType_SK]"
+                          cachedDataType="i4"
+                          cachedName="PaymentType_SK"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[PaymentType_SK]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Load form PaymentType_NDS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[PaymentType_NDS]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.NDSDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.NDSDA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[PaymentType_SK]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].ExternalColumns[PaymentType_SK]"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[PaymentType_SK]"
+                          name="PaymentType_SK"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[PaymentType_NK]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].ExternalColumns[PaymentType_NK]"
+                          length="255"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[PaymentType_NK]"
+                          name="PaymentType_NK"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[PaymentTypeName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].ExternalColumns[PaymentTypeName]"
+                          length="255"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[PaymentTypeName]"
+                          name="PaymentTypeName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[Source]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].ExternalColumns[Source]"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[Source]"
+                          name="Source"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[Status]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[Status]"
+                          name="Status"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[createdDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[createdDate]"
+                          name="createdDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                          name="updatedDate"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].ExternalColumns[PaymentType_SK]"
+                          dataType="i4"
+                          name="PaymentType_SK" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].ExternalColumns[PaymentType_NK]"
+                          dataType="wstr"
+                          length="255"
+                          name="PaymentType_NK" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].ExternalColumns[PaymentTypeName]"
+                          dataType="wstr"
+                          length="255"
+                          name="PaymentTypeName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].ExternalColumns[Source]"
+                          dataType="i4"
+                          name="Source" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                          dataType="i4"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                          dataType="dbTimeStamp"
+                          name="createdDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          name="updatedDate" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[PaymentType_SK]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[PaymentType_SK]"
+                          name="PaymentType_SK" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[PaymentType_NK]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[PaymentType_NK]"
+                          name="PaymentType_NK" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[PaymentTypeName]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[PaymentTypeName]"
+                          name="PaymentTypeName" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[Source]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[Source]"
+                          name="Source" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[Status]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[Status]"
+                          name="Status" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                          name="createdDate" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                          name="updatedDate" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="Update PaymentType_NK"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE PaymentType_NDS SET PaymentType_NK = ? WHERE PaymentType_SK = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[WATERMELONX86.NDSDA]"
+                      connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.NDSDA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Inputs[OLE DB Command Input].Columns[PaymentType_NK]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="PaymentType_NK"
+                          externalMetadataColumnId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[PaymentType_NK]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Inputs[OLE DB Command Input].Columns[PaymentType_SK]"
+                          cachedDataType="i4"
+                          cachedName="PaymentType_SK"
+                          externalMetadataColumnId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output].Columns[PaymentType_SK]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="wstr"
+                          length="255"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="i4"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Add PaymentType_NK.Paths[Derived Column Output]"
+                  endId="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK.Inputs[OLE DB Command Input]"
+                  name="Derived Column Output"
+                  startId="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Sequence Container\Add PaymentType_NK.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Sequence Container\Import Branch_Stage to Branch_NDS"
           DTS:CreationName="Microsoft.Pipeline"
@@ -5497,7 +5941,7 @@ where [refTable].[ProductLine_NK] = ?</property>
                     <input
                       refId="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Insert Into PaymentType_NDS.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
@@ -5531,7 +5975,7 @@ where [refTable].[ProductLine_NK] = ?</property>
                           cachedLength="255"
                           cachedName="Payment"
                           cachedSortKeyPosition="1"
-                          externalMetadataColumnId="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Insert Into PaymentType_NDS.Inputs[OLE DB Destination Input].ExternalColumns[PaymentType_NK]"
+                          externalMetadataColumnId="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Insert Into PaymentType_NDS.Inputs[OLE DB Destination Input].ExternalColumns[PaymentTypeName]"
                           lineageId="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Sort and Select Distince Value.Outputs[Sort Output].Columns[Payment]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -5561,6 +6005,11 @@ where [refTable].[ProductLine_NK] = ?</property>
                           refId="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Insert Into PaymentType_NDS.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
                           dataType="dbTimeStamp"
                           name="updatedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Insert Into PaymentType_NDS.Inputs[OLE DB Destination Input].ExternalColumns[PaymentTypeName]"
+                          dataType="wstr"
+                          length="255"
+                          name="PaymentTypeName" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -6002,7 +6451,7 @@ where [refTable].[PaymentType_NK] = ?</property>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE PaymentType_NDS SET PaymentType_NK = ?, Source = ?, Status = ?, updatedDate = ? WHERE PaymentType_SK = ?;</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE PaymentType_NDS SET PaymentTypeName = ?, Source = ?, Status = ?, updatedDate = ? WHERE PaymentType_SK = ?;</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6201,6 +6650,14 @@ where [refTable].[PaymentType_NK] = ?</property>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\Sequence Container\Import Product_Stage to Product_NDS" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{3469951B-A6D6-43FA-B356-05D8539B2A02}"
+          DTS:From="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\Add PaymentType_NK" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -6225,23 +6682,27 @@ where [refTable].[PaymentType_NK] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="248,43"
           Id="Package\Import Sales_Stage to Invoice_NDS"
-          TopLeft="207.624996619299,326.299990019799" />
+          TopLeft="205.624996619299,426.299990019799" />
         <NodeLayout
           Size="254,42"
           Id="Package\Sequence Container\Import Branch_Stage to Branch_NDS"
           TopLeft="18.7499987520278,21.749998895824" />
         <NodeLayout
-          Size="277,42"
-          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS"
-          TopLeft="7.12499851919711,92.86666961501" />
-        <NodeLayout
           Size="261,43"
           Id="Package\Sequence Container\Import Product_Stage to Product_NDS"
           TopLeft="326.624984232709,96.516667181949" />
+        <NodeLayout
+          Size="300,43"
+          Id="Package\Sequence Container\Import ProductLine_Stage to ProductLine_NDS"
+          TopLeft="308.499984987081,21.6000003603105" />
+        <NodeLayout
+          Size="277,42"
+          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS"
+          TopLeft="7.12499851919711,92.86666961501" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
           TopLeft="457.895817943228,64.266667026977">
@@ -6265,30 +6726,52 @@ where [refTable].[PaymentType_NK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="300,43"
-          Id="Package\Sequence Container\Import ProductLine_Stage to ProductLine_NDS"
-          TopLeft="308.499984987081,21.6000003603105" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="644,190"
-          Size="644,233"
-          Id="Package\Sequence Container"
-          TopLeft="15,40" />
+          Size="184,42"
+          Id="Package\Sequence Container\Add PaymentType_NK"
+          TopLeft="57,168" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="334.31249830965,273">
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="147.312499259599,134.86666961501">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.299990019799"
+              EndConnector="0,33.13333038499"
               Start="0,0"
-              End="0,45.799990019799">
+              End="0,25.63333038499">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.799990019799" />
+                    End="0,25.63333038499" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="644,277"
+          Size="644,320"
+          Id="Package\Sequence Container"
+          TopLeft="15,40" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="333.31249830965,360">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.299990019799"
+              Start="0,0"
+              End="0,58.799990019799">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.799990019799" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6300,6 +6783,437 @@ where [refTable].[PaymentType_NK] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Import Sales_Stage to Invoice_NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="243,43"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Convert &quot;F&quot; to Female, &quot;M' to Male"
+          TopLeft="116.999996334315,374.999988913536" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column"
+          TopLeft="352,634" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup Branch"
+          TopLeft="163.999995112419,148.666662255923" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup Payment"
+          TopLeft="163.999995112419,226.999993234873" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS"
+          TopLeft="89,722" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS"
+          TopLeft="356.99999126792,716.999981671572" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1"
+          TopLeft="76,638" />
+        <NodeLayout
+          Size="153,43"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup Product"
+          TopLeft="164.999995082617,303.999990940094" />
+        <NodeLayout
+          Size="161,43"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup InvoiceId"
+          TopLeft="157.999995291233,534.999984055758" />
+        <NodeLayout
+          Size="188,43"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage"
+          TopLeft="146.999995619059,66.9999980032445" />
+        <NodeLayout
+          Size="211,43"
+          Id="Package\Import Sales_Stage to Invoice_NDS\Add Source, Status columns"
+          TopLeft="136.999995917082,444.666659216086" />
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[OLE DB Source Output]"
+          TopLeft="239.833328699072,109.666664669911">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.999997586012"
+              Start="0,0"
+              End="0,31.499997586012">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.499997586012" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup No Match Output]"
+          TopLeft="238.499995291233,577.999984055758">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="212.500004708767,56.000015944242"
+              Start="0,0"
+              End="212.500004708767,48.500015944242">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.000007972121" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.000007972121"
+                    Point2="0,28.000007972121"
+                    Point3="4,28.000007972121" />
+                  <mssgle:LineSegment
+                    End="208.500004708767,28.000007972121" />
+                  <mssgle:CubicBezierSegment
+                    Point1="208.500004708767,28.000007972121"
+                    Point2="212.500004708767,28.000007972121"
+                    Point3="212.500004708767,32.000007972121" />
+                  <mssgle:LineSegment
+                    End="212.500004708767,48.500015944242" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="50.4436156356335,33.000007972121,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output3]"
+          TopLeft="212.999995291233,577.999984055758">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-37.999995291233,60.000015944242"
+              Start="0,0"
+              End="-37.999995291233,52.500015944242">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.354250014268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.354250014268"
+                    Point2="0,24.354250014268"
+                    Point3="-4,24.354250014268" />
+                  <mssgle:LineSegment
+                    End="-33.999995291233,24.354250014268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-33.999995291233,24.354250014268"
+                    Point2="-37.999995291233,24.354250014268"
+                    Point3="-37.999995291233,28.354250014268" />
+                  <mssgle:LineSegment
+                    End="-37.999995291233,52.500015944242" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-67.1913843643665,29.354250014268,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output2]"
+          TopLeft="239.999995708466,346.999990940094">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.999997973442"
+              Start="0,0"
+              End="0,20.499997973442">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.499997973442" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,4.44531148672101,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output1]"
+          TopLeft="241.999995097518,268.999993234873">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.999997705221"
+              Start="0,0"
+              End="0,27.499997705221">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.499997705221" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,7.9453113526105,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output]"
+          TopLeft="240.499995112419,190.666662255923">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.33333097895"
+              Start="0,0"
+              End="0,28.83333097895">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.83333097895" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,8.611977989475,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output3]"
+          TopLeft="176,680">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output2]"
+          TopLeft="451.74999563396,676">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.999981671572"
+              Start="0,0"
+              End="0,33.499981671572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.499981671572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output1]"
+          TopLeft="240.499995604158,487.333325882753">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.666658173005"
+              Start="0,0"
+              End="0,40.166658173005">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.166658173005" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output]"
+          TopLeft="240.499996125698,417.999988913536">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.66667030255"
+              Start="0,0"
+              End="0,19.16667030255">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.16667030255" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="createdDate lấy từ Stage"
+          ParentId="Package\Import Sales_Stage to Invoice_NDS"
+          FontInfo="{assembly:Null}"
+          Size="159,40"
+          Id="564c1454-e0f0-4ad4-8012-499cd3ca5896"
+          TopLeft="425,567" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup Branch">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Branch_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup Payment">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[PaymentType_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup Product">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Product_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup InvoiceId">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Invoice_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Sequence Container\Import Branch_Stage to Branch_NDS">
     <LayoutInfo>
@@ -6551,9 +7465,9 @@ where [refTable].[PaymentType_NK] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="181,42"
-          Id="Package\Sequence Container\Import Product_Stage to Product_NDS\Lookup ProductLineId"
-          TopLeft="149,222" />
+          Size="199,43"
+          Id="Package\Sequence Container\Import Product_Stage to Product_NDS\Load from Product_Stage"
+          TopLeft="145,62" />
         <NodeLayout
           Size="211,43"
           Id="Package\Sequence Container\Import Product_Stage to Product_NDS\Add Source, Status columns"
@@ -6562,6 +7476,10 @@ where [refTable].[PaymentType_NK] = ?</property>
           Size="198,42"
           Id="Package\Sequence Container\Import Product_Stage to Product_NDS\Add updatedDate column"
           TopLeft="43.0769230769231,406.153846153846" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Sequence Container\Import Product_Stage to Product_NDS\Lookup ProductLineId"
+          TopLeft="149,222" />
         <NodeLayout
           Size="162,42"
           Id="Package\Sequence Container\Import Product_Stage to Product_NDS\Lookup ProductId"
@@ -6578,10 +7496,6 @@ where [refTable].[PaymentType_NK] = ?</property>
           Size="193,42"
           Id="Package\Sequence Container\Import Product_Stage to Product_NDS\Insert into Product_NDS"
           TopLeft="330,488" />
-        <NodeLayout
-          Size="199,43"
-          Id="Package\Sequence Container\Import Product_Stage to Product_NDS\Load from Product_Stage"
-          TopLeft="145,62" />
         <EdgeLayout
           Id="Package\Sequence Container\Import Product_Stage to Product_NDS.Paths[OLE DB Source Output]"
           TopLeft="241.217261900105,104.666666666667">
@@ -6601,7 +7515,9 @@ where [refTable].[PaymentType_NK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6719,7 +7635,9 @@ where [refTable].[PaymentType_NK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6741,7 +7659,9 @@ where [refTable].[PaymentType_NK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6763,12 +7683,27 @@ where [refTable].[PaymentType_NK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import Product_Stage to Product_NDS\Load from Product_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Import Product_Stage to Product_NDS\Lookup ProductLineId">
     <Properties>
@@ -6817,19 +7752,6 @@ where [refTable].[PaymentType_NK] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Import Product_Stage to Product_NDS\Insert into Product_NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Import Product_Stage to Product_NDS\Load from Product_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6893,7 +7815,9 @@ where [refTable].[PaymentType_NK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6987,7 +7911,9 @@ where [refTable].[PaymentType_NK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7009,7 +7935,9 @@ where [refTable].[PaymentType_NK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7031,7 +7959,9 @@ where [refTable].[PaymentType_NK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7087,469 +8017,42 @@ where [refTable].[PaymentType_NK] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Import Sales_Stage to Invoice_NDS">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup Branch"
-          TopLeft="163.999995112419,148.666662255923" />
-        <NodeLayout
-          Size="243,43"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Convert &quot;F&quot; to Female, &quot;M' to Male"
-          TopLeft="116.999996334315,374.999988913536" />
-        <NodeLayout
-          Size="161,43"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup InvoiceId"
-          TopLeft="157.999995291233,534.999984055758" />
-        <NodeLayout
-          Size="188,43"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage"
-          TopLeft="146.999995619059,66.9999980032445" />
-        <NodeLayout
-          Size="191,42"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS"
-          TopLeft="356.99999126792,716.999981671572" />
-        <NodeLayout
-          Size="153,43"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup Product"
-          TopLeft="164.999995082617,303.999990940094" />
-        <NodeLayout
-          Size="211,43"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Add Source, Status columns"
-          TopLeft="136.999995917082,444.666659216086" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Lookup Payment"
-          TopLeft="163.999995112419,226.999993234873" />
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output1]"
-          TopLeft="241.999995097518,268.999993234873">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.999997705221"
-              Start="0,0"
-              End="0,27.499997705221">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.499997705221" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,7.9453113526105,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output]"
-          TopLeft="240.499995112419,190.666662255923">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.33333097895"
-              Start="0,0"
-              End="0,28.83333097895">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.83333097895" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,8.61197798947499,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output1]"
-          TopLeft="240.499995604158,487.333325882753">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.666658173005"
-              Start="0,0"
-              End="0,40.166658173005">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.166658173005" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output]"
-          TopLeft="240.499996125698,417.999988913536">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26.66667030255"
-              Start="0,0"
-              End="0,19.16667030255">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.16667030255" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[OLE DB Source Output]"
-          TopLeft="239.833328699072,109.666664669911">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.999997586012"
-              Start="0,0"
-              End="0,31.499997586012">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.499997586012" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output2]"
-          TopLeft="239.999995708466,346.999990940094">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.999997973442"
-              Start="0,0"
-              End="0,20.499997973442">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.499997973442" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,4.44531148672101,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="createdDate lấy từ Stage"
-          ParentId="Package\Import Sales_Stage to Invoice_NDS"
-          FontInfo="{assembly:Null}"
-          Size="159,60"
-          Id="564c1454-e0f0-4ad4-8012-499cd3ca5896"
-          TopLeft="425,567" />
-        <NodeLayout
-          Size="198,42"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column"
-          TopLeft="352,634" />
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup No Match Output]"
-          TopLeft="238.499995291233,577.999984055758">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="212.500004708767,56.000015944242"
-              Start="0,0"
-              End="212.500004708767,48.500015944242">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.000007972121" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.000007972121"
-                    Point2="0,28.000007972121"
-                    Point3="4,28.000007972121" />
-                  <mssgle:LineSegment
-                    End="208.500004708767,28.000007972121" />
-                  <mssgle:CubicBezierSegment
-                    Point1="208.500004708767,28.000007972121"
-                    Point2="212.500004708767,28.000007972121"
-                    Point3="212.500004708767,32.000007972121" />
-                  <mssgle:LineSegment
-                    End="212.500004708767,48.500015944242" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="50.4436156356335,33.000007972121,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output2]"
-          TopLeft="451.74999563396,676">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.999981671572"
-              Start="0,0"
-              End="0,33.499981671572">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.499981671572" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="198,42"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Add updatedDate column 1"
-          TopLeft="76,638" />
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Lookup Match Output3]"
-          TopLeft="212.999995291233,577.999984055758">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-37.999995291233,60.000015944242"
-              Start="0,0"
-              End="-37.999995291233,52.500015944242">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.354250014268" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.354250014268"
-                    Point2="0,24.354250014268"
-                    Point3="-4,24.354250014268" />
-                  <mssgle:LineSegment
-                    End="-33.999995291233,24.354250014268" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-33.999995291233,24.354250014268"
-                    Point2="-37.999995291233,24.354250014268"
-                    Point3="-37.999995291233,28.354250014268" />
-                  <mssgle:LineSegment
-                    End="-37.999995291233,52.500015944242" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-67.1913843643665,29.354250014268,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Import Sales_Stage to Invoice_NDS\Update Invoice_NDS"
-          TopLeft="89,722" />
-        <EdgeLayout
-          Id="Package\Import Sales_Stage to Invoice_NDS.Paths[Derived Column Output3]"
-          TopLeft="176,680">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup Branch">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Branch_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup Payment">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[PaymentType_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Insert into Invoice_NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup Product">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Product_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Lookup InvoiceId">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Invoice_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Sales_Stage to Invoice_NDS\Load from Sales_Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="211,43"
-          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Add Source, Status columns"
-          TopLeft="154.666666666667,198.555555555556" />
-        <NodeLayout
           Size="180,42"
           Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Lookup PaymentType"
           TopLeft="169.666666666667,292.777777777778" />
         <NodeLayout
-          Size="220,42"
-          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Sort and Select Distince Value"
-          TopLeft="155,126.333333333333" />
-        <NodeLayout
-          Size="223,42"
-          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Insert Into PaymentType_NDS"
-          TopLeft="335.333333333333,555.555555555556" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Add updatedDate"
-          TopLeft="44,417" />
+          Size="211,43"
+          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Add Source, Status columns"
+          TopLeft="154.666666666667,198.555555555556" />
         <NodeLayout
           Size="188,43"
           Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Load from Sales_Stage"
           TopLeft="172.333333333333,44.3333333333333" />
         <NodeLayout
+          Size="180,42"
+          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Update PaymentType"
+          TopLeft="38,522" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Add updatedDate"
+          TopLeft="44,417" />
+        <NodeLayout
           Size="263,43"
           Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Add createdDate, updateDate Columns"
           TopLeft="314.333333333333,446" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Insert Into PaymentType_NDS"
+          TopLeft="335.333333333333,555.555555555556" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Sort and Select Distince Value"
+          TopLeft="155,126.333333333333" />
         <EdgeLayout
           Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS.Paths[Sort Output]"
           TopLeft="262.583333333333,168.333333333333">
@@ -7595,6 +8098,42 @@ where [refTable].[PaymentType_NK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS.Paths[Lookup No Match Output]"
+          TopLeft="288.333333333334,334.777777777778">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="157.499999999999,111.222222222222"
+              Start="0,0"
+              End="157.499999999999,103.722222222222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.0768477728829" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.0768477728829"
+                    Point2="0,45.0768477728829"
+                    Point3="4,45.0768477728829" />
+                  <mssgle:LineSegment
+                    End="153.499999999999,45.0768477728829" />
+                  <mssgle:CubicBezierSegment
+                    Point1="153.499999999999,45.0768477728829"
+                    Point2="157.499999999999,45.0768477728829"
+                    Point3="157.499999999999,49.0768477728829" />
+                  <mssgle:LineSegment
+                    End="157.499999999999,103.722222222222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="22.9436132812497,50.0768477728829,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS.Paths[Lookup Match Output]"
           TopLeft="231,334.777777777778">
           <EdgeLayout.Curve>
@@ -7628,6 +8167,28 @@ where [refTable].[PaymentType_NK] = ?</property>
             <mssgm:EdgeLabel
               BoundingBox="-101.44138671875,38.3235438081252,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS.Paths[Derived Column Output2]"
+          TopLeft="126.25,459">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7672,68 +8233,6 @@ where [refTable].[PaymentType_NK] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS\Update PaymentType"
-          TopLeft="38,522" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS.Paths[Derived Column Output2]"
-          TopLeft="126.25,459">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,63"
-              Start="0,0"
-              End="0,55.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS.Paths[Lookup No Match Output]"
-          TopLeft="288.333333333334,334.777777777778">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="157.499999999999,111.222222222222"
-              Start="0,0"
-              End="157.499999999999,103.722222222222">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.0768477728829" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.0768477728829"
-                    Point2="0,45.0768477728829"
-                    Point3="4,45.0768477728829" />
-                  <mssgle:LineSegment
-                    End="153.499999999999,45.0768477728829" />
-                  <mssgle:CubicBezierSegment
-                    Point1="153.499999999999,45.0768477728829"
-                    Point2="157.499999999999,45.0768477728829"
-                    Point3="157.499999999999,49.0768477728829" />
-                  <mssgle:LineSegment
-                    End="157.499999999999,103.722222222222" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="22.9436132812497,50.0768477728829,111.6127734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7788,5 +8287,69 @@ where [refTable].[PaymentType_NK] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Add PaymentType_NK">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Sequence Container\Add PaymentType_NK\Load form PaymentType_NDS"
+          TopLeft="73,60" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Sequence Container\Add PaymentType_NK\Add PaymentType_NDS Colums"
+          TopLeft="67,148" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Sequence Container\Add PaymentType_NK\Update PaymentType_NK"
+          TopLeft="79,252" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Add PaymentType_NK.Paths[Derived Column Output]"
+          TopLeft="179.75,190">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Add PaymentType_NK.Paths[OLE DB Source Output]"
+          TopLeft="182,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
