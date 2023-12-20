@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{11974E77-82A4-4CCC-B5AE-FD07EC0C509B}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{D086599F-A36F-48BB-A72B-28A6860C6930}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -73,6 +73,18 @@
           DTS:ConnectionString="Data Source=WATERMELONX86;Initial Catalog=SourceDA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{41C8F314-9C8E-4169-A7C7-89D431A650C9}WATERMELONX86.SourceDA.sa;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WATERMELONX86.StageDA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3D582AAA-5CAD-4C65-993D-F61D564A8761}"
+      DTS:ObjectName="WATERMELONX86.StageDA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=WATERMELONX86;Initial Catalog=StageDA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{3D582AAA-5CAD-4C65-993D-F61D564A8761}WATERMELONX86.StageDA;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
@@ -85,7 +97,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Profiling Task Product_NDS"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2022; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -245,6 +257,87 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{177232E0-F3C0-4548-8CBB-B08C720E3E1B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data in Source"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{CC8BDCB7-2313-482F-B5A8-272E872AD926}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data in Source"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{41C8F314-9C8E-4169-A7C7-89D431A650C9}"
+              SQLTask:SqlStatementSource="DELETE FROM Branch_Source;&#xA;                 DELETE FROM ProductLine_Source;&#xA;                                 DELETE FROM Product_Source;&#xA;                                                 DELETE FROM Sales_Source;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data in Stage"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5B2F4516-1794-40C9-984D-DDD0BE9524E1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data in Stage"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3D582AAA-5CAD-4C65-993D-F61D564A8761}"
+              SQLTask:SqlStatementSource="DELETE FROM Branch_Stage&#xA;DELETE FROM Product_Stage&#xA;DELETE FROM ProductLine_Stage&#xA;DELETE FROM Sales_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\SET FlagRunSourceExcel in Metadata"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{06F59FC7-F01D-4074-A450-69555E6A9EEB}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SET FlagRunSourceExcel in Metadata"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BB1CD48B-5B6C-4C82-8818-858815F517F9}"
+              SQLTask:SqlStatementSource="Update ETL_RunOnceControl SET FlagRunOnce = 1 WHERE Name = 'FlagRunSourceExcel'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{A77D90AF-3434-4C89-87D6-04358E8862A3}"
+          DTS:From="Package\Sequence Container\Delete data in Source"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\Delete data in Stage" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{EFC01189-163B-49EB-81B2-4AE563E0055C}"
+          DTS:From="Package\Sequence Container\Delete data in Stage"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\SET FlagRunSourceExcel in Metadata" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Set NULL for CET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -253,7 +346,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Set NULL for CET"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -270,7 +363,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Set NULL for LSET"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -278,24 +371,17 @@
           SQLTask:SqlStatementSource="update data_flow set LSET = null;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Set UpdatedDate of Source to null"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{A5F97912-DC38-4195-9A60-CE29E2F04302}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Set UpdatedDate of Source to null"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{41C8F314-9C8E-4169-A7C7-89D431A650C9}"
-          SQLTask:SqlStatementSource="UPDATE City_Source SET updatedDate = null;&#xA;UPDATE ProductLine_Source SET updatedDate = null;&#xA;UPDATE Product_Source SET updatedDate = null;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D537BE4E-A2FC-4D88-9084-CD519195050A}"
+      DTS:From="Package\Set NULL for LSET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Set NULL for CET" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -307,27 +393,135 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <NodeLayout
-          Size="221,42"
-          Id="Package\Data Profiling Task Sales_NDS"
-          TopLeft="91,279" />
-        <NodeLayout
-          Size="161,43"
-          Id="Package\Set NULL for CET"
-          TopLeft="77.4999931268398,88.3666593093678" />
-        <NodeLayout
-          Size="167,43"
-          Id="Package\Set NULL for LSET"
-          TopLeft="76.8749932479114,21.7166714669267" />
-        <NodeLayout
-          Size="240,43"
-          Id="Package\Set UpdatedDate of Source to null"
-          TopLeft="78.7499958276749,169.649993208349" />
-        <NodeLayout
-          Size="233,42"
+          Size="233.333333333334,42"
           Id="Package\Data Profiling Task Product_NDS"
-          TopLeft="86,352" />
+          TopLeft="378.430542482892,196.722229626443" />
+        <NodeLayout
+          Size="221.333333333334,42"
+          Id="Package\Data Profiling Task Sales_NDS"
+          TopLeft="386.902764549894,94.833342115084" />
+        <NodeLayout
+          Size="181.333333333334,42.6666666666667"
+          Id="Package\Sequence Container\Delete data in Source"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Sequence Container\Delete data in Stage"
+          TopLeft="12.4444441340036,95.7777734729979" />
+        <NodeLayout
+          Size="254.666666666667,42.6666666666667"
+          Id="Package\Sequence Container\SET FlagRunSourceExcel in Metadata"
+          TopLeft="5.49999999999999,171.43332608064" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="98.3055554003352,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.6111068063312"
+              Start="0,0"
+              End="0,40.1111068063312">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.1111068063312" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="100.444444134004,138.444440139665">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32.3888891993297,32.9888859409755"
+              Start="0,0"
+              End="32.3888891993297,25.4888859409755">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.4944429704878" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.4944429704878"
+                    Point2="0,16.4944429704878"
+                    Point3="4,16.4944429704878" />
+                  <mssgle:LineSegment
+                    End="28.3888891993297,16.4944429704878" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.3888891993297,16.4944429704878"
+                    Point2="32.3888891993297,16.4944429704878"
+                    Point3="32.3888891993297,20.4944429704878" />
+                  <mssgle:LineSegment
+                    End="32.3888891993297,25.4888859409755" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="309.333333333334,272.666666666667"
+          Size="309.333333333334,316"
+          Id="Package\Sequence Container"
+          TopLeft="34.3055540219779,234.144433279568" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Set NULL for LSET"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="161.333333333334,42.6666666666667"
+          Id="Package\Set NULL for CET"
+          TopLeft="8.62499976716927,72.4833205558861" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="89.0624998835846,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.3166538892195"
+              Start="0,0"
+              End="0,16.8166538892195">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.8166538892195" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <GroupLayout
+          Text="Group "
+          ParentId="Package"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="177.333333333334,170"
+          Size="177.333333333334,213.333333333334"
+          Id="d65a82a9-0ca2-40b6-9e38-713c4fc9816d"
+          TopLeft="93.2499922700227,5.5">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Set NULL for LSET</s:String>
+            <s:String>Package\Set NULL for CET</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint]</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>

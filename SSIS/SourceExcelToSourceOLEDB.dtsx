@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{5E4FBA59-65A6-4382-ABB4-CF209B9080CF}">
+  DTS:VersionBuild="62"
+  DTS:VersionGUID="{08D03E10-46AF-4F3D-AE4C-B5DC7F7B0E3B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -59,152 +59,6 @@
           version="1">
           <components>
             <component
-              refId="Package\Source Excel to Source OLE DB\Add Column createdDate"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Add Column createdDate"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Source Excel to Source OLE DB\Add Column createdDate.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Source Excel to Source OLE DB\Add Column createdDate.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Source Excel to Source OLE DB\Add Column createdDate.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate.Outputs[Derived Column Output].Columns[createdDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate.Outputs[Derived Column Output].Columns[createdDate]"
-                      name="createdDate"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[GETDATE]()</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">GETDATE()</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Source Excel to Source OLE DB\Add Column createdDate.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Source Excel to Source OLE DB\Add Column createdDate.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Source Excel to Source OLE DB\Add Column createdDate 1"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Add Column createdDate 1"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Source Excel to Source OLE DB\Add Column createdDate 1.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Source Excel to Source OLE DB\Add Column createdDate 1.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Source Excel to Source OLE DB\Add Column createdDate 1.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate 1.Outputs[Derived Column Output].Columns[createdDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate 1.Outputs[Derived Column Output].Columns[createdDate]"
-                      name="createdDate"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[GETDATE]()</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">GETDATE()</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Source Excel to Source OLE DB\Add Column createdDate 1.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Source Excel to Source OLE DB\Add Column createdDate 1.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Source Excel to Source OLE DB\Add Column createdDate 2"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -234,6 +88,28 @@
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate 2.Outputs[Derived Column Output].Columns[createdDate]"
                       name="createdDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate 2.Outputs[Derived Column Output].Columns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate 2.Outputs[Derived Column Output].Columns[updatedDate]"
+                      name="updatedDate"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -335,6 +211,29 @@
                           name="FriendlyExpression">(DT_WSTR,50)(Date) + " " + (DT_WSTR,50)(Time)</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate 3.Outputs[Derived Column Output].Columns[updatedDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="101"
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate 3.Outputs[Derived Column Output].Columns[updatedDate]"
+                      name="updatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,50)(#{Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[Date]}) + " " + (DT_WSTR,50)(#{Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output].Columns[Time]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,50)(Date) + " " + (DT_WSTR,50)(Time)</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -364,6 +263,196 @@
               </outputs>
             </component>
             <component
+              refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add Column createdDate, updatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Outputs[Derived Column Output].Columns[createdDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Outputs[Derived Column Output].Columns[createdDate]"
+                      name="createdDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Outputs[Derived Column Output].Columns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Outputs[Derived Column Output].Columns[updatedDate]"
+                      name="updatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add Column createdDate, updatedDate 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Outputs[Derived Column Output].Columns[createdDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Outputs[Derived Column Output].Columns[createdDate]"
+                      name="createdDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Outputs[Derived Column Output].Columns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Outputs[Derived Column Output].Columns[updatedDate]"
+                      name="updatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Source Excel to Source OLE DB\Data Conversion"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -381,6 +470,12 @@
                       cachedLength="101"
                       cachedName="createdDate"
                       lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate 3.Outputs[Derived Column Output].Columns[createdDate]" />
+                    <inputColumn
+                      refId="Package\Source Excel to Source OLE DB\Data Conversion.Inputs[Data Conversion Input].Columns[updatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="101"
+                      cachedName="updatedDate"
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate 3.Outputs[Derived Column Output].Columns[updatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -406,6 +501,26 @@
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
                           name="SourceInputColumnLineageID">#{Package\Source Excel to Source OLE DB\Add Column createdDate 3.Outputs[Derived Column Output].Columns[createdDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source Excel to Source OLE DB\Data Conversion.Outputs[Data Conversion Output].Columns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Source Excel to Source OLE DB\Data Conversion.Outputs[Data Conversion Output].Columns[updatedDate]"
+                      name="updatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Source Excel to Source OLE DB\Add Column createdDate 3.Outputs[Derived Column Output].Columns[updatedDate]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1282,7 +1397,13 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="createdDate"
                       externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Branch_Source.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
-                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate.Outputs[Derived Column Output].Columns[createdDate]" />
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Outputs[Derived Column Output].Columns[createdDate]" />
+                    <inputColumn
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Branch_Source.Inputs[OLE DB Destination Input].Columns[updatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="updatedDate"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Branch_Source.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Outputs[Derived Column Output].Columns[updatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1300,6 +1421,10 @@
                       refId="Package\Source Excel to Source OLE DB\SourceDA - Branch_Source.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
                       dataType="dbTimeStamp"
                       name="createdDate" />
+                    <externalMetadataColumn
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Branch_Source.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      name="updatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1419,7 +1544,13 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="createdDate"
                       externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - ProductLine_Source.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
-                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate 1.Outputs[Derived Column Output].Columns[createdDate]" />
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Outputs[Derived Column Output].Columns[createdDate]" />
+                    <inputColumn
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - ProductLine_Source.Inputs[OLE DB Destination Input].Columns[updatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="updatedDate"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - ProductLine_Source.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Outputs[Derived Column Output].Columns[updatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1437,6 +1568,10 @@
                       refId="Package\Source Excel to Source OLE DB\SourceDA - ProductLine_Source.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
                       dataType="dbTimeStamp"
                       name="createdDate" />
+                    <externalMetadataColumn
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - ProductLine_Source.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      name="updatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1563,6 +1698,12 @@
                       cachedName="ProductLine"
                       externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Product_Source.Inputs[OLE DB Destination Input].ExternalColumns[ProductLine]"
                       lineageId="Package\Source Excel to Source OLE DB\Excel Source product.Outputs[Excel Source Output].Columns[ProductLine]" />
+                    <inputColumn
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Product_Source.Inputs[OLE DB Destination Input].Columns[updatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="updatedDate"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Product_Source.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      lineageId="Package\Source Excel to Source OLE DB\Add Column createdDate 2.Outputs[Derived Column Output].Columns[updatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1584,6 +1725,10 @@
                       dataType="wstr"
                       length="255"
                       name="ProductLine" />
+                    <externalMetadataColumn
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Product_Source.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      name="updatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1774,6 +1919,12 @@
                       cachedName="createdDate"
                       externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
                       lineageId="Package\Source Excel to Source OLE DB\Data Conversion.Outputs[Data Conversion Output].Columns[createdDate]" />
+                    <inputColumn
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].Columns[updatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="updatedDate"
+                      externalMetadataColumnId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      lineageId="Package\Source Excel to Source OLE DB\Data Conversion.Outputs[Data Conversion Output].Columns[updatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1839,6 +1990,10 @@
                       refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
                       dataType="dbTimeStamp"
                       name="createdDate" />
+                    <externalMetadataColumn
+                      refId="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      name="updatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1888,12 +2043,12 @@
               refId="Package\Source Excel to Source OLE DB.Paths[Derived Column Output2]"
               endId="Package\Source Excel to Source OLE DB\SourceDA - ProductLine_Source.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Source Excel to Source OLE DB\Add Column createdDate 1.Outputs[Derived Column Output]" />
+              startId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Outputs[Derived Column Output]" />
             <path
               refId="Package\Source Excel to Source OLE DB.Paths[Derived Column Output3]"
               endId="Package\Source Excel to Source OLE DB\SourceDA - Branch_Source.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Source Excel to Source OLE DB\Add Column createdDate.Outputs[Derived Column Output]" />
+              startId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Outputs[Derived Column Output]" />
             <path
               refId="Package\Source Excel to Source OLE DB.Paths[Excel Source Output]"
               endId="Package\Source Excel to Source OLE DB\Add Column createdDate 2.Inputs[Derived Column Input]"
@@ -1906,46 +2061,19 @@
               startId="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales.Outputs[Excel Source Output]" />
             <path
               refId="Package\Source Excel to Source OLE DB.Paths[Excel Source Output2]"
-              endId="Package\Source Excel to Source OLE DB\Add Column createdDate 1.Inputs[Derived Column Input]"
+              endId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1.Inputs[Derived Column Input]"
               name="Excel Source Output"
               startId="Package\Source Excel to Source OLE DB\Excel Source ProductLine.Outputs[Excel Source Output]" />
             <path
               refId="Package\Source Excel to Source OLE DB.Paths[Excel Source Output3]"
-              endId="Package\Source Excel to Source OLE DB\Add Column createdDate.Inputs[Derived Column Input]"
+              endId="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate.Inputs[Derived Column Input]"
               name="Excel Source Output"
               startId="Package\Source Excel to Source OLE DB\Excel Source City.Outputs[Excel Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Truncate table of Source"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{5F75B56B-AB94-41CA-8F9F-28E6694F5788}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Truncate table of Source"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{D1B51D80-E04A-4714-ADAF-8DD6DE450EB9}"
-          SQLTask:SqlStatementSource=" IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Branch_Source')&#xA;BEGIN&#xA;    TRUNCATE table Branch_Source;&#xA;END;&#xA;&#xA;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ProductLine_Source')&#xA;BEGIN&#xA;    TRUNCATE table ProductLine_Source;&#xA;END;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Product_Source')&#xA;BEGIN&#xA;    TRUNCATE table Product_Source;&#xA;END;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Sales_Source')&#xA;BEGIN&#xA;    TRUNCATE table Sales_Source;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
-  <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:CreationName=""
-      DTS:DTSID="{BE916ACB-6487-48F4-8DAD-41B1438DDAC9}"
-      DTS:From="Package\Truncate table of Source"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\Source Excel to Source OLE DB" />
-  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -1957,37 +2085,11 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="227,43"
+          Size="226.666666666667,42.6666666666667"
           Id="Package\Source Excel to Source OLE DB"
           TopLeft="71.2499968148769,98.1499953198435" />
-        <NodeLayout
-          Size="164,43"
-          Id="Package\Truncate table of Source"
-          TopLeft="98.1249956134708,18.1999991321564" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="182.354162880841,60.8666657988231">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.2833295210204"
-              Start="0,0"
-              End="0,29.7833295210204">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.7833295210204" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1997,31 +2099,31 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="231,43"
+          Size="230.666666666667,42.6666666666667"
           Id="Package\Source Excel to Source OLE DB\Excel Source supermarket_sales"
           TopLeft="75.9027743846595,303.087035201479" />
         <NodeLayout
-          Size="207,43"
+          Size="206.666666666667,42.6666666666667"
           Id="Package\Source Excel to Source OLE DB\Add Column createdDate 3"
-          TopLeft="359.821412486158,304.73808810938" />
+          TopLeft="359.821412486158,304.088088140374" />
         <NodeLayout
-          Size="207,43"
+          Size="206.666666666667,42.6666666666667"
           Id="Package\Source Excel to Source OLE DB\SourceDA - Branch_Source"
           TopLeft="733.234094206008,93.9920590101727" />
         <NodeLayout
-          Size="179,43"
+          Size="178.666666666667,42.6666666666667"
           Id="Package\Source Excel to Source OLE DB\Excel Source product"
           TopLeft="79.7222186583615,237.253700111795" />
         <NodeLayout
-          Size="209,43"
+          Size="209.333333333334,42.6666666666667"
           Id="Package\Source Excel to Source OLE DB\SourceDA - Product_Source"
           TopLeft="724.702348555661,226.576718189351" />
         <NodeLayout
-          Size="207,43"
+          Size="206.666666666667,42.6666666666667"
           Id="Package\Source Excel to Source OLE DB\Add Column createdDate 2"
           TopLeft="354.722206364904,232.679902292559" />
         <NodeLayout
-          Size="197,43"
+          Size="197.333333333334,42.6666666666667"
           Id="Package\Source Excel to Source OLE DB\Excel Source ProductLine"
           TopLeft="83.6111073734033,168.349991972447" />
         <NodeLayout
@@ -2029,39 +2131,39 @@
           Id="Package\Source Excel to Source OLE DB\Excel Source City"
           TopLeft="93,100" />
         <NodeLayout
-          Size="207,43"
-          Id="Package\Source Excel to Source OLE DB\Add Column createdDate 1"
+          Size="273.333333333334,42.6666666666667"
+          Id="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate 1"
           TopLeft="366.071412206761,163.357138473647" />
         <NodeLayout
-          Size="229,43"
+          Size="229.333333333334,42.6666666666667"
           Id="Package\Source Excel to Source OLE DB\SourceDA - ProductLine_Source"
           TopLeft="724.305523176575,170.611104671161" />
         <NodeLayout
-          Size="157,43"
+          Size="157.333333333334,42.6666666666667"
           Id="Package\Source Excel to Source OLE DB\Data Conversion"
           TopLeft="619.642829442664,300.142850324086" />
         <NodeLayout
-          Size="197,43"
-          Id="Package\Source Excel to Source OLE DB\Add Column createdDate"
+          Size="264,42.6666666666667"
+          Id="Package\Source Excel to Source OLE DB\Add Column createdDate, updatedDate"
           TopLeft="345.535698839065,97.4999953508378" />
         <NodeLayout
-          Size="197,42"
+          Size="197.333333333334,42"
           Id="Package\Source Excel to Source OLE DB\SourceDA - Sales_Source"
           TopLeft="842.187462351286,298.312492212653" />
         <EdgeLayout
           Id="Package\Source Excel to Source OLE DB.Paths[Derived Column Output3]"
-          TopLeft="542.869032172398,117.079360513839">
+          TopLeft="609.535698839065,117.079360513839">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="190.36506203361,0"
+              EndConnector="123.698395366943,0"
               Start="0,0"
-              End="182.86506203361,0">
+              End="116.198395366943,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="182.86506203361,0" />
+                    End="116.198395366943,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2072,18 +2174,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Source Excel to Source OLE DB.Paths[Derived Column Output2]"
-          TopLeft="572.738078873428,188.317454905737">
+          TopLeft="639.404745540094,188.317454905737">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="151.567444303147,0"
+              EndConnector="84.9007776364806,0"
               Start="0,0"
-              End="144.067444303147,0">
+              End="77.4007776364806,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="144.067444303147,0" />
+                    End="77.4007776364806,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2094,18 +2196,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Source Excel to Source OLE DB.Paths[Derived Column Output1]"
-          TopLeft="566.488079152825,323.773802550066">
+          TopLeft="566.488079152825,323.448802565564">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="53.1547502898395,0"
+              EndConnector="53.1547502898394,0"
               Start="0,0"
-              End="45.6547502898395,0">
+              End="45.6547502898394,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="45.6547502898395,0" />
+                    End="45.6547502898394,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2160,7 +2262,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Source Excel to Source OLE DB.Paths[Excel Source Output3]"
-          TopLeft="253,119.999997675419">
+          TopLeft="253,119.916664342086">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2204,18 +2306,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Source Excel to Source OLE DB.Paths[Excel Source Output1]"
-          TopLeft="306.569441051326,325.245894988763">
+          TopLeft="306.569441051326,324.92089500426">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="53.2519714348317,0"
+              EndConnector="53.2519714348319,0"
               Start="0,0"
-              End="45.7519714348317,0">
+              End="45.7519714348319,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="45.7519714348317,0" />
+                    End="45.7519714348319,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

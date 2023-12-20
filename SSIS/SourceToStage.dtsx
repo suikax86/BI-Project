@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="81"
-  DTS:VersionGUID="{6AC71880-EED6-40B9-8E72-F39448A6E1A3}">
+  DTS:VersionBuild="88"
+  DTS:VersionGUID="{F155967D-F4E7-4E37-B114-3ACAA490AC1B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -71,7 +71,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="CET_Product">
       <DTS:VariableValue
-        DTS:DataType="7">11/16/2023 9:19:39 PM</DTS:VariableValue>
+        DTS:DataType="7">11/16/2023 9:19:00 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -80,7 +80,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="CET_ProductLine">
       <DTS:VariableValue
-        DTS:DataType="7">11/16/2023 9:19:37 PM</DTS:VariableValue>
+        DTS:DataType="7">11/16/2023 9:19:00 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -89,7 +89,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="CET_Sales">
       <DTS:VariableValue
-        DTS:DataType="7">11/16/2023 9:19:41 PM</DTS:VariableValue>
+        DTS:DataType="7">11/16/2023 9:19:00 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -107,7 +107,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="LSET_Product">
       <DTS:VariableValue
-        DTS:DataType="7">11/16/2023 9:19:39 PM</DTS:VariableValue>
+        DTS:DataType="7">11/16/2023 9:19:00 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -116,7 +116,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="LSET_ProductLine">
       <DTS:VariableValue
-        DTS:DataType="7">11/16/2023 9:19:36 PM</DTS:VariableValue>
+        DTS:DataType="7">11/16/2023 9:19:00 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -125,7 +125,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="LSET_Sales">
       <DTS:VariableValue
-        DTS:DataType="7">11/16/2023 9:19:40 PM</DTS:VariableValue>
+        DTS:DataType="7">11/16/2023 9:19:00 PM</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -148,7 +148,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET, CET from data_flow of Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -330,7 +330,10 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT  * FROM City_Source WHERE ((createdDate &gt;= ?  AND createdDate &lt; ?) OR ( updatedDate &gt;= ? AND updatedDate &lt; ?))</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Branch, City, createdDate, updatedDate
+FROM   Branch_Source
+WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
+             (updatedDate &gt;= ?) AND (updatedDate &lt; ?)</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -347,7 +350,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">2</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
@@ -386,6 +389,15 @@
                           lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].Columns[City]"
                           name="City"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                          name="updatedDate"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -403,6 +415,10 @@
                           refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
                           dataType="dbTimeStamp"
                           name="createdDate" />
+                        <externalMetadataColumn
+                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          name="updatedDate" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -429,6 +445,11 @@
                           name="ErrorColumn"
                           specialFlags="2" />
                         <outputColumn
+                          refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                          name="updatedDate" />
+                        <outputColumn
                           refId="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source.Outputs[OLE DB Source Error Output].Columns[City]"
                           dataType="wstr"
                           length="255"
@@ -451,15 +472,15 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\From City_Source to City_Stage\SET CET to Metadata"
+          DTS:refId="Package\From City_Source to City_Stage\SET CET of City in Metadata"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{E4570B82-DD63-423D-8D2B-BA4210B7C5D8}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="SET CET to Metadata"
+          DTS:ObjectName="SET CET of City in Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -476,7 +497,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET LSET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -493,7 +514,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Table Branch_Stage"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -507,7 +528,7 @@
           DTS:refId="Package\From City_Source to City_Stage.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{119C3332-F647-453B-B953-740F654F3326}"
-          DTS:From="Package\From City_Source to City_Stage\SET CET to Metadata"
+          DTS:From="Package\From City_Source to City_Stage\SET CET of City in Metadata"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\From City_Source to City_Stage\Truncate Table Branch_Stage" />
@@ -556,7 +577,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET, CET from data_flow of Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -738,7 +759,8 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT  * FROM ProductLine_Source WHERE ((createdDate &gt;= ?  AND createdDate &lt; ?) OR ( updatedDate &gt;= ? AND updatedDate &lt; ?))</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select * from ProductLine_Source
+Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND updatedDate &lt; ?)</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -755,7 +777,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">2</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
@@ -794,6 +816,15 @@
                           lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].Columns[ProductLineID]"
                           name="ProductLineID"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                          name="updatedDate"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -811,6 +842,10 @@
                           refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
                           dataType="dbTimeStamp"
                           name="createdDate" />
+                        <externalMetadataColumn
+                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          name="updatedDate" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -837,6 +872,11 @@
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
+                          refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                          name="updatedDate" />
+                        <outputColumn
                           refId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
@@ -859,15 +899,15 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\From ProductLine_Source to ProductLine_Stage\SET CET to Metadata"
+          DTS:refId="Package\From ProductLine_Source to ProductLine_Stage\SET CET of ProductLine in Metadata"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{9cede4bc-5085-47b0-ab8c-0cd809bf2da0}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="SET CET to Metadata"
+          DTS:ObjectName="SET CET of ProductLine in Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -884,7 +924,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET LSET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -901,7 +941,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Table ProductLine_Stage"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -915,7 +955,7 @@
           DTS:refId="Package\From ProductLine_Source to ProductLine_Stage.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{03F42D62-403E-479C-95FE-04FD95AE0DF9}"
-          DTS:From="Package\From ProductLine_Source to ProductLine_Stage\SET CET to Metadata"
+          DTS:From="Package\From ProductLine_Source to ProductLine_Stage\SET CET of ProductLine in Metadata"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\From ProductLine_Source to ProductLine_Stage\Truncate Table ProductLine_Stage" />
@@ -1156,7 +1196,8 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT * FROM Product_Source WHERE ((createdDate &gt;= ?  AND createdDate &lt; ?) OR ( updatedDate &gt;= ? AND updatedDate &lt; ?))</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select * from Product_Source
+Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND updatedDate &lt; ?)</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -1173,7 +1214,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">2</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
@@ -1221,6 +1262,15 @@
                           lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[ProductLine]"
                           name="ProductLine"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                          name="updatedDate"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1242,6 +1292,10 @@
                           dataType="wstr"
                           length="255"
                           name="ProductLine" />
+                        <externalMetadataColumn
+                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          name="updatedDate" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1273,6 +1327,11 @@
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
+                          refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                          name="updatedDate" />
+                        <outputColumn
                           refId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
@@ -1295,13 +1354,13 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\From Product_Source to Product_Stage\SET CET to Metadata"
+          DTS:refId="Package\From Product_Source to Product_Stage\SET CET of Product in Metadata"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{65917786-b46b-417d-b727-abb69c71c712}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="SET CET to Metadata"
+          DTS:ObjectName="SET CET of Product in Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="2">
           <DTS:Variables />
@@ -1351,7 +1410,7 @@
           DTS:refId="Package\From Product_Source to Product_Stage.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{BA24B987-85CE-4544-9292-112BB69DA4CF}"
-          DTS:From="Package\From Product_Source to Product_Stage\SET CET to Metadata"
+          DTS:From="Package\From Product_Source to Product_Stage\SET CET of Product in Metadata"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\From Product_Source to Product_Stage\Truncate Table Product_Stage" />
@@ -1400,7 +1459,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET, CET from data_flow of Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1710,7 +1769,8 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT * FROM Sales_Source WHERE ((createdDate &gt;= ?  AND createdDate &lt; ?) OR ( updatedDate &gt;= ? AND updatedDate &lt; ?))</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select * from Sales_Source
+Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND updatedDate &lt; ?)</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -1727,7 +1787,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">2</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
@@ -1878,6 +1938,15 @@
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[createdDate]"
                           name="createdDate"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                          name="updatedDate"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1943,6 +2012,10 @@
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
                           dataType="dbTimeStamp"
                           name="createdDate" />
+                        <externalMetadataColumn
+                          refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          name="updatedDate" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2028,6 +2101,11 @@
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
+                          refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                          name="updatedDate" />
+                        <outputColumn
                           refId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
@@ -2055,15 +2133,15 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\From Sales_Source to Sales_Stage\SET CET to Metadata"
+          DTS:refId="Package\From Sales_Source to Sales_Stage\SET CET of Sales in Metadata"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{62732a01-c048-4bd5-a26f-b593dd3bcb0f}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="SET CET to Metadata"
+          DTS:ObjectName="SET CET of Sales in Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2080,7 +2158,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SET LCET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2097,7 +2175,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Table Sales_Stage"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2111,7 +2189,7 @@
           DTS:refId="Package\From Sales_Source to Sales_Stage.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{48EC1275-1F61-45F4-9702-EA3B4DD98C33}"
-          DTS:From="Package\From Sales_Source to Sales_Stage\SET CET to Metadata"
+          DTS:From="Package\From Sales_Source to Sales_Stage\SET CET of Sales in Metadata"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\From Sales_Source to Sales_Stage\Truncate Table Sales_Stage" />
@@ -2155,39 +2233,39 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="285,43"
+          Size="285.333333333334,42.6666666666667"
           Id="Package\From City_Source to City_Stage\GET LSET, CET from data_flow of Metadata"
           TopLeft="11.4687475203539,183.95832147797" />
         <NodeLayout
-          Size="285,42"
+          Size="285.333333333334,42"
           Id="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage"
           TopLeft="9.88541349784163,266.329150832395" />
         <NodeLayout
-          Size="180,43"
-          Id="Package\From City_Source to City_Stage\SET CET to Metadata"
-          TopLeft="58.166662755112,23.0666624514263" />
+          Size="212,42.6666666666667"
+          Id="Package\From City_Source to City_Stage\SET CET of City in Metadata"
+          TopLeft="46.7083299340061,23.0666624514263" />
         <NodeLayout
-          Size="180,43"
+          Size="180,42.6666666666667"
           Id="Package\From City_Source to City_Stage\SET LSET to Metadata"
           TopLeft="68.3854116724496,359.020813225707" />
         <NodeLayout
-          Size="219,43"
+          Size="218.666666666667,42.6666666666667"
           Id="Package\From City_Source to City_Stage\Truncate Table Branch_Stage"
           TopLeft="42.3333293472729,102.544437585639" />
         <EdgeLayout
           Id="Package\From City_Source to City_Stage.PrecedenceConstraints[Constraint]"
-          TopLeft="149.916662717859,65.733329118093">
+          TopLeft="152.187496307306,65.7333291180929">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.8111084675459"
+              EndConnector="0,36.8111084675461"
               Start="0,0"
-              End="0,29.3111084675459">
+              End="0,29.3111084675461">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.3111084675459" />
+                    End="0,29.3111084675461" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2265,28 +2343,28 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="349,458"
-          Size="349,501"
+          PanelSize="349.333333333334,458"
+          Size="349.333333333334,501.333333333334"
           Id="Package\From City_Source to City_Stage"
           TopLeft="43.4374980581924,15.3124990314245" />
         <NodeLayout
-          Size="223,43"
+          Size="222.666666666667,42.6666666666667"
           Id="Package\From Product_Source to Product_Stage\GET LSET, CET from data_flow of Metadata"
           TopLeft="33.6562156830924,183.416683868567" />
         <NodeLayout
-          Size="185,53"
+          Size="185.333333333334,53.3333333333334"
           Id="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage"
           TopLeft="58.2499639578177,260.854151208203" />
         <NodeLayout
-          Size="180,43"
-          Id="Package\From Product_Source to Product_Stage\SET CET to Metadata"
+          Size="180,42.6666666666667"
+          Id="Package\From Product_Source to Product_Stage\SET CET of Product in Metadata"
           TopLeft="49.944442457623,25.750016478697" />
         <NodeLayout
-          Size="180,43"
+          Size="180,42.6666666666667"
           Id="Package\From Product_Source to Product_Stage\SET LSET to Metadata"
           TopLeft="61.9895434284903,349.583341236909" />
         <NodeLayout
-          Size="164,43"
+          Size="164,42.6666666666667"
           Id="Package\From Product_Source to Product_Stage\Truncate Table Product_Stage"
           TopLeft="64.2395470233952,101.861104240683" />
         <EdgeLayout
@@ -2380,12 +2458,12 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="327,446"
-          Size="327,489"
+          PanelSize="326.666666666667,446"
+          Size="326.666666666667,489.333333333334"
           Id="Package\From Product_Source to Product_Stage"
           TopLeft="790.739551083962,15.4750132811064" />
         <NodeLayout
-          Size="213,42"
+          Size="213.333333333334,42"
           Id="Package\From ProductLine_Source to ProductLine_Stage\GET LSET, CET from data_flow of Metadata"
           TopLeft="31.2812488474884,171.624988764525" />
         <NodeLayout
@@ -2393,31 +2471,31 @@
           Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage"
           TopLeft="40.1978979121591,259.208317603668" />
         <NodeLayout
-          Size="180,43"
-          Id="Package\From ProductLine_Source to ProductLine_Stage\SET CET to Metadata"
-          TopLeft="54.1111089380251,19.5222183031507" />
+          Size="249.333333333334,42.6666666666667"
+          Id="Package\From ProductLine_Source to ProductLine_Stage\SET CET of ProductLine in Metadata"
+          TopLeft="14.5277773742047,19.5222183031507" />
         <NodeLayout
-          Size="235,43"
+          Size="234.666666666667,42.6666666666667"
           Id="Package\From ProductLine_Source to ProductLine_Stage\SET LSET to Metadata"
           TopLeft="22.6666465500997,351.583313961825" />
         <NodeLayout
-          Size="188,43"
+          Size="188,42.6666666666667"
           Id="Package\From ProductLine_Source to ProductLine_Stage\Truncate Table ProductLine_Stage"
           TopLeft="47.1770642668325,100.479179232319" />
         <EdgeLayout
           Id="Package\From ProductLine_Source to ProductLine_Stage.PrecedenceConstraints[Constraint]"
-          TopLeft="142.644086602429,62.1888849698174">
+          TopLeft="140.185754153852,62.1888849698174">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.2902942625013"
+              EndConnector="0,38.2902942625016"
               Start="0,0"
-              End="0,30.7902942625013">
+              End="0,30.7902942625016">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.7902942625013" />
+                    End="0,30.7902942625016" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2495,28 +2573,28 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="315,451"
-          Size="315,494"
+          PanelSize="314.666666666667,450.666666666667"
+          Size="314.666666666667,494"
           Id="Package\From ProductLine_Source to ProductLine_Stage"
           TopLeft="427.031230910215,11.666669456164" />
         <NodeLayout
-          Size="285,43"
+          Size="285.333333333334,42.6666666666667"
           Id="Package\From Sales_Source to Sales_Stage\GET LSET, CET from data_flow of Metadata"
           TopLeft="8.21869303798394,180.833322485288" />
         <NodeLayout
-          Size="299,42"
+          Size="298.666666666667,42"
           Id="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage"
           TopLeft="1.59375017462366,275.916650394599" />
         <NodeLayout
-          Size="180,43"
-          Id="Package\From Sales_Source to Sales_Stage\SET CET to Metadata"
+          Size="180,42.6666666666667"
+          Id="Package\From Sales_Source to Sales_Stage\SET CET of Sales in Metadata"
           TopLeft="51.3333312844236,12.9166836619371" />
         <NodeLayout
-          Size="185,43"
+          Size="185.333333333334,42.6666666666667"
           Id="Package\From Sales_Source to Sales_Stage\SET LCET to Metadata"
           TopLeft="63.3749405723077,363.020840500792" />
         <NodeLayout
-          Size="164,43"
+          Size="164,42.6666666666667"
           Id="Package\From Sales_Source to Sales_Stage\Truncate Table Sales_Stage"
           TopLeft="62.1978660609275,92.9166593829794" />
         <EdgeLayout
@@ -2610,8 +2688,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="371,475"
-          Size="371,518"
+          PanelSize="370.666666666667,474.666666666667"
+          Size="370.666666666667,518"
           Id="Package\From Sales_Source to Sales_Stage"
           TopLeft="1164.20828519327,16.062499806285" />
       </GraphLayout>
@@ -2623,11 +2701,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="209,43"
+          Size="209.333333333334,42.6666666666667"
           Id="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source"
           TopLeft="117.499994747341,120.899994235039" />
         <NodeLayout
-          Size="240,43"
+          Size="240,42.6666666666667"
           Id="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage"
           TopLeft="106.249995250255,240.499988532067" />
         <EdgeLayout
@@ -2687,11 +2765,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="228,43"
+          Size="228,42.6666666666667"
           Id="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source"
           TopLeft="264.999992102385,243.999992728234" />
         <NodeLayout
-          Size="243,43"
+          Size="242.666666666667,42.6666666666667"
           Id="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Destination Product_Stage"
           TopLeft="257.999992311001,359.999989271164" />
         <EdgeLayout
@@ -2751,7 +2829,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="247,43"
+          Size="246.666666666667,42.6666666666667"
           Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source"
           TopLeft="279.99999165535,165.999995052815" />
         <NodeLayout
@@ -2815,11 +2893,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="216,43"
+          Size="216,42.6666666666667"
           Id="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source"
           TopLeft="314.999990612269,167.99999499321" />
         <NodeLayout
-          Size="232,43"
+          Size="232,42.6666666666667"
           Id="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage"
           TopLeft="300.999991029501,287.999991416931" />
         <EdgeLayout
