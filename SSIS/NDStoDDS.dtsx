@@ -12,8 +12,8 @@
   DTS:ObjectName="NDStoDDS"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="101"
-  DTS:VersionGUID="{9ACDC972-F926-4AB6-BE0F-B43C65332DBC}">
+  DTS:VersionBuild="104"
+  DTS:VersionGUID="{B22A81E3-3EED-492E-BC0E-E6095DC9911F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -642,6 +642,20 @@
                       cachedName="UnitPrice"
                       externalMetadataColumnId="Package\Fact_Sales\Insert Into Fact_Sales.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
                       lineageId="Package\Fact_Sales\Lookup Product_Key.Outputs[Lookup Match Output].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Insert Into Fact_Sales.Inputs[OLE DB Destination Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Fact_Sales\Insert Into Fact_Sales.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\Fact_Sales\Import from Invoice_NDS.Outputs[OLE DB Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Insert Into Fact_Sales.Inputs[OLE DB Destination Input].Columns[MemberType]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MemberType"
+                      externalMetadataColumnId="Package\Fact_Sales\Insert Into Fact_Sales.Inputs[OLE DB Destination Input].ExternalColumns[MemberType]"
+                      lineageId="Package\Fact_Sales\Import from Invoice_NDS.Outputs[OLE DB Source Output].Columns[MemberType]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -702,6 +716,16 @@
                       refId="Package\Fact_Sales\Insert Into Fact_Sales.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
                       dataType="r8"
                       name="Rating" />
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Insert Into Fact_Sales.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="6"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Insert Into Fact_Sales.Inputs[OLE DB Destination Input].ExternalColumns[MemberType]"
+                      dataType="wstr"
+                      length="255"
+                      name="MemberType" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1534,6 +1558,349 @@ where [refTable].[Product_SK] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Fact_Sales\Update Fact_Sales"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update Fact_Sales"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Update Fact_Sales
+SET Date_Key = ?, Product_Key = ?, PaymentType_Key = ?, Branch_Key = ?, Invoice_NK = ?, 
+UnitPrice = ?, Quantity = ?, Crogs = ?, Tax = ?, Total = ?, GrossMarginPercentange = ?, GrossIncome = ?,
+Gender = ?, MemberType = ?
+WHERE InvoiceId = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fact_Sales\Update Fact_Sales.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[WATERMELONX86.DDSDA]"
+                  connectionManagerRefId="Package.ConnectionManagers[WATERMELONX86.DDSDA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[Date_SK]"
+                      cachedDataType="i4"
+                      cachedName="Date_SK"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Fact_Sales\Lookup Date_Key.Outputs[Lookup Match Output].Columns[Date_SK]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[Product_SK]"
+                      cachedDataType="i4"
+                      cachedName="Product_SK"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Fact_Sales\Lookup Product_Key.Outputs[Lookup Match Output].Columns[Product_SK]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[PaymentType_SK]"
+                      cachedDataType="i4"
+                      cachedName="PaymentType_SK"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Fact_Sales\Lookup PaymentType_Key.Outputs[Lookup Match Output].Columns[PaymentType_SK]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[Branch_SK]"
+                      cachedDataType="i4"
+                      cachedName="Branch_SK"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Fact_Sales\Lookup Branch_Key.Outputs[Lookup Match Output].Columns[Branch_SK]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[Invoice_NK]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Invoice_NK"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Fact_Sales\Import from Invoice_NDS.Outputs[OLE DB Source Output].Columns[Invoice_NK]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Fact_Sales\Lookup Product_Key.Outputs[Lookup Match Output].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Fact_Sales\Import from Invoice_NDS.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[Crogs]"
+                      cachedDataType="cy"
+                      cachedName="Crogs"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Fact_Sales\Import from Invoice_NDS.Outputs[OLE DB Source Output].Columns[Crogs]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[Tax]"
+                      cachedDataType="cy"
+                      cachedName="Tax"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\Fact_Sales\Import from Invoice_NDS.Outputs[OLE DB Source Output].Columns[Tax]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[Total]"
+                      cachedDataType="cy"
+                      cachedName="Total"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\Fact_Sales\Import from Invoice_NDS.Outputs[OLE DB Source Output].Columns[Total]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[GrossMarginPercentage]"
+                      cachedDataType="cy"
+                      cachedName="GrossMarginPercentage"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      lineageId="Package\Fact_Sales\Import from Invoice_NDS.Outputs[OLE DB Source Output].Columns[GrossMarginPercentage]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[GrossIncome]"
+                      cachedDataType="cy"
+                      cachedName="GrossIncome"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      lineageId="Package\Fact_Sales\Import from Invoice_NDS.Outputs[OLE DB Source Output].Columns[GrossIncome]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      lineageId="Package\Fact_Sales\Import from Invoice_NDS.Outputs[OLE DB Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[MemberType]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MemberType"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      lineageId="Package\Fact_Sales\Import from Invoice_NDS.Outputs[OLE DB Source Output].Columns[MemberType]" />
+                    <inputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].Columns[Invoice_SK]"
+                      cachedDataType="i4"
+                      cachedName="Invoice_SK"
+                      externalMetadataColumnId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      lineageId="Package\Fact_Sales\Import from Invoice_NDS.Outputs[OLE DB Source Output].Columns[Invoice_SK]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="cy"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="i4"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="cy"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="cy"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      dataType="cy"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      dataType="cy"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      dataType="cy"
+                      name="Param_11">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      dataType="wstr"
+                      length="6"
+                      name="Param_12">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_13">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      dataType="i4"
+                      name="Param_14">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact_Sales\Update Fact_Sales.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact_Sales\Update Fact_Sales.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact_Sales\Update Fact_Sales.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact_Sales\Update Fact_Sales.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact_Sales\Update Fact_Sales.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -1556,6 +1923,11 @@ where [refTable].[Product_SK] = ?</property>
               endId="Package\Fact_Sales\Lookup exits.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Fact_Sales\Lookup Branch_Key.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact_Sales.Paths[Lookup Match Output4]"
+              endId="Package\Fact_Sales\Update Fact_Sales.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact_Sales\Lookup exits.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fact_Sales.Paths[Lookup No Match Output]"
               endId="Package\Fact_Sales\Insert Into Fact_Sales.Inputs[OLE DB Destination Input]"
@@ -7817,21 +8189,139 @@ FROM         Product_NDS</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Fact_Sales\Lookup Branch_Key"
+          TopLeft="747.124969491735,84.8999960052969" />
+        <NodeLayout
+          Size="139.333333333334,42.6666666666667"
+          Id="Package\Fact_Sales\Lookup exits"
+          TopLeft="502.999985009432,83.999997496605" />
+        <NodeLayout
           Size="176,42.6666666666667"
           Id="Package\Fact_Sales\Lookup Product_Key"
           TopLeft="485.874981170521,12.7499994456768" />
-        <NodeLayout
-          Size="200.666666666667,42.6666666666667"
-          Id="Package\Fact_Sales\Import from Invoice_NDS"
-          TopLeft="46.249997932464,9.74999953508379" />
         <NodeLayout
           Size="204,42.6666666666667"
           Id="Package\Fact_Sales\Lookup PaymentType_Key"
           TopLeft="723.999970525504,14.6999993526936" />
         <NodeLayout
-          Size="172,42.6666666666667"
-          Id="Package\Fact_Sales\Lookup Branch_Key"
-          TopLeft="747.124969491735,84.8999960052969" />
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Fact_Sales\Lookup Date_Key"
+          TopLeft="274.999991804362,13.9999995827675" />
+        <NodeLayout
+          Size="182.666666666667,42.6666666666667"
+          Id="Package\Fact_Sales\Insert Into Fact_Sales"
+          TopLeft="571.124981665984,206.399993895293" />
+        <NodeLayout
+          Size="200.666666666667,42.6666666666667"
+          Id="Package\Fact_Sales\Import from Invoice_NDS"
+          TopLeft="46.249997932464,9.74999953508379" />
+        <EdgeLayout
+          Id="Package\Fact_Sales.Paths[OLE DB Source Output]"
+          TopLeft="246.916664599131,33.208332892259">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28.0833272052309,0"
+              Start="0,0"
+              End="20.5833272052309,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="20.5833272052309,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact_Sales.Paths[Lookup No Match Output]"
+          TopLeft="594.555540564988,126.666664163272">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="67.90277443433,79.733329732021"
+              Start="0,0"
+              End="67.90277443433,72.233329732021">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4364539117966" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.4364539117966"
+                    Point2="0,32.4364539117966"
+                    Point3="4,32.4364539117966" />
+                  <mssgle:LineSegment
+                    End="63.90277443433,32.4364539117966" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63.90277443433,32.4364539117966"
+                    Point2="67.90277443433,32.4364539117966"
+                    Point3="67.90277443433,36.4364539117966" />
+                  <mssgle:LineSegment
+                    End="67.90277443433,72.233329732021" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-21.854999501585,37.4364539117966,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact_Sales.Paths[Lookup Match Output3]"
+          TopLeft="747.124969491735,105.783330084284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-104.79165114897,0"
+              Start="0,0"
+              End="-97.2916511489698,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-97.2916511489698,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-96.8372122932349,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact_Sales.Paths[Lookup Match Output2]"
+          TopLeft="437.666658471028,34.7083328475555">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.2083226994924,0"
+              Start="0,0"
+              End="40.7083226994924,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="40.7083226994924,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.8372253690038,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact_Sales.Paths[Lookup Match Output1]"
           TopLeft="829.56247000862,57.3666660193602">
@@ -7881,108 +8371,42 @@ FROM         Product_NDS</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="162.666666666667,42.6666666666667"
-          Id="Package\Fact_Sales\Lookup Date_Key"
-          TopLeft="274.999991804362,13.9999995827675" />
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Fact_Sales\Update Fact_Sales"
+          TopLeft="366.208320061987,206.049990174771" />
         <EdgeLayout
-          Id="Package\Fact_Sales.Paths[OLE DB Source Output]"
-          TopLeft="246.916664599131,33.208332892259">
+          Id="Package\Fact_Sales.Paths[Lookup Match Output4]"
+          TopLeft="550.77776278721,126.666664163272">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="28.0833272052309,0"
+              EndConnector="-101.236109391889,79.383326011499"
               Start="0,0"
-              End="20.5833272052309,0">
+              End="-101.236109391889,71.883326011499">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="20.5833272052309,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact_Sales.Paths[Lookup Match Output2]"
-          TopLeft="437.666658471028,34.7083328475555">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="48.2083226994924,0"
-              Start="0,0"
-              End="40.7083226994924,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="0,28.2940682922844" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.2940682922844"
+                    Point2="0,32.2940682922844"
+                    Point3="-4,32.2940682922844" />
                   <mssgle:LineSegment
-                    End="40.7083226994924,0" />
+                    End="-97.2361093918894,32.2940682922844" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-97.2361093918894,32.2940682922844"
+                    Point2="-101.236109391889,32.2940682922844"
+                    Point3="-101.236109391889,36.2940682922844" />
+                  <mssgle:LineSegment
+                    End="-101.236109391889,71.883326011499" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-27.8372253690038,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="139.333333333334,42.6666666666667"
-          Id="Package\Fact_Sales\Lookup exits"
-          TopLeft="502.999985009432,83.999997496605" />
-        <EdgeLayout
-          Id="Package\Fact_Sales.Paths[Lookup Match Output3]"
-          TopLeft="747.124969491735,105.783330084284">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-104.79165114897,0"
-              Start="0,0"
-              End="-97.2916511489698,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-97.2916511489698,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-96.8372122932349,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="182.666666666667,42.6666666666667"
-          Id="Package\Fact_Sales\Insert Into Fact_Sales"
-          TopLeft="482.999985605479,208.999993771315" />
-        <EdgeLayout
-          Id="Package\Fact_Sales.Paths[Lookup No Match Output]"
-          TopLeft="573.499985307456,126.666664163272">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,82.3333296080432"
-              Start="0,0"
-              End="0,74.8333296080432">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,74.8333296080432" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,31.6119773040216,111.6127734375,11.609375"
+              BoundingBox="-98.8094414146947,37.2940682922844,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7990,12 +8414,81 @@ FROM         Product_NDS</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Fact_Sales\Lookup Branch_Key">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Branch]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact_Sales\Lookup exits">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Fact_Sales]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact_Sales\Lookup Product_Key">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Product]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Fact_Sales\Lookup PaymentType_Key">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8005,10 +8498,46 @@ FROM         Product_NDS</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact_Sales\Lookup Date_Key">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Date]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact_Sales\Insert Into Fact_Sales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -8022,52 +8551,6 @@ FROM         Product_NDS</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact_Sales\Lookup Branch_Key">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Branch]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact_Sales\Lookup Product_Key">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Product]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -8093,10 +8576,6 @@ FROM         Product_NDS</property>
           Id="Package\Sequence Container\Dim_Branch\Insert Destination"
           TopLeft="150.833333333333,621.5" />
         <NodeLayout
-          Size="121.333333333334,42.6666666666667"
-          Id="Package\Sequence Container\Dim_Branch\Union All"
-          TopLeft="172.166666666667,416.166666666667" />
-        <NodeLayout
           Size="198.666666666667,42.6666666666667"
           Id="Package\Sequence Container\Dim_Branch\Import from Branch_NDS"
           TopLeft="133.5,5.49999999999993" />
@@ -8104,28 +8583,10 @@ FROM         Product_NDS</property>
           Size="154.666666666667,42.6666666666667"
           Id="Package\Sequence Container\Dim_Branch\Derived Column"
           TopLeft="17.5,210.833333333333" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Dim_Branch.Paths[Union All Output 1]"
-          TopLeft="232.833333333333,458.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Sequence Container\Dim_Branch\Union All"
+          TopLeft="172.166666666667,416.166666666667" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Branch.Paths[OLE DB Source Output]"
           TopLeft="232.833333333333,48.1666666666666">
@@ -8298,6 +8759,28 @@ FROM         Product_NDS</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Dim_Branch.Paths[Union All Output 1]"
+          TopLeft="232.833333333333,458.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -8390,13 +8873,13 @@ FROM         Product_NDS</property>
           Id="Package\Sequence Container\Dim_Date\Insert into Dim_Date"
           TopLeft="472.638870964035,402.42591528451" />
         <NodeLayout
-          Size="113.333333333334,42.6666666666667"
-          Id="Package\Sequence Container\Dim_Date\Lookup"
-          TopLeft="282.638876253947,300.999986018075" />
-        <NodeLayout
           Size="200.666666666667,42.6666666666667"
           Id="Package\Sequence Container\Dim_Date\Import from Invoice_NDS"
           TopLeft="236.99999293685,52.999998420477" />
+        <NodeLayout
+          Size="113.333333333334,42.6666666666667"
+          Id="Package\Sequence Container\Dim_Date\Lookup"
+          TopLeft="282.638876253947,300.999986018075" />
         <NodeLayout
           Size="350.666666666667,42.6666666666667"
           Id="Package\Sequence Container\Dim_Date\Convert createdDate into Minute, Hour, Day, Month, Year"
@@ -8405,6 +8888,54 @@ FROM         Product_NDS</property>
           Size="413.333333333334,42.6666666666667"
           Id="Package\Sequence Container\Dim_Date\Add EnglishMonthName, VietnameseMonthName, BurmeseMonthName"
           TopLeft="136.999995917082,200.916660698255" />
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Sequence Container\Dim_Date\Update Dim_Date"
+          TopLeft="150.999995499849,422.333329965671" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Dim_Date.Paths[Derived Column Output]"
+          TopLeft="341.99999549985,171.666662822168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.2499978760873"
+              Start="0,0"
+              End="0,21.7499978760873">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.7499978760873" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Dim_Date.Paths[Output 0]"
+          TopLeft="341.486102752181,243.583327364922">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.4166586531537"
+              Start="0,0"
+              End="0,49.9166586531537">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.9166586531537" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Date.Paths[OLE DB Source Output]"
           TopLeft="338.833327343067,95.6666650871437">
@@ -8464,54 +8995,6 @@ FROM         Product_NDS</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence Container\Dim_Date.Paths[Derived Column Output]"
-          TopLeft="341.99999549985,171.666662822168">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.2499978760873"
-              Start="0,0"
-              End="0,21.7499978760873">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.7499978760873" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Dim_Date.Paths[Output 0]"
-          TopLeft="341.486102752181,243.583327364922">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57.4166586531537"
-              Start="0,0"
-              End="0,49.9166586531537">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.9166586531537" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162.666666666667,42.6666666666667"
-          Id="Package\Sequence Container\Dim_Date\Update Dim_Date"
-          TopLeft="150.999995499849,422.333329965671" />
-        <EdgeLayout
           Id="Package\Sequence Container\Dim_Date.Paths[Lookup Match Output]"
           TopLeft="321.749987365058,343.666652684742">
           <EdgeLayout.Curve>
@@ -8551,6 +9034,27 @@ FROM         Product_NDS</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_Date\Insert into Dim_Date">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_Date\Import from Invoice_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Dim_Date\Lookup">
     <Properties>
       <Property>
@@ -8568,27 +9072,6 @@ FROM         Product_NDS</property>
         <Value
           type="q4:string">0</Value>
       </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Dim_Date\Insert into Dim_Date">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Dim_Date\Import from Invoice_NDS">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -8713,6 +9196,27 @@ FROM         Product_NDS</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_PaymentType\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_PaymentType\Import from PaymentType_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Dim_PaymentType\Slowly Changing Dimension">
     <Properties>
       <Property>
@@ -8764,27 +9268,6 @@ FROM         Product_NDS</property>
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Dim_PaymentType\Insert Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Dim_PaymentType\Import from PaymentType_NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -9212,27 +9695,6 @@ FROM         Product_NDS</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Dim_Product\Import from Product_NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Dim_Product\Import form ProductLine_NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Dim_Product\Slowly Changing Dimension">
     <Properties>
       <Property>
@@ -9304,53 +9766,7 @@ FROM         Product_NDS</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fact_Sales\Lookup Date_Key">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Date]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact_Sales\Lookup exits">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Fact_Sales]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact_Sales\Insert Into Fact_Sales">
+    design-time-name="Package\Sequence Container\Dim_Product\Import from Product_NDS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9359,6 +9775,14 @@ FROM         Product_NDS</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_Product\Import form ProductLine_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
