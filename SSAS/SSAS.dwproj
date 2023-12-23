@@ -24,10 +24,6 @@
       <FullPath>Dim Branch.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Dim Date.dim</Name>
-      <FullPath>Dim Date.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Dim Payment Type.dim</Name>
       <FullPath>Dim Payment Type.dim</FullPath>
     </ProjectItem>
@@ -38,6 +34,10 @@
     <ProjectItem>
       <Name>Dim Customer.dim</Name>
       <FullPath>Dim Customer.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Date.dim</Name>
+      <FullPath>Dim Date.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
