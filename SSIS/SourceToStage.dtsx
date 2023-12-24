@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="88"
-  DTS:VersionGUID="{F155967D-F4E7-4E37-B114-3ACAA490AC1B}">
+  DTS:VersionBuild="89"
+  DTS:VersionGUID="{2B0A4E9A-5025-4637-99D2-42FFD8415F15}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -148,7 +148,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET, CET from data_flow of Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -480,7 +480,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
           DTS:LocaleID="-1"
           DTS:ObjectName="SET CET of City in Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -497,7 +497,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
           DTS:LocaleID="-1"
           DTS:ObjectName="SET LSET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -514,7 +514,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Table Branch_Stage"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -577,7 +577,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET, CET from data_flow of Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -907,7 +907,7 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
           DTS:LocaleID="-1"
           DTS:ObjectName="SET CET of ProductLine in Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -924,7 +924,7 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
           DTS:LocaleID="-1"
           DTS:ObjectName="SET LSET to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -941,7 +941,7 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Table ProductLine_Stage"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2233,23 +2233,23 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="285.333333333334,42.6666666666667"
+          Size="285,43"
           Id="Package\From City_Source to City_Stage\GET LSET, CET from data_flow of Metadata"
           TopLeft="11.4687475203539,183.95832147797" />
         <NodeLayout
-          Size="285.333333333334,42"
+          Size="285,42"
           Id="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage"
           TopLeft="9.88541349784163,266.329150832395" />
         <NodeLayout
-          Size="212,42.6666666666667"
+          Size="212,43"
           Id="Package\From City_Source to City_Stage\SET CET of City in Metadata"
           TopLeft="46.7083299340061,23.0666624514263" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,43"
           Id="Package\From City_Source to City_Stage\SET LSET to Metadata"
           TopLeft="68.3854116724496,359.020813225707" />
         <NodeLayout
-          Size="218.666666666667,42.6666666666667"
+          Size="219,43"
           Id="Package\From City_Source to City_Stage\Truncate Table Branch_Stage"
           TopLeft="42.3333293472729,102.544437585639" />
         <EdgeLayout
@@ -2343,28 +2343,28 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="349.333333333334,458"
-          Size="349.333333333334,501.333333333334"
+          PanelSize="349,458"
+          Size="349,501"
           Id="Package\From City_Source to City_Stage"
           TopLeft="43.4374980581924,15.3124990314245" />
         <NodeLayout
-          Size="222.666666666667,42.6666666666667"
+          Size="223,43"
           Id="Package\From Product_Source to Product_Stage\GET LSET, CET from data_flow of Metadata"
           TopLeft="33.6562156830924,183.416683868567" />
         <NodeLayout
-          Size="185.333333333334,53.3333333333334"
+          Size="185,53"
           Id="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage"
           TopLeft="58.2499639578177,260.854151208203" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,43"
           Id="Package\From Product_Source to Product_Stage\SET CET of Product in Metadata"
           TopLeft="49.944442457623,25.750016478697" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,43"
           Id="Package\From Product_Source to Product_Stage\SET LSET to Metadata"
           TopLeft="61.9895434284903,349.583341236909" />
         <NodeLayout
-          Size="164,42.6666666666667"
+          Size="164,43"
           Id="Package\From Product_Source to Product_Stage\Truncate Table Product_Stage"
           TopLeft="64.2395470233952,101.861104240683" />
         <EdgeLayout
@@ -2458,12 +2458,12 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="326.666666666667,446"
-          Size="326.666666666667,489.333333333334"
+          PanelSize="327,446"
+          Size="327,489"
           Id="Package\From Product_Source to Product_Stage"
           TopLeft="790.739551083962,15.4750132811064" />
         <NodeLayout
-          Size="213.333333333334,42"
+          Size="213,42"
           Id="Package\From ProductLine_Source to ProductLine_Stage\GET LSET, CET from data_flow of Metadata"
           TopLeft="31.2812488474884,171.624988764525" />
         <NodeLayout
@@ -2471,15 +2471,15 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
           Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage"
           TopLeft="40.1978979121591,259.208317603668" />
         <NodeLayout
-          Size="249.333333333334,42.6666666666667"
+          Size="249,43"
           Id="Package\From ProductLine_Source to ProductLine_Stage\SET CET of ProductLine in Metadata"
           TopLeft="14.5277773742047,19.5222183031507" />
         <NodeLayout
-          Size="234.666666666667,42.6666666666667"
+          Size="235,43"
           Id="Package\From ProductLine_Source to ProductLine_Stage\SET LSET to Metadata"
           TopLeft="22.6666465500997,351.583313961825" />
         <NodeLayout
-          Size="188,42.6666666666667"
+          Size="188,43"
           Id="Package\From ProductLine_Source to ProductLine_Stage\Truncate Table ProductLine_Stage"
           TopLeft="47.1770642668325,100.479179232319" />
         <EdgeLayout
@@ -2573,28 +2573,28 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="314.666666666667,450.666666666667"
-          Size="314.666666666667,494"
+          PanelSize="315,451"
+          Size="315,494"
           Id="Package\From ProductLine_Source to ProductLine_Stage"
           TopLeft="427.031230910215,11.666669456164" />
         <NodeLayout
-          Size="285.333333333334,42.6666666666667"
+          Size="285,43"
           Id="Package\From Sales_Source to Sales_Stage\GET LSET, CET from data_flow of Metadata"
           TopLeft="8.21869303798394,180.833322485288" />
         <NodeLayout
-          Size="298.666666666667,42"
+          Size="299,42"
           Id="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage"
           TopLeft="1.59375017462366,275.916650394599" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,43"
           Id="Package\From Sales_Source to Sales_Stage\SET CET of Sales in Metadata"
           TopLeft="51.3333312844236,12.9166836619371" />
         <NodeLayout
-          Size="185.333333333334,42.6666666666667"
+          Size="185,43"
           Id="Package\From Sales_Source to Sales_Stage\SET LCET to Metadata"
           TopLeft="63.3749405723077,363.020840500792" />
         <NodeLayout
-          Size="164,42.6666666666667"
+          Size="164,43"
           Id="Package\From Sales_Source to Sales_Stage\Truncate Table Sales_Stage"
           TopLeft="62.1978660609275,92.9166593829794" />
         <EdgeLayout
@@ -2688,8 +2688,8 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="370.666666666667,474.666666666667"
-          Size="370.666666666667,518"
+          PanelSize="371,475"
+          Size="371,518"
           Id="Package\From Sales_Source to Sales_Stage"
           TopLeft="1164.20828519327,16.062499806285" />
       </GraphLayout>
@@ -2701,27 +2701,27 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="209.333333333334,42.6666666666667"
+          Size="209,42"
           Id="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Source City_Source"
           TopLeft="117.499994747341,120.899994235039" />
         <NodeLayout
-          Size="240,42.6666666666667"
+          Size="240,43"
           Id="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage\OLE DB Destination Branch_Stage"
           TopLeft="106.249995250255,240.499988532067" />
         <EdgeLayout
           Id="Package\From City_Source to City_Stage\Import data from City_Source to City_Stage.Paths[OLE DB Source Output]"
-          TopLeft="224.208328332131,163.566660901706">
+          TopLeft="224.124994998798,162.899994235039">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,76.9333276303613"
+              EndConnector="0,77.599994297028"
               Start="0,0"
-              End="0,69.4333276303613">
+              End="0,70.099994297028">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.4333276303613" />
+                    End="0,70.099994297028" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2763,7 +2763,7 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
     design-time-name="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="228,42.6666666666667"
           Id="Package\From Product_Source to Product_Stage\Import data from Product_Source to Product_Stage\OLE DB Source Product_Source"
@@ -2791,7 +2791,9 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2827,7 +2829,7 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
     design-time-name="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="246.666666666667,42.6666666666667"
           Id="Package\From ProductLine_Source to ProductLine_Stage\Import data from ProductLine_Source to ProductLine_Stage\OLE DB Source ProductLine_Source"
@@ -2855,7 +2857,9 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2893,11 +2897,11 @@ Where (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="216,42.6666666666667"
+          Size="216,43"
           Id="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Source Sales_Source"
           TopLeft="314.999990612269,167.99999499321" />
         <NodeLayout
-          Size="232,42.6666666666667"
+          Size="232,43"
           Id="Package\From Sales_Source to Sales_Stage\Import data from Sales_Source to Sales_Stage\OLE DB Destination Sales_Stage"
           TopLeft="300.999991029501,287.999991416931" />
         <EdgeLayout

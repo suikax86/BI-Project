@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="118"
-  DTS:VersionGUID="{3A976EAD-9C21-4D43-8E29-6F7D6C3184C5}">
+  DTS:VersionBuild="120"
+  DTS:VersionGUID="{960C001F-D47E-48F1-9C60-CA0CE37742F4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -6684,7 +6684,7 @@ where [refTable].[PaymentTypeName] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="248,42.6666666666667"
+          Size="248,43"
           Id="Package\Import Sales_Stage to Invoice_NDS"
           TopLeft="205.624996619299,426.299990019799" />
         <NodeLayout
@@ -6696,15 +6696,15 @@ where [refTable].[PaymentTypeName] = ?</property>
           Id="Package\Sequence Container\Import Branch_Stage to Branch_NDS"
           TopLeft="18.7499987520278,21.749998895824" />
         <NodeLayout
-          Size="261.333333333334,42.6666666666667"
+          Size="261,43"
           Id="Package\Sequence Container\Import Product_Stage to Product_NDS"
           TopLeft="326.624984232709,96.516667181949" />
         <NodeLayout
-          Size="300,42.6666666666667"
+          Size="300,43"
           Id="Package\Sequence Container\Import ProductLine_Stage to ProductLine_NDS"
           TopLeft="308.499984987081,21.6000003603105" />
         <NodeLayout
-          Size="277.333333333334,42"
+          Size="277,42"
           Id="Package\Sequence Container\Import Sales_Stage to PaymentType_NDS"
           TopLeft="7.12499851919711,92.86666961501" />
         <EdgeLayout
@@ -6754,7 +6754,7 @@ where [refTable].[PaymentTypeName] = ?</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="644,277.333333333334"
+          PanelSize="644,277"
           Size="644,320"
           Id="Package\Sequence Container"
           TopLeft="15,40" />
@@ -7100,7 +7100,7 @@ where [refTable].[PaymentTypeName] = ?</property>
           Text="createdDate lấy từ Stage"
           ParentId="Package\Import Sales_Stage to Invoice_NDS"
           FontInfo="{assembly:Null}"
-          Size="158.666666666667,40"
+          Size="158.666666666667,NaN"
           Id="564c1454-e0f0-4ad4-8012-499cd3ca5896"
           TopLeft="425,567" />
       </GraphLayout>
@@ -7135,7 +7135,7 @@ where [refTable].[PaymentTypeName] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -7145,7 +7145,7 @@ where [refTable].[PaymentTypeName] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7298,31 +7298,31 @@ where [refTable].[PaymentTypeName] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="149.333333333334,42.6666666666667"
+          Size="149,42"
           Id="Package\Sequence Container\Import Branch_Stage to Branch_NDS\Lookup Branch"
           TopLeft="161.607143173793,212.80952427444" />
         <NodeLayout
-          Size="210.666666666667,42.6666666666667"
+          Size="211,43"
           Id="Package\Sequence Container\Import Branch_Stage to Branch_NDS\Add Source, Status columns"
           TopLeft="132.142857142857,132.380952380952" />
         <NodeLayout
-          Size="161.333333333334,42.6666666666667"
+          Size="161,43"
           Id="Package\Sequence Container\Import Branch_Stage to Branch_NDS\Add updatedDate"
           TopLeft="48.1249992828817,331.466664899985" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,43"
           Id="Package\Sequence Container\Import Branch_Stage to Branch_NDS\UPDATE Branch_NDS"
           TopLeft="42.7678571335439,412.380952380952" />
         <NodeLayout
-          Size="196,42.6666666666667"
+          Size="196,43"
           Id="Package\Sequence Container\Import Branch_Stage to Branch_NDS\Load from Branch_Stage"
           TopLeft="145,62" />
         <NodeLayout
-          Size="262.666666666667,42.6666666666667"
+          Size="263,43"
           Id="Package\Sequence Container\Import Branch_Stage to Branch_NDS\Add createdDate, updateDate Columns"
           TopLeft="297.857142857143,332.619047619048" />
         <NodeLayout
-          Size="190.666666666667,42.6666666666667"
+          Size="191,43"
           Id="Package\Sequence Container\Import Branch_Stage to Branch_NDS\Insert into Branch_NDS"
           TopLeft="334.196428711127,413.288095272964" />
         <EdgeLayout
@@ -7351,73 +7351,73 @@ where [refTable].[PaymentTypeName] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Import Branch_Stage to Branch_NDS.Paths[Lookup No Match Output]"
-          TopLeft="259.829365396015,255.476190941107">
+          TopLeft="259.607143173793,254.80952427444">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="169.361110794462,77.1428566779411"
+              EndConnector="169.74999968335,77.809523344608"
               Start="0,0"
-              End="169.361110794462,69.6428566779411">
+              End="169.74999968335,70.309523344608">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.3478039504001" />
+                    End="0,27.6198062994024" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.3478039504001"
-                    Point2="0,31.3478039504001"
-                    Point3="4,31.3478039504001" />
+                    Point1="0,27.6198062994024"
+                    Point2="0,31.6198062994024"
+                    Point3="4,31.6198062994024" />
                   <mssgle:LineSegment
-                    End="165.361110794462,31.3478039504001" />
+                    End="165.74999968335,31.6198062994024" />
                   <mssgle:CubicBezierSegment
-                    Point1="165.361110794462,31.3478039504001"
-                    Point2="169.361110794462,31.3478039504001"
-                    Point3="169.361110794462,35.3478039504001" />
+                    Point1="165.74999968335,31.6198062994024"
+                    Point2="169.74999968335,31.6198062994024"
+                    Point3="169.74999968335,35.6198062994024" />
                   <mssgle:LineSegment
-                    End="169.361110794462,69.6428566779411" />
+                    End="169.74999968335,70.309523344608" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="28.874168678481,36.3478039504001,111.6127734375,11.609375"
+              BoundingBox="9.183261560425,36.6198062994024,151.3834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Import Branch_Stage to Branch_NDS.Paths[Lookup Match Output]"
-          TopLeft="212.718254284904,255.476190941107">
+          TopLeft="212.607143173793,254.80952427444">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-83.9265883353554,75.990473958878"
+              EndConnector="-83.9821438909113,76.657140625545"
               Start="0,0"
-              End="-83.9265883353554,68.490473958878">
+              End="-83.9821438909113,69.157140625545">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.8795212200388" />
+                    End="0,27.151507345839" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.8795212200388"
-                    Point2="0,30.8795212200388"
-                    Point3="-4,30.8795212200388" />
+                    Point1="0,27.151507345839"
+                    Point2="0,31.151507345839"
+                    Point3="-4,31.151507345839" />
                   <mssgle:LineSegment
-                    End="-79.9265883353554,30.8795212200388" />
+                    End="-79.9821438909113,31.151507345839" />
                   <mssgle:CubicBezierSegment
-                    Point1="-79.9265883353554,30.8795212200388"
-                    Point2="-83.9265883353554,30.8795212200388"
-                    Point3="-83.9265883353554,34.8795212200388" />
+                    Point1="-79.9821438909113,31.151507345839"
+                    Point2="-83.9821438909113,31.151507345839"
+                    Point3="-83.9821438909113,35.151507345839" />
                   <mssgle:LineSegment
-                    End="-83.9265883353554,68.490473958878" />
+                    End="-83.9821438909113,69.157140625545" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-110.040032448928,35.8795212200388,136.1534765625,11.609375"
+              BoundingBox="-90.1824586642057,36.151507345839,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7440,9 +7440,7 @@ where [refTable].[PaymentTypeName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.4194140625,10.5871893134002,30.838828125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7464,30 +7462,32 @@ where [refTable].[PaymentTypeName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-15.4194140625,10.4645693998746,30.838828125,9.5732421875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Import Branch_Stage to Branch_NDS.Paths[Derived Column Output]"
-          TopLeft="236.875000158325,175.047619047619">
+          TopLeft="236.875000158325,175.380952380952">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.7619052268215"
+              EndConnector="0,37.428571893488"
               Start="0,0"
-              End="0,30.2619052268215">
+              End="0,29.928571893488">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.2619052268215" />
+                    End="0,29.928571893488" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-15.4194140625,10.3443315196608,30.838828125,9.5732421875"
+              BoundingBox="-15.4194140625,10.177664852994,30.838828125,9.5732421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8351,7 +8351,7 @@ where [refTable].[PaymentTypeName] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8361,7 +8361,7 @@ where [refTable].[PaymentTypeName] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
