@@ -12,8 +12,8 @@
   DTS:ObjectName="NDStoDDS"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="131"
-  DTS:VersionGUID="{E3589153-D1BC-4FB8-B9CF-0204E25F18FD}">
+  DTS:VersionBuild="132"
+  DTS:VersionGUID="{E2F502F5-74D5-4485-A87A-217D398B7475}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -9306,7 +9306,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-126.427563855735,5,155.5634765625,11.609375"
+              BoundingBox="-96.8372122932349,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9330,7 +9330,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-57.4275769315038,5,155.5634765625,11.609375"
+              BoundingBox="-27.8372253690038,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9354,7 +9354,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-77.78173828125,4.2119774929683,155.5634765625,11.609375"
+              BoundingBox="-48.19138671875,4.2119774929683,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9378,7 +9378,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-50.4692436037583,5,155.5634765625,11.609375"
+              BoundingBox="-20.8788920412583,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9401,9 +9401,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-14.5178090536346,5,49.6189453125,11.2236328125"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9438,7 +9436,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-51.445351064085,37.4364539117966,170.7934765625,11.609375"
+              BoundingBox="-21.854999501585,37.4364539117966,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9638,9 +9636,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.4194140625,21.46337890625,30.838828125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9709,7 +9705,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-54.3100716145834,136.770698319576,93.9534765625,11.609375"
+              BoundingBox="-34.4247200520834,136.770698319576,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9768,9 +9764,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.4194140625,21.46337890625,30.838828125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9814,9 +9808,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.4194140625,21.46337890625,30.838828125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9929,7 +9921,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
         <NodeLayout
           Size="163,43"
           Id="Package\Sequence Container\Dim_Date\Update Dim_Date"
-          TopLeft="150.999995499849,422.333329965671" />
+          TopLeft="142.999995499849,406.333329965671" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Date.Paths[Derived Column Output]"
           TopLeft="341.99999549985,171.666662822168">
@@ -9949,9 +9941,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-24.80947265625,5.26318253179365,49.6189453125,11.2236328125"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9973,9 +9963,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-24.80947265625,19.3465129203269,49.6189453125,11.2236328125"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9997,9 +9985,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-24.80947265625,7.3048491279287,49.6189453125,11.2236328125"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10034,43 +10020,43 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="25.9365924071275,34.3796312998841,170.7934765625,11.609375"
+              BoundingBox="55.5269439696275,34.3796312998841,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Date.Paths[Lookup Match Output]"
-          TopLeft="321.749987365058,343.666652684742">
+          TopLeft="321.638876253947,343.999986018075">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-89.4166585318753,78.6666772809293"
+              EndConnector="-97.138880754098,62.333343947596"
               Start="0,0"
-              End="-89.4166585318753,71.1666772809293">
+              End="-97.138880754098,54.833343947596">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.1237475671544" />
+                    End="0,21.4555017168193" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.1237475671544"
-                    Point2="0,32.1237475671544"
-                    Point3="-4,32.1237475671544" />
+                    Point1="0,21.4555017168193"
+                    Point2="0,25.4555017168193"
+                    Point3="-4,25.4555017168193" />
                   <mssgle:LineSegment
-                    End="-85.4166585318753,32.1237475671544" />
+                    End="-93.138880754098,25.4555017168193" />
                   <mssgle:CubicBezierSegment
-                    Point1="-85.4166585318753,32.1237475671544"
-                    Point2="-89.4166585318753,32.1237475671544"
-                    Point3="-89.4166585318753,36.1237475671544" />
+                    Point1="-93.138880754098,25.4555017168193"
+                    Point2="-97.138880754098,25.4555017168193"
+                    Point3="-97.138880754098,29.4555017168193" />
                   <mssgle:LineSegment
-                    End="-89.4166585318753,71.1666772809293" />
+                    End="-97.138880754098,54.833343947596" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-92.8997159846877,37.1237475671544,96.3827734375,11.609375"
+              BoundingBox="-96.760827095799,30.4555017168193,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10161,9 +10147,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.4194140625,21.46337890625,30.838828125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10198,7 +10182,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-143.198960503472,29.2730720606827,93.9534765625,11.609375"
+              BoundingBox="-123.313608940972,29.2730720606827,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10389,9 +10373,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-20.95265625,21.46337890625,41.9053125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10425,9 +10407,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="95.8846223958335,40.5623100303951,30.897421875,9.55859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10461,9 +10441,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-10.7859895833334,40.5623100303951,41.9053125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10497,9 +10475,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-0.9487109375,35,30.897421875,9.55859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10521,9 +10497,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-20.95265625,21.46337890625,41.9053125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10592,7 +10566,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-42.9922938368056,162.127982646421,104.8734765625,11.609375"
+              BoundingBox="-17.6469422743056,162.127982646421,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10615,9 +10589,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-20.95265625,21.46337890625,41.9053125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10675,9 +10647,7 @@ WHERE (createdDate &gt;= ?) AND (createdDate &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-20.95265625,21.46337890625,41.9053125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
