@@ -1,0 +1,112 @@
+﻿--1. Thống kê số thành viên mua hàng theo ngày, tháng, năm
+SELECT
+  NON EMPTY { [Measures].[Fact Sales Count] } ON COLUMNS,
+  NON EMPTY {
+    (
+      [Dim Date].[Year].[Year].ALLMEMBERS *
+      [Dim Date].[Month].[Month].ALLMEMBERS *
+      [Dim Date].[Day].[Day].ALLMEMBERS *
+      [Dim Customer].[Member Type].[Member Type].ALLMEMBERS
+    )
+  } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS
+FROM (
+  SELECT
+    ( { [Dim Customer].[Member Type].&[Member] } ) ON COLUMNS
+  FROM [DDSDA]
+)
+
+--2. Thống kê doanh thu của khách hàng (member, normal) theo ngày, tháng, năm và theo chi nhánh.
+SELECT
+  NON EMPTY { [Measures].[Total] } ON COLUMNS,
+  NON EMPTY {
+    (
+      [Dim Date].[Year].[Year].ALLMEMBERS *
+      [Dim Date].[Month].[Month].ALLMEMBERS *
+      [Dim Date].[Day].[Day].ALLMEMBERS *
+      [Dim Branch].[Name].[Name].ALLMEMBERS *
+      [Dim Customer].[Member Type].[Member Type].ALLMEMBERS
+    )
+  } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS
+FROM [DDSDA]
+
+--3 Thống kê số lượng khách thanh toán theo cash/ debit/… ở từng chi nhánh theo từng tháng trong năm
+SELECT
+  NON EMPTY { [Measures].[Fact Sales Count] } ON COLUMNS,
+  NON EMPTY {
+    (
+      [Dim Payment Type].[Payment Type Name].[Payment Type Name].ALLMEMBERS *
+      [Dim Branch].[Name].[Name].ALLMEMBERS *
+      [Dim Date].[Month].[Month].ALLMEMBERS *
+      [Dim Date].[Year].[Year].ALLMEMBERS
+    )
+  } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS
+FROM [DDSDA]
+
+--4. Thống kê lượng rating của khách hàng (member, normal) theo từng loại sản phẩm (ProductLine)
+// Tổng hợp theo Member, Normal
+SELECT
+  {[Measures].[Fact Sales Count]} ON COLUMNS,
+  NON EMPTY{
+    [Dim Product].[Product Line Name].Members *
+    {[Dim Customer].[Member Type].[Member], [Dim Customer].[Member Type].[Normal]}
+  } ON ROWS
+FROM
+  [DDSDA]
+WHERE
+  {
+    [Dim Product].[Product Line Id].Members
+  }
+// Theo member
+  SELECT
+ [Measures].[Fact Sales Count] ON COLUMNS,
+ NON EMPTY[Dim Product].[Product Line Id].[Product Line Id].Members ON ROWS
+FROM
+ 	 [DDSDA]
+WHERE
+    	[Dim Customer].[Member Type].&[Member]
+//Theo normal
+SELECT
+[Measures].[Fact Sales Count] ON COLUMNS,
+[Dim Product].[Product Line Id].[Product Line Id].Members ON ROWS
+FROM
+[DDSDA]
+WHERE
+[Dim Customer].[Member Type].&[Normal]
+
+
+ --5. Thống kê số lượng sản phẩm bán được theo từng thời điểm (time / date)
+ SELECT
+  NON EMPTY { [Measures].[Quantity] } ON COLUMNS,
+  NON EMPTY {
+    (
+      [Dim Date].[Year].[Year].ALLMEMBERS *
+      [Dim Date].[Month].[Month].ALLMEMBERS *
+      [Dim Date].[Day].[Day].ALLMEMBERS *
+      [Dim Date].[Hour].[Hour].ALLMEMBERS
+    )
+  } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS
+FROM [DDSDA]
+
+
+--6.	Thống kê số lượng khách hàng nữ đã mua theo từng loại sản phẩm
+SELECT
+  [Measures].[Fact Sales Count] ON COLUMNS,
+  NON EMPTY [Dim Product].[Product Line Id].[Product Line Id].Members ON ROWS
+FROM
+  [DDSDA]
+WHERE
+    [Dim Customer].[Gender].[Female]
+
+
+--7. Cho biết doanh thu của từng chi nhánh của các năm
+SELECT
+  NON EMPTY { [Measures].[Total] } ON COLUMNS,
+  NON EMPTY {
+    (
+      [Dim Branch].[Name].[Name].ALLMEMBERS *
+      [Dim Date].[Year].[Year].ALLMEMBERS
+    )
+  } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS
+FROM [DDSDA]
+
+

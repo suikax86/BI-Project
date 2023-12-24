@@ -6,10 +6,71 @@
     <Name>SSAS.database</Name>
     <FullPath>SSAS.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>DDSDA.cube</Name>
+      <FullPath>DDSDA.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>DDSDA.partitions</Name>
+          <FullPath>DDSDA.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Dim Branch.dim</Name>
+      <FullPath>Dim Branch.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Payment Type.dim</Name>
+      <FullPath>Dim Payment Type.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Product.dim</Name>
+      <FullPath>Dim Product.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Customer.dim</Name>
+      <FullPath>Dim Customer.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Date.dim</Name>
+      <FullPath>Dim Date.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>DDSDA.ds</Name>
+      <FullPath>DDSDA.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>DDSDA.dsv</Name>
+      <FullPath>DDSDA.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>DDSDA</Id>
+            <Name>DDSDA</Name>
+            <Value xsi:type="xsd:string">Provider=SQLOLEDB.1;Data Source=WATERMELONX86;Integrated Security=SSPI;Initial Catalog=DDSDA</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>DDSDA</Id>
+            <Name>DDSDA</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>

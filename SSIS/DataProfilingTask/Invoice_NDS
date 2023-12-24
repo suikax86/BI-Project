@@ -1,0 +1,1787 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{D9A33AE7-403F-41B1-8367-CC4EF62E4075}" Name="Invoice_NDS">
+      <DtsConnectionManagerID>Invoice_NDS</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{E7DBF2FC-20B0-4225-A522-E52F2FCBE037}" Name="Product_NDS">
+      <DtsConnectionManagerID>Product_NDS</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{BB1CD48B-5B6C-4C82-8818-858815F517F9}" Name="WATERMELONX86.MetadataDA.sa">
+      <DtsConnectionManagerID>WATERMELONX86.MetadataDA.sa</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}" Name="WATERMELONX86.NDSDA">
+      <DtsConnectionManagerID>WATERMELONX86.NDSDA</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{41C8F314-9C8E-4169-A7C7-89D431A650C9}" Name="WATERMELONX86.SourceDA.sa">
+      <DtsConnectionManagerID>WATERMELONX86.SourceDA.sa</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table Schema="dbo" Table="Invoice_NDS" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="-1" />
+        <Column Name="Invoice_SK" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="-1" />
+        <KeyColumns>
+          <Column Name="Invoice_SK" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="-1" />
+        <Column Name="Invoice_SK" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="-1" />
+        <KeyColumns>
+          <Column Name="Invoice_SK" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Invoice_NK" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="ProductId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="MemberType" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Gender" SqlDbType="NVarChar" MaxLength="6" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Quantity" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Crogs" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Tax" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Total" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="GrossMarginPercentage" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="GrossIncome" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Rating" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="BranchId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="PaymentId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Source" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Status" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="createdDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="updatedDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Invoice_SK" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <MinValue>1017</MinValue>
+        <MaxValue>2032</MaxValue>
+        <Mean>1524.5</Mean>
+        <StdDev>293.293794683761</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="ProductId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>943</MaxValue>
+        <Mean>496.950787401575</Mean>
+        <StdDev>283.358064740905</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Quantity" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>10</MaxValue>
+        <Mean>5.50393700787402</Mean>
+        <StdDev>2.91682336039004</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Crogs" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>10.1700</MinValue>
+        <MaxValue>993.0000</MaxValue>
+        <Mean>307.527992125984</Mean>
+        <StdDev>233.466617890853</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Tax" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0.5085</MinValue>
+        <MaxValue>49.6500</MaxValue>
+        <Mean>15.3763996062992</Mean>
+        <StdDev>11.6733308945426</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Total" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>10.6785</MinValue>
+        <MaxValue>1042.6500</MaxValue>
+        <Mean>322.904391732283</Mean>
+        <StdDev>245.139948785396</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="GrossMarginPercentage" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>4.7619</MinValue>
+        <MaxValue>4.7619</MaxValue>
+        <Mean>4.76190000000004</Mean>
+        <StdDev>0</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="GrossIncome" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0.5085</MinValue>
+        <MaxValue>49.6500</MaxValue>
+        <Mean>15.3763996062992</Mean>
+        <StdDev>11.6733308945426</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Rating" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>4</MinValue>
+        <MaxValue>10</MaxValue>
+        <Mean>6.9634842519685</Mean>
+        <StdDev>1.71876949258754</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="BranchId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>3</MaxValue>
+        <Mean>1.98917322834646</Mean>
+        <StdDev>0.822231040144901</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="PaymentId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>13</MinValue>
+        <MaxValue>15</MaxValue>
+        <Mean>14.003937007874</Mean>
+        <StdDev>0.830036672636671</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Source" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>1</MaxValue>
+        <Mean>1</Mean>
+        <StdDev>0</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Status" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>1</MaxValue>
+        <Mean>1</Mean>
+        <StdDev>0</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="createdDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2019-01-01T10:39:00.0000000</MinValue>
+        <MaxValue>2020-03-22T19:20:00.0000000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="updatedDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2023-12-14T18:26:22.1930000</MinValue>
+        <MaxValue>2023-12-14T18:26:22.1930000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Invoice_NK" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="ProductId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="MemberType" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Gender" SqlDbType="NVarChar" MaxLength="6" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Quantity" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Crogs" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Tax" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Total" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="GrossMarginPercentage" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="GrossIncome" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Rating" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="BranchId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="PaymentId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Source" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Status" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="createdDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="updatedDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Invoice_SK" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <MinValue>1017</MinValue>
+        <MaxValue>2032</MaxValue>
+        <Mean>1524.5</Mean>
+        <StdDev>293.293794683761</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="ProductId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>943</MaxValue>
+        <Mean>496.950787401575</Mean>
+        <StdDev>283.358064740905</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Quantity" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>10</MaxValue>
+        <Mean>5.50393700787402</Mean>
+        <StdDev>2.91682336039004</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Crogs" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>10.1700</MinValue>
+        <MaxValue>993.0000</MaxValue>
+        <Mean>307.527992125984</Mean>
+        <StdDev>233.466617890853</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Tax" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0.5085</MinValue>
+        <MaxValue>49.6500</MaxValue>
+        <Mean>15.3763996062992</Mean>
+        <StdDev>11.6733308945426</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Total" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>10.6785</MinValue>
+        <MaxValue>1042.6500</MaxValue>
+        <Mean>322.904391732283</Mean>
+        <StdDev>245.139948785396</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="GrossMarginPercentage" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>4.7619</MinValue>
+        <MaxValue>4.7619</MaxValue>
+        <Mean>4.76190000000004</Mean>
+        <StdDev>0</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="GrossIncome" SqlDbType="Money" MaxLength="0" Precision="19" Scale="4" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0.5085</MinValue>
+        <MaxValue>49.6500</MaxValue>
+        <Mean>15.3763996062992</Mean>
+        <StdDev>11.6733308945426</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Rating" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>4</MinValue>
+        <MaxValue>10</MaxValue>
+        <Mean>6.9634842519685</Mean>
+        <StdDev>1.71876949258754</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="BranchId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>3</MaxValue>
+        <Mean>1.98917322834646</Mean>
+        <StdDev>0.822231040144901</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="PaymentId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>13</MinValue>
+        <MaxValue>15</MaxValue>
+        <Mean>14.003937007874</Mean>
+        <StdDev>0.830036672636671</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Source" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>1</MaxValue>
+        <Mean>1</Mean>
+        <StdDev>0</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Status" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>1</MaxValue>
+        <Mean>1</Mean>
+        <StdDev>0</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="createdDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2019-01-01T10:39:00.0000000</MinValue>
+        <MaxValue>2020-03-22T19:20:00.0000000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="updatedDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2023-12-14T18:26:22.1930000</MinValue>
+        <MaxValue>2023-12-14T18:26:22.1930000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Invoice_NK" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>11</MinLength>
+        <MaxLength>11</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>1016</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="MemberType" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>6</MinLength>
+        <MaxLength>6</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>1016</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Gender" SqlDbType="NVarChar" MaxLength="6" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>4</MinLength>
+        <MaxLength>6</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>507</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>509</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Invoice_NK" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>11</MinLength>
+        <MaxLength>11</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>1016</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="MemberType" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>6</MinLength>
+        <MaxLength>6</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>1016</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq1" IsExact="true">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Gender" SqlDbType="NVarChar" MaxLength="6" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>4</MinLength>
+        <MaxLength>6</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>507</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>509</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Invoice_SK" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1016</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Invoice_SK" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1016</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <KeyColumns>
+          <Column Name="Invoice_NK" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Invoice_NK" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1016</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <KeyColumns>
+          <Column Name="Invoice_NK" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Invoice_NK" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1016</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="ProductId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>943</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>15</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>43</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>53</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>129</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>311</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>332</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>516</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>583</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>635</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>669</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>681</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>712</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>751</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>852</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>873</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>877</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>878</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>880</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>881</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>882</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>883</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>884</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>885</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>886</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>887</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>888</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>889</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>891</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>892</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>893</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>894</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>895</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>896</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>897</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>898</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>899</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>900</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>902</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>903</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>904</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>905</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>906</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>907</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>908</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>909</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>910</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>911</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>913</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>914</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>915</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>916</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>917</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>918</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>919</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>920</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>921</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>922</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>924</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>925</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>926</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>927</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>928</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>929</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>930</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>931</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>932</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>933</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>935</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>936</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>937</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>938</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="ProductId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>943</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>15</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>43</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>53</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>129</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>311</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>332</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>516</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>583</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>635</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>669</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>681</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>712</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>751</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>852</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>873</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>877</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>878</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>880</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>881</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>882</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>883</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>884</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>885</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>886</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>887</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>888</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>889</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>891</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>892</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>893</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>894</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>895</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>896</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>897</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>898</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>899</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>900</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>902</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>903</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>904</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>905</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>906</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>907</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>908</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>909</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>910</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>911</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>913</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>914</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>915</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>916</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>917</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>918</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>919</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>920</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>921</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>922</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>924</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>925</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>926</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>927</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>928</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>929</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>930</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>931</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>932</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>933</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>935</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>936</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>937</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>938</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="MemberType" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>2</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Normal</Value>
+            <Count>509</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Member</Value>
+            <Count>507</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="MemberType" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>2</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Normal</Value>
+            <Count>509</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Member</Value>
+            <Count>507</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Gender" SqlDbType="NVarChar" MaxLength="6" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>2</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Male</Value>
+            <Count>509</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Female</Value>
+            <Count>507</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Gender" SqlDbType="NVarChar" MaxLength="6" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>2</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Male</Value>
+            <Count>509</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Female</Value>
+            <Count>507</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Quantity" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>10</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>9</Value>
+            <Count>92</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>93</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>100</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7</Value>
+            <Count>103</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>113</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10</Value>
+            <Count>121</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>111</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>105</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>92</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8</Value>
+            <Count>86</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Quantity" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>10</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>9</Value>
+            <Count>92</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>93</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>100</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7</Value>
+            <Count>103</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>113</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10</Value>
+            <Count>121</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>111</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>105</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>92</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8</Value>
+            <Count>86</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="BranchId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>3</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>338</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>349</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>329</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="BranchId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>3</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>338</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>349</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>329</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="PaymentId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>3</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>15</Value>
+            <Count>352</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>13</Value>
+            <Count>348</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14</Value>
+            <Count>316</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="PaymentId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>3</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>15</Value>
+            <Count>352</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>13</Value>
+            <Count>348</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14</Value>
+            <Count>316</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Source" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>1016</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Source" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>1016</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Status" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>1016</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="Status" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>1016</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <KeyColumns>
+          <Column Name="createdDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>false</IsExactKey>
+        <KeyStrength>0.9940945</KeyStrength>
+        <KeyViolations>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2019-03-24T18:27:00.0000000</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2019-03-02T19:26:00.0000000</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2019-02-25T17:16:00.0000000</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2019-02-15T20:21:00.0000000</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2019-02-07T11:28:00.0000000</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2019-01-15T15:01:00.0000000</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+        </KeyViolations>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="createdDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1010</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>2019-01-15T15:01:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-02-07T11:28:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-02-15T20:21:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-02-25T17:16:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-03-02T19:26:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-03-24T18:27:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <KeyColumns>
+          <Column Name="createdDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>false</IsExactKey>
+        <KeyStrength>0.9940945</KeyStrength>
+        <KeyViolations>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2019-03-24T18:27:00.0000000</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2019-03-02T19:26:00.0000000</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2019-02-25T17:16:00.0000000</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2019-02-15T20:21:00.0000000</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2019-02-07T11:28:00.0000000</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2019-01-15T15:01:00.0000000</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+        </KeyViolations>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="createdDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1010</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>2019-01-15T15:01:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-02-07T11:28:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-02-15T20:21:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-02-25T17:16:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-03-02T19:26:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-03-24T18:27:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq1">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="updatedDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>2023-12-14T18:26:22.1930000</Value>
+            <Count>1016</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7E841CF6-A1DF-4C9E-A904-BBECF1BC0FAB}</DataSourceID>
+        <Table DataSource="WATERMELONX86" Database="NDSDA" Schema="dbo" Table="Invoice_NDS" RowCount="1016" />
+        <Column Name="updatedDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>2023-12-14T18:26:22.1930000</Value>
+            <Count>1016</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>
